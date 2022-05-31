@@ -5,8 +5,8 @@ const tempDataName = 'basic'
 
 //Se não existir o item 'users' no localStorage, ele cria
 let users = localStorage.getItem('users')
-    if(!users)
-        localStorage.setItem('users', JSON.stringify([]))
+if (!users)
+    localStorage.setItem('users', JSON.stringify([]))
 
 //Trocar de tela sem sair da pagina + animações
 document.querySelector('.steps').addEventListener('click', (event) => {
@@ -32,9 +32,9 @@ document.querySelector('#submit-form').addEventListener('click', (event) => {
 })
 
 //Evento FocusOut recebido por bubbling
-dynamicContent.addEventListener('focusout', (event)=>{
+dynamicContent.addEventListener('focusout', (event) => {
     //Valida se o campo digitado nao está em branco
-    if(event.target.value != "")
+    if (event.target.value != "")
         controller.AddToTemp(tempDataName)
+    console.log("teste");
 })
-
