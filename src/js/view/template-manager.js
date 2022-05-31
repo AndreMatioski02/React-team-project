@@ -109,9 +109,12 @@ class TemplateManager {
                                 <option ${data.year == 2012 ? 'selected' : ''} value="2012">2012</option>
                             </select>
                         </div>
+                        <div class="input-group">
+                            <label for="age">Age</label>
+                            <input type="text" disabled="" value="${ (new Date().getFullYear())-data.year}">
+                        </div>
                     </div>
                 </div>
-
 
                 <footer>
                     <label><input type="checkbox" value="agree" name="terms" id="terms"> I accept the terms and privacy</label>
@@ -122,4 +125,5 @@ class TemplateManager {
         } else if (name == 'social') return 'social'
         else if (name == 'certificates') return 'certificates'
     }
+    
 }

@@ -44,6 +44,7 @@ dynamicContent.addEventListener('focusout', (event) => {
         controller.addToTemp(tempDataName)
 })
 
+
 function changeDiv(event) {
     controller.changeForm(event.target.dataset.page)
 
@@ -63,3 +64,4 @@ window.addEventListener('load', () => {
         tempDataName = 'basic'
     }, 250);
 })
+
