@@ -10,6 +10,7 @@ if (!users)
 
 //Trocar de tela sem sair da pagina + animações
 document.querySelector('.steps').addEventListener('click', (event) => {
+    controller.save(tempDataName)
     changeDiv(event)
         /*
     document.querySelectorAll('.list-item').forEach((element) => {
@@ -32,7 +33,7 @@ dynamicContent.addEventListener('submit', (event) => {
         //Validações
 
     //Salvar no banco e trocar de tela
-    controller.save()
+    controller.save(tempDataName)
     changeDiv(event)
 })
 
@@ -52,3 +53,13 @@ function changeDiv(event) {
         tempDataName = event.target.dataset.page
     }, 250);
 }
+
+window.addEventListener('load', () => {
+    controller.changeForm('basic')
+
+    //Precisei fazer ele esperar para que nao gerasse um cadastro de temp na proxima tela
+    //ele ativa o evento focusout quando some com a div anterior
+    setTimeout(() => {
+        tempDataName = 'basic'
+    }, 250);
+})
