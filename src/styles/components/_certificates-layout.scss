@@ -1,0 +1,34 @@
+.div-certificates {
+    width: 100%;
+    .input-content::placeholder {
+        color: #bababa;
+    }
+    .input-link-certificate {
+        margin-bottom: 1rem;
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        input {
+            color: $secondary;
+            width: 100%;
+            border: 1px solid $secondary;
+            border-radius: 4px;
+            padding: 0.5rem 0.75rem;
+            background-image: url(../images/favorite-icon.jpg);
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: 2.5rem;
+            
+        }
+        label {
+            color: $secondary;
+            line-height: 16px;
+            font-size: 0.875rem;
+            font-weight: 400;
+            .required {
+                color: #bababa;
+            }
+        }
+    }
+
+}
