@@ -112,9 +112,11 @@ class TemplateManager {
                     </div>
                 </div>
 
-                <label><input type="checkbox" value="agree" name="terms" id="terms"> I accept the terms and privacy</label>
 
-                <button value="Next" id="submit-form">Submit</button>
+                <footer>
+                    <label><input type="checkbox" value="agree" name="terms" id="terms"> I accept the terms and privacy</label>
+                    <button value="Next" id="submit-form" class="submit-form-button">Next<i class="fa-solid fa-angle-right"></i></button>
+                </footer>
             </form>
             `
         } else if (name == 'social') return 'social'
