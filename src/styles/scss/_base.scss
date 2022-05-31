@@ -12,6 +12,11 @@
     font-family: 'Nunito';
 }
 
+body {
+    display: flex;
+    justify-content: center;
+}
+
 .dynamic-content {
     transition: 200ms;
 }
@@ -25,23 +30,3 @@
     margin-top: 2.18rem;
 }
 
-.birthday {
-    .subtitle {
-        font-size: 1.125rem;
-        color: $secondary;
-        font-weight: 400;
-    }
-    .date-group {
-        display: flex;
-        .input-group {
-            flex-basis: 33%;
-            select {
-                color: $secondary;
-                width: 90%;
-                border: 1px solid $secondary;
-                border-radius: 4px;
-                padding: 0.5rem 0.75rem;
-            }
-        }
-    }
-}

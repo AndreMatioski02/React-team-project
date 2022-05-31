@@ -50,6 +50,15 @@
   font-family: 'Nunito';
 }
 
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .dynamic-content {
   -webkit-transition: 200ms;
   transition: 200ms;
@@ -63,31 +72,6 @@
 
 .form {
   margin-top: 2.18rem;
-}
-
-.birthday .subtitle {
-  font-size: 1.125rem;
-  color: #AAAAAA;
-  font-weight: 400;
-}
-
-.birthday .date-group {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.birthday .date-group .input-group {
-  -ms-flex-preferred-size: 33%;
-      flex-basis: 33%;
-}
-
-.birthday .date-group .input-group select {
-  color: #AAAAAA;
-  width: 90%;
-  border: 1px solid #AAAAAA;
-  border-radius: 4px;
-  padding: 0.5rem 0.75rem;
 }
 
 .dynamic-content .form footer {
@@ -227,5 +211,56 @@
 
 .div-inputs .input-group-phone label .required {
   color: #bababa;
+}
+
+.birthday {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.birthday .subtitle {
+  margin-bottom: 1rem;
+  margin-left: 0;
+  font-size: 1.125rem;
+  color: #AAAAAA;
+  font-weight: 400;
+}
+
+.birthday .date-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.birthday .date-group .input-group {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.birthday .date-group .input-group label {
+  color: #AAAAAA;
+}
+
+.birthday .date-group .input-group select {
+  color: #AAAAAA;
+  width: 90%;
+  border: 1px solid #AAAAAA;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+}
+
+.birthday .date-group .input-group input {
+  color: #AAAAAA;
+  width: 100%;
+  border: 1px solid #AAAAAA;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
 }
 /*# sourceMappingURL=style.css.map */
