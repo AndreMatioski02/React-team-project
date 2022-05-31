@@ -1,14 +1,11 @@
 class userController {
 
-    fullName = form.querySelector('#fullName')
-    nickname = form.querySelector('#nickname')
-    email = form.querySelector('#email')
 
     constructor() {
 
     }
 
-    AddToTemp(tempDataName) {
+    addToTemp(tempDataName) {
 
         let user = new User()
         user.addTemp(tempDataName)
@@ -22,7 +19,21 @@ class userController {
         }*/
     }
 
-    validateNotNull() {
+    changeForm(target) {
+        let newTab = document.querySelector(`#${target}`)
+        document.querySelectorAll('.list-item').forEach((element) => {
+            element.classList.remove('active')
+        })
+        newTab.classList.add(`active`)
+        dynamicContent.classList.add('invisible')
+        setTimeout(() => {
+            dynamicContent.innerHTML = TemplateManager.getTemplate(newTab.dataset.page);
+            tempDataName = newTab.dataset.page
+            dynamicContent.classList.remove('invisible')
+        }, 200);
+    }
+
+    save() {
 
     }
 
