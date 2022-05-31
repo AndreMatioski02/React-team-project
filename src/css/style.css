@@ -1,0 +1,93 @@
+@font-face {
+  font-family: "Nunito";
+  src: url("../assets/fonts/Nunito/Nunito-VariableFont_wght.ttf");
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: black;
+  font-family: "Nunito";
+}
+
+.container {
+  padding: 0 2rem;
+}
+.container .title {
+  margin-top: 3.5rem;
+  font-size: 1.125rem;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.header {
+  margin-top: 2.875rem;
+}
+.header .steps {
+  display: flex;
+  width: 100%;
+  list-style-type: none;
+  justify-content: center;
+}
+.header .list-item {
+  border-bottom: 1px solid grey;
+  text-align: center;
+  width: 33%;
+  cursor: pointer;
+}
+.header .list-item.active {
+  border-bottom: 2px solid #074EE8;
+  color: #074EE8;
+}
+
+.dynamic-content {
+  transition: 200ms;
+}
+
+.invisible {
+  opacity: 0;
+  transition: 200ms;
+}
+
+.form {
+  margin-top: 2.18rem;
+}
+
+.input-group {
+  margin-bottom: 2.18rem;
+}
+.input-group label {
+  color: #AAAAAA;
+  line-height: 16px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  display: block;
+}
+.input-group input[type=text] {
+  color: #AAAAAA;
+  width: 100%;
+  border: 1px solid #AAAAAA;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+}
+
+.birthday .subtitle {
+  font-size: 1.125rem;
+  color: #AAAAAA;
+  font-weight: 400;
+}
+.birthday .date-group {
+  display: flex;
+}
+.birthday .date-group .input-group {
+  flex-basis: 33%;
+}
+.birthday .date-group .input-group select {
+  color: #AAAAAA;
+  width: 90%;
+  border: 1px solid #AAAAAA;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+}
+
+/*# sourceMappingURL=style.css.map */
