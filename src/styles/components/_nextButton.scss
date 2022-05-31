@@ -1,0 +1,24 @@
+@import '../scss/variables';
+
+.dynamic-content{
+    .form{
+        footer {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            .submit-form-button {
+                color: white;
+                border: none;
+                background-color: $primary;
+                border-radius: 4px;
+                width: 5rem;
+                height: 2rem;
+                font-size: 1rem;
+                i {
+                    color: white;
+                    padding-left: 0.75rem;
+                }
+            }
+        }
+    }
+}

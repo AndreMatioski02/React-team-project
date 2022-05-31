@@ -12,36 +12,6 @@
     font-family: 'Nunito';
 }
 
-.container {
-    padding: 0 2rem;
-    .title {
-        margin-top: 3.5rem;
-        font-size: 1.125rem;
-        line-height: 24px;
-        font-weight: 600;
-    }
-}
-
-.header {
-    margin-top: 2.875rem;
-    .steps {
-        display: flex;
-        width: 100%;
-        list-style-type: none;
-        justify-content: center;
-    }
-    .list-item {
-        border-bottom: 1px solid grey;
-        text-align: center;
-        width: 33%;
-        cursor: pointer;
-        &.active {
-            border-bottom: 2px solid $primary;
-            color: $primary;
-        }
-    }
-}
-
 .dynamic-content {
     transition: 200ms;
 }
