@@ -44,8 +44,6 @@
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  margin: 0;
-  padding: 0;
   color: black;
   font-family: 'Nunito';
 }
@@ -57,24 +55,14 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.dynamic-content {
-  -webkit-transition: 200ms;
-  transition: 200ms;
-}
-
-.invisible {
-  opacity: 0;
-  -webkit-transition: 200ms;
-  transition: 200ms;
+  width: 80%;
 }
 
 .form {
   margin-top: 2.18rem;
 }
 
-.dynamic-content .form footer {
+.dynamic-content .form .first-footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -84,7 +72,7 @@ body {
   margin-bottom: 1rem;
 }
 
-.dynamic-content .form footer .submit-form-button {
+.dynamic-content .form .first-footer .submit-form-button {
   color: white;
   border: none;
   background-color: #074EE8;
@@ -94,7 +82,7 @@ body {
   font-size: 1rem;
 }
 
-.dynamic-content .form footer .submit-form-button i {
+.dynamic-content .form .first-footer .submit-form-button i {
   color: white;
   padding-left: 0.75rem;
 }
@@ -262,5 +250,118 @@ body {
   border: 1px solid #AAAAAA;
   border-radius: 4px;
   padding: 0.5rem 0.75rem;
+}
+
+.dynamic-content .form {
+  width: 100%;
+}
+
+.dynamic-content .form .third-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.dynamic-content .form .third-footer .finish-form-button {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  border: none;
+  background-color: #074EE8;
+  border-radius: 4px;
+  width: 5.5rem;
+  height: 2rem;
+  font-size: 1rem;
+}
+
+.dynamic-content .form .third-footer .finish-form-button i {
+  color: white;
+  padding-right: 0.55rem;
+}
+
+.div-certificates {
+  width: 100%;
+}
+
+.div-certificates .input-content::-webkit-input-placeholder {
+  color: #bababa;
+}
+
+.div-certificates .input-content:-ms-input-placeholder {
+  color: #bababa;
+}
+
+.div-certificates .input-content::-ms-input-placeholder {
+  color: #bababa;
+}
+
+.div-certificates .input-content::placeholder {
+  color: #bababa;
+}
+
+.div-certificates .input-link-certificate {
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.div-certificates .input-link-certificate input {
+  color: #AAAAAA;
+  width: 100%;
+  border: 1px solid #AAAAAA;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  background-image: url(../images/favorite-icon.jpg);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 2.5rem;
+}
+
+.div-certificates .input-link-certificate label {
+  color: #AAAAAA;
+  line-height: 16px;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.div-certificates .input-link-certificate label .required {
+  color: #bababa;
+}
+
+.add-button-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-bottom: 2rem;
+}
+
+.add-button-div .add-button {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  border: none;
+  background-color: #074EE8;
+  border-radius: 4px;
+  width: 7rem;
+  height: 2.25rem;
+  font-size: 1rem;
+}
+
+.add-button-div .add-button i {
+  color: white;
+  padding: 0.5rem;
 }
 /*# sourceMappingURL=style.css.map */

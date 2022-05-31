@@ -6,8 +6,6 @@
 
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
     color: black;
     font-family: 'Nunito';
 }
@@ -15,15 +13,7 @@
 body {
     display: flex;
     justify-content: center;
-}
-
-.dynamic-content {
-    transition: 200ms;
-}
-
-.invisible {
-    opacity: 0;
-    transition: 200ms;
+    width: 80%;
 }
 
 .form {
