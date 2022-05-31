@@ -25,24 +25,6 @@
     margin-top: 2.18rem;
 }
 
-.input-group {
-    margin-bottom: 2.18rem;
-    label {
-        color: $secondary;
-        line-height: 16px;
-        font-size: 0.875rem;
-        font-weight: 400;
-        display: block;
-    }
-    input[type=text] {
-        color: $secondary;
-        width: 100%;
-        border: 1px solid $secondary;
-        border-radius: 4px;
-        padding: 0.5rem 0.75rem;
-    }
-}
-
 .birthday {
     .subtitle {
         font-size: 1.125rem;
