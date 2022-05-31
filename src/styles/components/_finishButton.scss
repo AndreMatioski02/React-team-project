@@ -1,0 +1,26 @@
+@import '../scss/variables';
+
+.dynamic-content{
+    .form{
+        width: 100%;
+        .third-footer {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 1rem;
+            .finish-form-button {
+                justify-content: center;
+                color: white;
+                border: none;
+                background-color: $primary;
+                border-radius: 4px;
+                width: 5.5rem;
+                height: 2rem;
+                font-size: 1rem;
+                i {
+                    color: white;
+                    padding-right: 0.55rem;
+                }
+            }
+        }
+    }
+}
