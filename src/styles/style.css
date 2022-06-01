@@ -55,7 +55,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 80%;
+  width: 100%;
 }
 
 .form {
@@ -363,5 +363,35 @@ body {
 .add-button-div .add-button i {
   color: white;
   padding: 0.5rem;
+}
+
+.alignment-space {
+  width: 26.438rem;
+  height: 10rem;
+}
+
+.dynamic-content .form .second-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.dynamic-content .form .second-footer .submit-form-button {
+  color: white;
+  border: none;
+  background-color: #074EE8;
+  border-radius: 4px;
+  width: 5rem;
+  height: 2rem;
+  font-size: 1rem;
+}
+
+.dynamic-content .form .second-footer .submit-form-button i {
+  color: white;
+  padding-left: 0.75rem;
 }
 /*# sourceMappingURL=style.css.map */
