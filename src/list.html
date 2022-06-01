@@ -5,8 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List</title>
+    <script src="https://kit.fontawesome.com/39a25fa245.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-    
+    <div class="container">
+        <h1 class="title">List team</h1>
+        <header class="header">
+            <ul class="steps">
+                <li id="basic" data-page="basic" class="list-item active">List</li>
+            </ul>
+        </header>
+
+        <!-- Aqui será inserido o conteúdo dinamico da página -->
+        <div class="content">
+
+        </div>
+
+    </div>
+    <script>
+        let data = JSON.parse(localStorage.getItem(`users`));
+        var $wrapper = document.querySelector('.content');
+
+        if (!data) {
+            document.querySelector('.content').innerHTML = '<h2>No data registered!.</h2>'
+        }else{
+            for (let i=0; i < data.length; i++) {
+                $wrapper.innerHTML = $wrapper.innerHTML+`<h1 class="title">Full Name: ${data[i].fullName}</h1><br>`;
+                $wrapper.innerHTML = $wrapper.innerHTML+`<h3 class="subtitle-list">Nickname: ${data[i].nickname}</h3><br>`;
+                $wrapper.innerHTML = $wrapper.innerHTML+`<h3 class="subtitle-list">Email: ${data[i].email}</h3><br>`;
+                $wrapper.innerHTML = $wrapper.innerHTML+`<h3 class="subtitle-list">Phone: ${data[i].phone}</h3><br>`;       
+            }
+        }
+    </script>
 </body>
+
 </html>

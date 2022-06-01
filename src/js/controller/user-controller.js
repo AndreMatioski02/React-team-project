@@ -89,7 +89,13 @@ class userController {
 
         if (!user_exists) {
             console.log('n existe');
-            data.push(user)
+            data.push(user);
+            // para testar com mais de 1 usuario
+            // data.push(user);
+            // data.push(user);
+            // data.push(user);
+            // data.push(user);
+            // data.push(user);
         }
         localStorage.setItem('users', JSON.stringify(data))
 
