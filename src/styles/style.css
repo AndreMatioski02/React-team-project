@@ -4,7 +4,7 @@
 .container .title {
   margin-top: 3.5rem;
   font-size: 1.125rem;
-  line-height: 24px;
+  line-height: 1.5rem;
   font-weight: 600;
 }
 .container .header {
@@ -27,6 +27,36 @@
   color: #074EE8;
 }
 
+@media (max-width: 475px) {
+  .container {
+    padding: 1rem;
+  }
+  .container .title {
+    margin-top: 2rem;
+  }
+  .container .header {
+    margin-top: 2rem;
+  }
+  .container .header .steps {
+    padding: 0;
+  }
+}
+
+@media (max-width: 325px) {
+  .container {
+    padding: 0.5rem;
+  }
+  .container .title {
+    margin-top: 1rem;
+  }
+  .container .header {
+    margin-top: 1.5rem;
+  }
+  .container .header .steps {
+    padding: 0;
+  }
+}
+
 @font-face {
   font-family: "Nunito";
   src: url("../assets/fonts/Nunito/Nunito-VariableFont_wght.ttf");
@@ -38,19 +68,66 @@
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  width: 100%;
+  display: block;
+  margin: auto;
+  width: 70%;
 }
 
 .form {
   margin-top: 2.18rem;
 }
 
+@media (max-width: 475px) {
+  body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0;
+    width: 100%;
+  }
+  .form {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 325px) {
+  body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0;
+    width: 100%;
+  }
+  .form {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 775px) {
+  body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0;
+    width: 100%;
+  }
+  .form {
+    margin-top: 2rem;
+  }
+}
+
+.dynamic-content .form .label-div {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
 .dynamic-content .form .first-footer {
   display: flex;
-  justify-content: space-between;
   margin-bottom: 1rem;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 .dynamic-content .form .first-footer .submit-form-button {
   color: white;
@@ -64,6 +141,43 @@ body {
 .dynamic-content .form .first-footer .submit-form-button i {
   color: white;
   padding-left: 0.75rem;
+}
+
+@media (max-width: 475px) {
+  .label-div {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .first-footer {
+    width: 100%;
+    margin-top: 1.5rem;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+}
+
+@media (max-width: 325px) {
+  .dynamic-content .form .label-div {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-top: 1.5rem;
+  }
+  .dynamic-content .form .label-div label {
+    margin-top: 1rem;
+  }
+  .dynamic-content .form .first-footer {
+    margin-bottom: 1rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .dynamic-content .form .first-footer .submit-form-button {
+    width: 7rem;
+    font-size: 1rem;
+  }
 }
 
 .div-inputs {
@@ -139,6 +253,36 @@ body {
   color: #bababa;
 }
 
+@media (max-width: 475px) {
+  .div-inputs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .div-inputs .input-group-email {
+    width: 55%;
+  }
+  .div-inputs .input-group-phone {
+    width: 40%;
+  }
+}
+
+@media (max-width: 325px) {
+  .div-inputs .input-group {
+    margin-bottom: 1rem;
+  }
+  .div-inputs .input-group-email {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .div-inputs .input-group-phone {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
 .birthday {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -175,6 +319,47 @@ body {
   border: 1px solid #AAAAAA;
   border-radius: 4px;
   padding: 0.5rem 0.75rem;
+}
+
+@media (max-width: 430px) {
+  .birthday .date-group .input-group select {
+    padding: 0.5rem 0.5rem;
+  }
+}
+
+@media (max-width: 325px) {
+  .birthday {
+    margin-top: 0.75rem;
+    margin-bottom: 0.25rem;
+  }
+  .birthday .subtitle {
+    margin-top: 0.75rem;
+    margin-bottom: 0.25rem;
+    margin-left: 0.5rem;
+  }
+  .birthday .date-group {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin: auto;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-left: 0.5rem;
+  }
+  .birthday .date-group .input-group {
+    width: 50%;
+  }
+  .birthday .date-group .input-group label {
+    margin-top: 0.5rem;
+  }
+  .birthday .date-group .input-group select {
+    width: 90%;
+    padding: 0.5rem 0.75rem;
+  }
+  .birthday .date-group .input-group input {
+    width: 90%;
+    padding: 0.5rem 0.75rem;
+  }
 }
 
 .dynamic-content .form {
