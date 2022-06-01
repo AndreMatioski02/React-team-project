@@ -1,126 +1,58 @@
 .container {
   padding: 0 2rem;
 }
-
 .container .title {
   margin-top: 3.5rem;
   font-size: 1.125rem;
   line-height: 24px;
   font-weight: 600;
 }
-
 .container .header {
   margin-top: 2.875rem;
 }
-
 .container .header .steps {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 100%;
   list-style-type: none;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
-
 .container .header .list-item {
   border-bottom: 1px solid grey;
   text-align: center;
   width: 33%;
   cursor: pointer;
 }
-
 .container .header .list-item.active {
   border-bottom: 2px solid #074EE8;
   color: #074EE8;
 }
 
 @font-face {
-  font-family: 'Nunito';
+  font-family: "Nunito";
   src: url("../assets/fonts/Nunito/Nunito-VariableFont_wght.ttf");
 }
-
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  box-sizing: border-box;
   color: black;
-  font-family: 'Nunito';
+  font-family: "Nunito";
 }
 
-.dynamic-content {
-  -webkit-transition: 200ms;
-  transition: 200ms;
-}
-
-.invisible {
-  opacity: 0;
-  -webkit-transition: 200ms;
-  transition: 200ms;
+body {
+  display: flex;
+  justify-content: center;
+  width: 80%;
 }
 
 .form {
   margin-top: 2.18rem;
 }
 
-.input-group {
-  margin-bottom: 2.18rem;
-}
-
-.input-group label {
-  color: #AAAAAA;
-  line-height: 16px;
-  font-size: 0.875rem;
-  font-weight: 400;
-  display: block;
-}
-
-.input-group input[type=text] {
-  color: #AAAAAA;
-  width: 100%;
-  border: 1px solid #AAAAAA;
-  border-radius: 4px;
-  padding: 0.5rem 0.75rem;
-}
-
-.birthday .subtitle {
-  font-size: 1.125rem;
-  color: #AAAAAA;
-  font-weight: 400;
-}
-
-.birthday .date-group {
-  display: -webkit-box;
-  display: -ms-flexbox;
+.dynamic-content .form .first-footer {
   display: flex;
-}
-
-.birthday .date-group .input-group {
-  -ms-flex-preferred-size: 33%;
-      flex-basis: 33%;
-}
-
-.birthday .date-group .input-group select {
-  color: #AAAAAA;
-  width: 90%;
-  border: 1px solid #AAAAAA;
-  border-radius: 4px;
-  padding: 0.5rem 0.75rem;
-}
-
-.dynamic-content .form footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   margin-bottom: 1rem;
 }
-
-.dynamic-content .form footer .submit-form-button {
+.dynamic-content .form .first-footer .submit-form-button {
   color: white;
   border: none;
   background-color: #074EE8;
@@ -129,9 +61,196 @@
   height: 2rem;
   font-size: 1rem;
 }
-
-.dynamic-content .form footer .submit-form-button i {
+.dynamic-content .form .first-footer .submit-form-button i {
   color: white;
   padding-left: 0.75rem;
 }
+
+.div-inputs {
+  display: flex;
+  flex-wrap: wrap;
+}
+.div-inputs .input-content::placeholder {
+  color: #bababa;
+}
+.div-inputs .input-group {
+  margin-bottom: 2.18rem;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.div-inputs .input-group input {
+  color: #AAAAAA;
+  width: 100%;
+  border: 1px solid #AAAAAA;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+}
+.div-inputs .input-group label {
+  color: #AAAAAA;
+  line-height: 16px;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+.div-inputs .input-group label .required {
+  color: #bababa;
+}
+.div-inputs .input-group-email {
+  display: flex;
+  width: 65%;
+  flex-direction: column;
+}
+.div-inputs .input-group-email input {
+  color: #AAAAAA;
+  width: 100%;
+  border: 1px solid #AAAAAA;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+}
+.div-inputs .input-group-email label {
+  color: #AAAAAA;
+  line-height: 16px;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+.div-inputs .input-group-email label .required {
+  color: #bababa;
+}
+.div-inputs .input-group-phone {
+  display: flex;
+  width: 30%;
+  flex-direction: column;
+  margin-left: 5%;
+}
+.div-inputs .input-group-phone input {
+  color: #AAAAAA;
+  width: 100%;
+  border: 1px solid #AAAAAA;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+}
+.div-inputs .input-group-phone label {
+  color: #AAAAAA;
+  line-height: 16px;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+.div-inputs .input-group-phone label .required {
+  color: #bababa;
+}
+
+.birthday {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.birthday .subtitle {
+  margin-bottom: 1rem;
+  margin-left: 0;
+  font-size: 1.125rem;
+  color: #AAAAAA;
+  font-weight: 400;
+}
+.birthday .date-group {
+  display: flex;
+  width: 100%;
+}
+.birthday .date-group .input-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.birthday .date-group .input-group label {
+  color: #AAAAAA;
+}
+.birthday .date-group .input-group select {
+  color: #AAAAAA;
+  width: 90%;
+  border: 1px solid #AAAAAA;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+}
+.birthday .date-group .input-group input {
+  color: #AAAAAA;
+  width: 100%;
+  border: 1px solid #AAAAAA;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+}
+
+.dynamic-content .form {
+  width: 100%;
+}
+.dynamic-content .form .third-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+.dynamic-content .form .third-footer .finish-form-button {
+  justify-content: center;
+  color: white;
+  border: none;
+  background-color: #074EE8;
+  border-radius: 4px;
+  width: 5.5rem;
+  height: 2rem;
+  font-size: 1rem;
+}
+.dynamic-content .form .third-footer .finish-form-button i {
+  color: white;
+  padding-right: 0.55rem;
+}
+
+.div-certificates {
+  width: 100%;
+}
+.div-certificates .input-content::placeholder {
+  color: #bababa;
+}
+.div-certificates .input-link-certificate {
+  margin-bottom: 1rem;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.div-certificates .input-link-certificate input {
+  color: #AAAAAA;
+  width: 100%;
+  border: 1px solid #AAAAAA;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  background-image: url(../images/favorite-icon.jpg);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 2.5rem;
+}
+.div-certificates .input-link-certificate label {
+  color: #AAAAAA;
+  line-height: 16px;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+.div-certificates .input-link-certificate label .required {
+  color: #bababa;
+}
+
+.add-button-div {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+}
+.add-button-div .add-button {
+  justify-content: center;
+  color: white;
+  border: none;
+  background-color: #074EE8;
+  border-radius: 4px;
+  width: 7rem;
+  height: 2.25rem;
+  font-size: 1rem;
+}
+.add-button-div .add-button i {
+  color: white;
+  padding: 0.5rem;
+}
+
 /*# sourceMappingURL=style.css.map */

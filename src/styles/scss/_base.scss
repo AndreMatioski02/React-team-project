@@ -6,60 +6,17 @@
 
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
     color: black;
     font-family: 'Nunito';
 }
 
-.dynamic-content {
-    transition: 200ms;
-}
-
-.invisible {
-    opacity: 0;
-    transition: 200ms;
+body {
+    display: flex;
+    justify-content: center;
+    width: 80%;
 }
 
 .form {
     margin-top: 2.18rem;
 }
 
-.input-group {
-    margin-bottom: 2.18rem;
-    label {
-        color: $secondary;
-        line-height: 16px;
-        font-size: 0.875rem;
-        font-weight: 400;
-        display: block;
-    }
-    input[type=text] {
-        color: $secondary;
-        width: 100%;
-        border: 1px solid $secondary;
-        border-radius: 4px;
-        padding: 0.5rem 0.75rem;
-    }
-}
-
-.birthday {
-    .subtitle {
-        font-size: 1.125rem;
-        color: $secondary;
-        font-weight: 400;
-    }
-    .date-group {
-        display: flex;
-        .input-group {
-            flex-basis: 33%;
-            select {
-                color: $secondary;
-                width: 90%;
-                border: 1px solid $secondary;
-                border-radius: 4px;
-                padding: 0.5rem 0.75rem;
-            }
-        }
-    }
-}

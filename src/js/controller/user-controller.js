@@ -28,13 +28,19 @@ class userController {
     }
 
     changeForm(target) {
+        //Pega qual tab foi clicada
         let newTab = document.querySelector(`#${target}`)
+
+        //Desativa a classe active de todas as tabs
         document.querySelectorAll('.list-item').forEach((element) => {
             element.classList.remove('active')
         })
+
+        //Coloca a classe active na tab clicada
         newTab.classList.add(`active`)
         dynamicContent.classList.add('invisible')
         setTimeout(() => {
+            //Faz o conteúdo aparecer na div dynamicContent
             dynamicContent.innerHTML = TemplateManager.getTemplate(newTab.dataset.page);
             tempDataName = newTab.dataset.page
             dynamicContent.classList.remove('invisible')
