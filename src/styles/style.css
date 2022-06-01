@@ -412,6 +412,13 @@ body {
   height: 10rem;
 }
 
+@media (max-width: 768px) {
+  .alignment-space {
+    width: 10rem;
+    height: 5rem;
+  }
+}
+
 .dynamic-content .form .second-footer {
   display: flex;
   justify-content: flex-end;
