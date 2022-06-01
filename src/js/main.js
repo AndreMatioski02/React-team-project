@@ -1,7 +1,7 @@
 const dynamicContent = document.querySelector(`.dynamic-content`)
 const form = document.querySelector('.form')
 const controller = new userController()
-const tempDataName = 'basic'
+var tempDataName = 'basic'
 
 //Se não existir o item 'users' no localStorage, ele cria
 let users = localStorage.getItem('users')
