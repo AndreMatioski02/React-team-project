@@ -41,7 +41,7 @@ dynamicContent.addEventListener('submit', (event) => {
 dynamicContent.addEventListener('focusout', (event) => {
     //Valida se o campo digitado nao está em branco
     if (event.target.value != "")
-        controller.addToTemp(tempDataName)
+        controller.addToTemp(event, tempDataName)
 })
 
 function changeDiv(event) {
