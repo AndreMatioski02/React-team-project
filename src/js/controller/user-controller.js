@@ -52,8 +52,11 @@ class userController {
                 dynamicContent.querySelector('#addCertificate').addEventListener('click', (event) => {
                     event.preventDefault() //para nao enviar o form
                     let certificateList = dynamicContent.querySelector('#certificateList')
-                    if (certificateList.childElementCount < 5)
-                        certificateList.insertAdjacentHTML('afterbegin', TemplateManager.getCertificateTemplate())
+                    if (certificateList.childElementCount < 2)
+                        certificateList.insertAdjacentHTML('afterbegin', TemplateManager.getCertificateTemplate(certificateList.childElementCount + 1))
+                    else
+                        console.log(dynamicContent.querySelectorAll('.certificate'));
+
                 })
             }
         }, 200);

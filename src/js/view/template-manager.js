@@ -155,7 +155,7 @@ class TemplateManager {
                     <div class="input-link-certificate">
                         <label for="certificate">Certificates</label>
                         <div id='certificateList'>
-                            <input class="input-content" type="text" name="certificate" id="certificate"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">            
+                            <input class="input-content certificate" type="text" name="certificate1" id="certificate1"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">            
                         </div>
                     </div>
                     <div class="add-button-div">
@@ -190,10 +190,10 @@ class TemplateManager {
         }
     }
 
-    static getCertificateTemplate() {
+    static getCertificateTemplate(id) {
         return `
         <div class="input-link-certificate">
-            <input class="input-content" type="text" name="certificate" id="certificate"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">            
+            <input class="input-content certificate" type="text" name="certificate${id}" id="certificate${id}"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">            
         </div>
         `
     }
