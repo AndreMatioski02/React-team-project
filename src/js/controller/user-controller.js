@@ -64,6 +64,20 @@ class userController {
 
                 this.addOrUpdateUser(user)
                 break;
+
+            case 'social':
+                let databasic = JSON.parse(localStorage.getItem('basic'))
+                let users = JSON.parse(localStorage.getItem('users'))
+                users.map(e => {
+                    if (e.fullName == databasic.fullName) {
+                        e.linkedin = document.querySelector('#linkedin').value
+                        e.github = document.querySelector('#github').value
+                        return
+                    }
+                })
+                localStorage.setItem('users', JSON.stringify(users))
+
+                break;
         }
 
 

@@ -122,18 +122,20 @@ class TemplateManager {
         </form>
         `
         } else if (name == 'social') {
+            let data = JSON.parse(localStorage.getItem(`social`))
+            if (!data) data = {}
             return `
-            <form action="" class="form">
+            <form action="" class="form" data-page='certificates'>
 
                 <div class="div-inputs">
                     <div class="input-group">
                         <label for="linkedin">Linkedin<span ></span></label>
-                        <input class="input-content" type="text" name="linkedin" id="linkedin"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
+                        <input class="input-content" value='${data.linkedin != undefined ? data.linkedin : ''}' type="text" name="linkedin" id="linkedin"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
                     </div>
 
                     <div class="input-group">
                         <label for="Github">Github<span class="required">*</span></label>
-                        <input class="input-content" type="text" name="Github" id="Github"  placeholder="https://github.com/foobar">
+                        <input class="input-content" value='${data.github != undefined ? data.github : ''}' type="text" name="github" id="github"  placeholder="https://github.com/foobar">
                     </div>
 
                     <div class="alignment-space"></div>
