@@ -1,77 +1,121 @@
 .container {
   padding: 0 2rem;
 }
-
 .container .title {
   margin-top: 3.5rem;
   font-size: 1.125rem;
-  line-height: 24px;
+  line-height: 1.5rem;
   font-weight: 600;
 }
-
 .container .header {
   margin-top: 2.875rem;
 }
-
 .container .header .steps {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 100%;
   list-style-type: none;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
-
 .container .header .list-item {
   border-bottom: 1px solid grey;
   text-align: center;
   width: 33%;
   cursor: pointer;
 }
-
 .container .header .list-item.active {
   border-bottom: 2px solid #074EE8;
   color: #074EE8;
 }
 
+@media (max-width: 475px) {
+  .container {
+    padding: 1rem;
+  }
+  .container .title {
+    margin-top: 2rem;
+  }
+  .container .header {
+    margin-top: 2rem;
+  }
+  .container .header .steps {
+    padding: 0;
+  }
+}
+@media (max-width: 325px) {
+  .container {
+    padding: 0.5rem;
+  }
+  .container .title {
+    margin-top: 1rem;
+  }
+  .container .header {
+    margin-top: 1.5rem;
+  }
+  .container .header .steps {
+    padding: 0;
+  }
+}
 @font-face {
-  font-family: 'Nunito';
+  font-family: "Nunito";
   src: url("../assets/fonts/Nunito/Nunito-VariableFont_wght.ttf");
 }
-
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   color: black;
-  font-family: 'Nunito';
+  font-family: "Nunito";
 }
 
 body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 100%;
+  display: block;
+  margin: auto;
+  width: 70%;
 }
 
 .form {
   margin-top: 2.18rem;
 }
 
-.dynamic-content .form .first-footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-bottom: 1rem;
-}
+@media (max-width: 475px) {
+  body {
+    display: flex;
+    margin: 0;
+    width: 100%;
+  }
 
+  .form {
+    margin-top: 2rem;
+  }
+}
+@media (max-width: 325px) {
+  body {
+    display: flex;
+    margin: 0;
+    width: 100%;
+  }
+
+  .form {
+    margin-top: 1.5rem;
+  }
+}
+@media (max-width: 775px) {
+  body {
+    display: flex;
+    margin: 0;
+    width: 100%;
+  }
+
+  .form {
+    margin-top: 2rem;
+  }
+}
+.dynamic-content .form .label-div {
+  justify-content: flex-start;
+}
+.dynamic-content .form .first-footer {
+  display: flex;
+  margin-bottom: 1rem;
+  justify-content: flex-end;
+}
 .dynamic-content .form .first-footer .submit-form-button {
   color: white;
   border: none;
@@ -81,46 +125,52 @@ body {
   height: 2rem;
   font-size: 1rem;
 }
-
 .dynamic-content .form .first-footer .submit-form-button i {
   color: white;
   padding-left: 0.75rem;
 }
 
+@media (max-width: 475px) {
+  .label-div {
+    justify-content: flex-start;
+  }
+
+  .first-footer {
+    width: 100%;
+    margin-top: 1.5rem;
+    justify-content: flex-end;
+  }
+}
+@media (max-width: 325px) {
+  .dynamic-content .form .label-div {
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+  .dynamic-content .form .label-div label {
+    margin-top: 1rem;
+  }
+  .dynamic-content .form .first-footer {
+    margin-bottom: 1rem;
+    justify-content: center;
+  }
+  .dynamic-content .form .first-footer .submit-form-button {
+    width: 7rem;
+    font-size: 1rem;
+  }
+}
 .div-inputs {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
-
-.div-inputs .input-content::-webkit-input-placeholder {
-  color: #bababa;
-}
-
-.div-inputs .input-content:-ms-input-placeholder {
-  color: #bababa;
-}
-
-.div-inputs .input-content::-ms-input-placeholder {
-  color: #bababa;
-}
-
 .div-inputs .input-content::placeholder {
   color: #bababa;
 }
-
 .div-inputs .input-group {
   margin-bottom: 2.18rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 100%;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
-
 .div-inputs .input-group input {
   color: #AAAAAA;
   width: 100%;
@@ -128,29 +178,20 @@ body {
   border-radius: 4px;
   padding: 0.5rem 0.75rem;
 }
-
 .div-inputs .input-group label {
   color: #AAAAAA;
   line-height: 16px;
   font-size: 0.875rem;
   font-weight: 400;
 }
-
 .div-inputs .input-group label .required {
   color: #bababa;
 }
-
 .div-inputs .input-group-email {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 65%;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
-
 .div-inputs .input-group-email input {
   color: #AAAAAA;
   width: 100%;
@@ -158,30 +199,21 @@ body {
   border-radius: 4px;
   padding: 0.5rem 0.75rem;
 }
-
 .div-inputs .input-group-email label {
   color: #AAAAAA;
   line-height: 16px;
   font-size: 0.875rem;
   font-weight: 400;
 }
-
 .div-inputs .input-group-email label .required {
   color: #bababa;
 }
-
 .div-inputs .input-group-phone {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 30%;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   margin-left: 5%;
 }
-
 .div-inputs .input-group-phone input {
   color: #AAAAAA;
   width: 100%;
@@ -189,23 +221,45 @@ body {
   border-radius: 4px;
   padding: 0.5rem 0.75rem;
 }
-
 .div-inputs .input-group-phone label {
   color: #AAAAAA;
   line-height: 16px;
   font-size: 0.875rem;
   font-weight: 400;
 }
-
 .div-inputs .input-group-phone label .required {
   color: #bababa;
 }
 
+@media (max-width: 475px) {
+  .div-inputs {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .div-inputs .input-group-email {
+    width: 55%;
+  }
+  .div-inputs .input-group-phone {
+    width: 40%;
+  }
+}
+@media (max-width: 325px) {
+  .div-inputs .input-group {
+    margin-bottom: 1rem;
+  }
+  .div-inputs .input-group-email {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .div-inputs .input-group-phone {
+    width: 100%;
+    margin-left: 0;
+  }
+}
 .birthday {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
-
 .birthday .subtitle {
   margin-bottom: 1rem;
   margin-left: 0;
@@ -213,29 +267,18 @@ body {
   color: #AAAAAA;
   font-weight: 400;
 }
-
 .birthday .date-group {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 100%;
 }
-
 .birthday .date-group .input-group {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
-
 .birthday .date-group .input-group label {
   color: #AAAAAA;
 }
-
 .birthday .date-group .input-group select {
   color: #AAAAAA;
   width: 90%;
@@ -243,7 +286,6 @@ body {
   border-radius: 4px;
   padding: 0.5rem 0.75rem;
 }
-
 .birthday .date-group .input-group input {
   color: #AAAAAA;
   width: 100%;
@@ -252,24 +294,52 @@ body {
   padding: 0.5rem 0.75rem;
 }
 
+@media (max-width: 430px) {
+  .birthday .date-group .input-group select {
+    padding: 0.5rem 0.5rem;
+  }
+}
+@media (max-width: 325px) {
+  .birthday {
+    margin-top: 0.75rem;
+    margin-bottom: 0.25rem;
+  }
+  .birthday .subtitle {
+    margin-top: 0.75rem;
+    margin-bottom: 0.25rem;
+    margin-left: 0.5rem;
+  }
+  .birthday .date-group {
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+    margin-left: 0.5rem;
+  }
+  .birthday .date-group .input-group {
+    width: 50%;
+  }
+  .birthday .date-group .input-group label {
+    margin-top: 0.5rem;
+  }
+  .birthday .date-group .input-group select {
+    width: 90%;
+    padding: 0.5rem 0.75rem;
+  }
+  .birthday .date-group .input-group input {
+    width: 90%;
+    padding: 0.5rem 0.75rem;
+  }
+}
 .dynamic-content .form {
   width: 100%;
 }
-
 .dynamic-content .form .third-footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  justify-content: flex-end;
   margin-bottom: 1rem;
 }
-
 .dynamic-content .form .third-footer .finish-form-button {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   color: white;
   border: none;
   background-color: #074EE8;
@@ -278,7 +348,6 @@ body {
   height: 2rem;
   font-size: 1rem;
 }
-
 .dynamic-content .form .third-footer .finish-form-button i {
   color: white;
   padding-right: 0.55rem;
@@ -287,33 +356,16 @@ body {
 .div-certificates {
   width: 100%;
 }
-
-.div-certificates .input-content::-webkit-input-placeholder {
-  color: #bababa;
-}
-
-.div-certificates .input-content:-ms-input-placeholder {
-  color: #bababa;
-}
-
-.div-certificates .input-content::-ms-input-placeholder {
-  color: #bababa;
-}
-
 .div-certificates .input-content::placeholder {
   color: #bababa;
 }
-
 .div-certificates .input-link-certificate {
   margin-bottom: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 100%;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
-
 .div-certificates .input-link-certificate input {
   color: #AAAAAA;
   width: 100%;
@@ -325,32 +377,23 @@ body {
   background-position: right;
   background-size: 2.5rem;
 }
-
 .div-certificates .input-link-certificate label {
   color: #AAAAAA;
   line-height: 16px;
   font-size: 0.875rem;
   font-weight: 400;
 }
-
 .div-certificates .input-link-certificate label .required {
   color: #bababa;
 }
 
 .add-button-div {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  justify-content: flex-end;
   margin-bottom: 2rem;
 }
-
 .add-button-div .add-button {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   color: white;
   border: none;
   background-color: #074EE8;
@@ -359,7 +402,6 @@ body {
   height: 2.25rem;
   font-size: 1rem;
 }
-
 .add-button-div .add-button i {
   color: white;
   padding: 0.5rem;
@@ -378,15 +420,10 @@ body {
 }
 
 .dynamic-content .form .second-footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  justify-content: flex-end;
   margin-bottom: 1rem;
 }
-
 .dynamic-content .form .second-footer .submit-form-button {
   color: white;
   border: none;
@@ -396,9 +433,9 @@ body {
   height: 2rem;
   font-size: 1rem;
 }
-
 .dynamic-content .form .second-footer .submit-form-button i {
   color: white;
   padding-left: 0.75rem;
 }
+
 /*# sourceMappingURL=style.css.map */

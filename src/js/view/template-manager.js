@@ -1,29 +1,33 @@
 class TemplateManager {
 
     static getTemplate(name) {
-        if (name == 'basic') return `
-        <form action="" class="form">
+
+        if (name == 'basic') {
+            let data = JSON.parse(localStorage.getItem(`basic`))
+            if (!data) data = {}
+            return `
+        <form action="" class="form" data-page='social'>
 
             <div class="div-inputs">
 
                 <div class="input-group">
                     <label for="fullName">Full Name <span class="required">*</span></label>
-                    <input class="input-content" type="text" name="fullName" id="fullName"  placeholder="Foo Bar">
+                    <input class="input-content" value='${data.fullName != undefined ? data.fullName : ''}' type="text" name="fullName" id="fullName"  placeholder="Foo Bar">
                 </div>
 
                 <div class="input-group">
                     <label for="nickname">Nickname</label>
-                    <input class="input-content" type="text" name="nickname" id="nickname"  placeholder="Juanito">
+                    <input class="input-content" value='${data.nickname != undefined ? data.nickname : ''}' type="text" name="nickname" id="nickname"  placeholder="Juanito">
                 </div>
 
                 <div class="input-group-email">
                     <label for="email">Email<span class="required">*</span></label>
-                    <input class="input-content" type="text" name="email" id="email"  placeholder="foo@bar.com">
+                    <input class="input-content" value='${data.email != undefined ? data.email : ''}' type="text" name="email" id="email"  placeholder="foo@bar.com">
                 </div>
 
                 <div class="input-group-phone">
                     <label for="phone">Phone</label>
-                    <input class="input-content" type="text" name="phone" id="phone" placeholder="(83) 0000-0000">
+                    <input class="input-content" value='${data.phone != undefined ? data.phone : ''}' type="text" name="phone" id="phone" placeholder="(83) 0000-0000">
                 </div>
 
             </div>
@@ -117,19 +121,21 @@ class TemplateManager {
             </footer>
         </form>
         `
-        else if (name == 'social') {
+        } else if (name == 'social') {
+            let data = JSON.parse(localStorage.getItem(`social`))
+            if (!data) data = {}
             return `
-            <form action="" class="form">
+            <form action="" class="form" data-page='certificates'>
 
                 <div class="div-inputs">
                     <div class="input-group">
                         <label for="linkedin">Linkedin<span ></span></label>
-                        <input class="input-content" type="text" name="linkedin" id="linkedin"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
+                        <input class="input-content" value='${data.linkedin != undefined ? data.linkedin : ''}' type="text" name="linkedin" id="linkedin"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
                     </div>
 
                     <div class="input-group">
                         <label for="Github">Github<span class="required">*</span></label>
-                        <input class="input-content" type="text" name="Github" id="Github"  placeholder="https://github.com/foobar">
+                        <input class="input-content" value='${data.github != undefined ? data.github : ''}' type="text" name="github" id="github"  placeholder="https://github.com/foobar">
                     </div>
 
                     <div class="alignment-space"></div>
@@ -141,35 +147,36 @@ class TemplateManager {
                 </footer>
             </form>
             `
-        }
-        else if (name == 'certificates') {
+        } else if (name == 'certificates') {
             return `
             <form action="" class="form">
 
                 <div class="div-certificates">
                     <div class="input-link-certificate">
-                        <label for="fullName">Certificates</label>
-                        <input class="input-content" type="text" name="certificate" id="certificate"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">            
+                        <label for="certificate">Certificates</label>
+                        <div id='certificateList'>
+                            <input class="input-content" type="text" name="certificate" id="certificate"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">            
+                        </div>
                     </div>
                     <div class="add-button-div">
-                        <button class="add-button"><i class="fa-solid fa-plus"></i> More <i class="fa-solid fa-angle-right"></i></button>
+                        <button class="add-button" id='addCertificate'><i class="fa-solid fa-plus"></i> More <i class="fa-solid fa-angle-right"></i></button>
                     </div>
                 </div>
 
                 <div class="div-inputs">
 
                     <div class="input-group">
-                        <label for="fullName">Team Name <span class="required">*</span></label>
+                        <label for="teamName">Team Name <span class="required">*</span></label>
                         <input class="input-content" type="text" name="teamName" id="teamName"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
                     </div>
 
                     <div class="input-group">
-                        <label for="nickname">Institution <span class="required">*</span></label>
+                        <label for="institution">Institution <span class="required">*</span></label>
                         <input class="input-content" type="text" name="institution" id="institution"  placeholder="Universidade Federal da Paraíba">
                     </div>
 
                     <div class="input-group">
-                        <label for="email">Graduation <span class="required">*</span></label>
+                        <label for="graduation">Graduation <span class="required">*</span></label>
                         <input class="input-content" type="text" name="graduation" id="graduation"  placeholder="Ciências da Computação">
                     </div>
 
@@ -181,5 +188,13 @@ class TemplateManager {
             </form>
             `
         }
+    }
+
+    static getCertificateTemplate() {
+        return `
+        <div class="input-link-certificate">
+            <input class="input-content" type="text" name="certificate" id="certificate"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">            
+        </div>
+        `
     }
 }
