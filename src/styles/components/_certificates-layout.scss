@@ -8,6 +8,7 @@
         display: flex;
         width: 100%;
         flex-wrap: wrap;
+        flex-direction: column;
         input {
             color: $secondary;
             width: 100%;
@@ -18,7 +19,6 @@
             background-repeat: no-repeat;
             background-position: right;
             background-size: 2.5rem;
-            
         }
         label {
             color: $secondary;
@@ -30,5 +30,4 @@
             }
         }
     }
-
 }

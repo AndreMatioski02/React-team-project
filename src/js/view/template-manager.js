@@ -153,28 +153,30 @@ class TemplateManager {
 
                 <div class="div-certificates">
                     <div class="input-link-certificate">
-                        <label for="fullName">Certificates</label>
-                        <input class="input-content" type="text" name="certificate" id="certificate"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">            
+                        <label for="certificate">Certificates</label>
+                        <div id='certificateList'>
+                            <input class="input-content" type="text" name="certificate" id="certificate"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">            
+                        </div>
                     </div>
                     <div class="add-button-div">
-                        <button class="add-button"><i class="fa-solid fa-plus"></i> More <i class="fa-solid fa-angle-right"></i></button>
+                        <button class="add-button" id='addCertificate'><i class="fa-solid fa-plus"></i> More <i class="fa-solid fa-angle-right"></i></button>
                     </div>
                 </div>
 
                 <div class="div-inputs">
 
                     <div class="input-group">
-                        <label for="fullName">Team Name <span class="required">*</span></label>
+                        <label for="teamName">Team Name <span class="required">*</span></label>
                         <input class="input-content" type="text" name="teamName" id="teamName"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
                     </div>
 
                     <div class="input-group">
-                        <label for="nickname">Institution <span class="required">*</span></label>
+                        <label for="institution">Institution <span class="required">*</span></label>
                         <input class="input-content" type="text" name="institution" id="institution"  placeholder="Universidade Federal da Paraíba">
                     </div>
 
                     <div class="input-group">
-                        <label for="email">Graduation <span class="required">*</span></label>
+                        <label for="graduation">Graduation <span class="required">*</span></label>
                         <input class="input-content" type="text" name="graduation" id="graduation"  placeholder="Ciências da Computação">
                     </div>
 
@@ -186,5 +188,13 @@ class TemplateManager {
             </form>
             `
         }
+    }
+
+    static getCertificateTemplate() {
+        return `
+        <div class="input-link-certificate">
+            <input class="input-content" type="text" name="certificate" id="certificate"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">            
+        </div>
+        `
     }
 }

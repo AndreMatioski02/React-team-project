@@ -41,7 +41,6 @@
     padding: 0;
   }
 }
-
 @media (max-width: 325px) {
   .container {
     padding: 0.5rem;
@@ -56,7 +55,6 @@
     padding: 0;
   }
 }
-
 @font-face {
   font-family: "Nunito";
   src: url("../assets/fonts/Nunito/Nunito-VariableFont_wght.ttf");
@@ -79,55 +77,44 @@ body {
 
 @media (max-width: 475px) {
   body {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     margin: 0;
     width: 100%;
   }
+
   .form {
     margin-top: 2rem;
   }
 }
-
 @media (max-width: 325px) {
   body {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     margin: 0;
     width: 100%;
   }
+
   .form {
     margin-top: 1.5rem;
   }
 }
-
 @media (max-width: 775px) {
   body {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     margin: 0;
     width: 100%;
   }
+
   .form {
     margin-top: 2rem;
   }
 }
-
 .dynamic-content .form .label-div {
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  justify-content: flex-start;
 }
-
 .dynamic-content .form .first-footer {
   display: flex;
   margin-bottom: 1rem;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  justify-content: flex-end;
 }
 .dynamic-content .form .first-footer .submit-form-button {
   color: white;
@@ -145,24 +132,18 @@ body {
 
 @media (max-width: 475px) {
   .label-div {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    justify-content: flex-start;
   }
+
   .first-footer {
     width: 100%;
     margin-top: 1.5rem;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+    justify-content: flex-end;
   }
 }
-
 @media (max-width: 325px) {
   .dynamic-content .form .label-div {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     margin-top: 1.5rem;
   }
   .dynamic-content .form .label-div label {
@@ -170,16 +151,13 @@ body {
   }
   .dynamic-content .form .first-footer {
     margin-bottom: 1rem;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
   }
   .dynamic-content .form .first-footer .submit-form-button {
     width: 7rem;
     font-size: 1rem;
   }
 }
-
 .div-inputs {
   display: flex;
   flex-wrap: wrap;
@@ -255,11 +233,8 @@ body {
 
 @media (max-width: 475px) {
   .div-inputs {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
   }
   .div-inputs .input-group-email {
     width: 55%;
@@ -268,7 +243,6 @@ body {
     width: 40%;
   }
 }
-
 @media (max-width: 325px) {
   .div-inputs .input-group {
     margin-bottom: 1rem;
@@ -282,7 +256,6 @@ body {
     margin-left: 0;
   }
 }
-
 .birthday {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -326,7 +299,6 @@ body {
     padding: 0.5rem 0.5rem;
   }
 }
-
 @media (max-width: 325px) {
   .birthday {
     margin-top: 0.75rem;
@@ -338,12 +310,9 @@ body {
     margin-left: 0.5rem;
   }
   .birthday .date-group {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
     margin: auto;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     margin-left: 0.5rem;
   }
   .birthday .date-group .input-group {
@@ -361,7 +330,6 @@ body {
     padding: 0.5rem 0.75rem;
   }
 }
-
 .dynamic-content .form {
   width: 100%;
 }
@@ -396,6 +364,7 @@ body {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
+  flex-direction: column;
 }
 .div-certificates .input-link-certificate input {
   color: #AAAAAA;

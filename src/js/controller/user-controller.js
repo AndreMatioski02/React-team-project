@@ -44,7 +44,21 @@ class userController {
             dynamicContent.innerHTML = TemplateManager.getTemplate(newTab.dataset.page);
             tempDataName = newTab.dataset.page
             dynamicContent.classList.remove('invisible')
+
+
+            //Tratamento diferenciado para tela de certificados
+            if (target == 'certificates') {
+
+                dynamicContent.querySelector('#addCertificate').addEventListener('click', (event) => {
+                    event.preventDefault() //para nao enviar o form
+                    let certificateList = dynamicContent.querySelector('#certificateList')
+                    if (certificateList.childElementCount < 5)
+                        certificateList.insertAdjacentHTML('afterbegin', TemplateManager.getCertificateTemplate())
+                })
+            }
         }, 200);
+
+
     }
 
     save(page) {
