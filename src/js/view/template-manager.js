@@ -109,7 +109,7 @@ class TemplateManager {
                 </div>
 
                 <footer class="first-footer">
-                    <button onclick="Validation()" value="Next" class="submit-form-button">Next<i class="fa-solid fa-angle-right"></i></button>
+                    <button value="Next" class="submit-form-button">Next<i class="fa-solid fa-angle-right"></i></button>
                 </footer>
             </form>
         `
