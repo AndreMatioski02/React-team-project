@@ -69,14 +69,15 @@ dynamicContent.addEventListener('submit', (event) => {
 
 //Evento FocusOut recebido por bubbling
 dynamicContent.addEventListener('focusout', (event) => {
-    //Valida se o campo digitado nao está em branco
-    if (event.target.classList.contains('.input-year')) {
-        //calcula data e preenche no input idade aqui
-    }
-
-    if (event.target.value != "")
-        controller.addToTemp(event, tempDataName)
+    // calculo da idade
+    let age = document.querySelector('#age');
+    let day = document.querySelector('#day');
+    let month = document.querySelector('#month')
+    let year  = document.querySelector('#year')
+    let newAge = CalculateAge(day.value, month.value, year.value);
+    age.placeholder = newAge;
 })
+
 
 function changeDiv(event) {
     controller.changeForm(event.target.dataset.page)

@@ -1,8 +1,16 @@
-function CalculateAge() {
+// CALCULANDO O A IDADE DO USUARIO
+function CalculateAge(day, month, year) {
     let date = new Date();
-    let day  = date.getDate().padStart(2, '0');
-    let month = (date.getMonth() + 1).padStart(2, '0');
-    let year  = date.getFullYear();
+    let currentDay  = date.getDate();
+    let currentMonth = (date.getMonth() + 1);
+    let currentYear = date.getFullYear();
 
-    console.log(`hj é ${day} de ${month} de ${year}`);
+    let age = currentYear - year;
+
+    if (currentMonth < month && currentDay < day) {
+        age = age - 1;
+    }
+    console.log(`Sua idade é ${age}`);
+
+    return age;
 }

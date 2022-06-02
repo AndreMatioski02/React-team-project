@@ -99,7 +99,7 @@ class TemplateManager {
                         </div>
                         <div class="input-group">
                             <label for="age">Age</label>
-                            <input type="text" placeholder="18">
+                            <input type="text" placeholder="18" id="age">
                         </div>
                     </div>
                 </div>
