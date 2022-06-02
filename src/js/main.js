@@ -30,7 +30,8 @@ document.querySelector('.steps').addEventListener('click', (event) => {
 //para funcionar é necessario que exista um formulário na tela com um data-page='id_da_pg_seguinte'
 dynamicContent.addEventListener('submit', (event) => {
     event.preventDefault()
-        //Validações
+
+    //Validações
 
     //Salvar no banco e trocar de tela
     controller.save(tempDataName)
@@ -41,7 +42,7 @@ dynamicContent.addEventListener('submit', (event) => {
 dynamicContent.addEventListener('focusout', (event) => {
     //Valida se o campo digitado nao está em branco
     if (event.target.value != "")
-        controller.addToTemp(tempDataName)
+        controller.addToTemp(event, tempDataName)
 })
 
 

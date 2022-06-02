@@ -18,26 +18,15 @@
         </header>
 
         <!-- Aqui será inserido o conteúdo dinamico da página -->
-        <div class="content">
+        <div class="content" style="display: flex;flex-wrap: wrap;">
 
         </div>
 
     </div>
+    <script src="./js/view/list-view.js"></script>
     <script>
-        let data = JSON.parse(localStorage.getItem(`users`));
         var $wrapper = document.querySelector('.content');
-
-        if (!data) {
-            document.querySelector('.content').innerHTML = '<h2>No data registered!.</h2>'
-        }else{
-            for (let i=0; i < data.length; i++) {
-                $wrapper.innerHTML = $wrapper.innerHTML+`<h1 class="title">Full Name: ${data[i].fullName}</h1><br>`;
-                $wrapper.innerHTML = $wrapper.innerHTML+`<h3 class="subtitle-list">Nickname: ${data[i].nickname}</h3><br>`;
-                $wrapper.innerHTML = $wrapper.innerHTML+`<h3 class="subtitle-list">Email: ${data[i].email}</h3><br>`;
-                $wrapper.innerHTML = $wrapper.innerHTML+`<h3 class="subtitle-list">Phone: ${data[i].phone}</h3><br>`;       
-            }
-        }
+        $wrapper.innerHTML= ListView.list();
     </script>
 </body>
-
 </html>

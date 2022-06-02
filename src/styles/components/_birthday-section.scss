@@ -1,0 +1,83 @@
+.birthday {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    .subtitle {
+        margin-bottom: 1rem;
+        margin-left: 0;
+        font-size: 1.125rem;
+        color: $secondary;
+        font-weight: 400;
+    }
+    .date-group {
+        display: flex;
+        width: 100%;
+        .input-group {
+            width: 100%;    
+            display: flex;        
+            flex-direction: column;
+            label {
+                color: $secondary;
+            }
+            select {
+                color: $secondary;
+                width: 90%;
+                border: 1px solid $secondary;
+                border-radius: 4px;
+                padding: 0.5rem 0.75rem;
+            }
+
+            input {
+                color: $secondary;
+                width: 100%;
+                border: 1px solid $secondary;
+                border-radius: 4px;
+                padding: 0.5rem 0.75rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 430px) {
+    .birthday {
+        .date-group {
+            .input-group {
+                select {
+                    padding: 0.5rem 0.5rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 325px) {
+    .birthday {
+        margin-top: 0.75rem;
+        margin-bottom: 0.25rem;
+        .subtitle {
+            margin-top: 0.75rem;
+            margin-bottom: 0.25rem;
+            margin-left: 0.5rem;
+        }
+        .date-group {
+            flex-wrap: wrap;
+            margin: auto;
+            justify-content: center;
+            margin-left: 0.5rem;
+            .input-group {
+                width: 50%;    
+                label {
+                    margin-top: 0.5rem;
+                }
+                select {
+                    width: 90%;
+                    padding: 0.5rem 0.75rem;
+                }
+    
+                input {
+                    width: 90%;
+                    padding: 0.5rem 0.75rem;
+                }
+            }
+        }
+    }
+}

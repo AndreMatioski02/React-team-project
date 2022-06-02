@@ -1,11 +1,14 @@
 @import '../scss/variables';
 
 .dynamic-content{
-    .form{
-        footer {
+    .form{  
+        .label-div {
+            justify-content: flex-start;
+        }
+        .first-footer {
             display: flex;
-            justify-content: space-between;
             margin-bottom: 1rem;
+            justify-content: flex-end;
             .submit-form-button {
                 color: white;
                 border: none;
@@ -22,3 +25,38 @@
         }
     }
 }
+
+@media (max-width: 475px) {
+    .label-div {
+        justify-content: flex-start;
+    }
+    .first-footer {
+        width: 100%;
+        margin-top: 1.5rem;
+        justify-content: flex-end;       
+    }
+}
+
+@media (max-width: 325px) {
+    .dynamic-content{
+        .form{  
+            .label-div {
+                justify-content: center;
+                margin-top: 1.5rem;
+                label {
+                    margin-top: 1rem;
+                }
+            }
+            .first-footer {
+                margin-bottom: 1rem;
+                justify-content: center;
+                .submit-form-button {
+                    width: 7rem;
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+    
+
