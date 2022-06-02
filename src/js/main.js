@@ -17,18 +17,18 @@ document.querySelector('.steps').addEventListener('click', (event) => {
     if (tempDataName == 'basic') {
         let inputName = document.querySelector('#fullName');
         let inputEmail = document.querySelector('#email');
-        if (inputName.value !== '' && inputEmail.value !== ''){
+        if (inputName.value !== '' && inputEmail.value !== '') {
             validation = 'ok';
         }
-    }else if (tempDataName == 'social') {
+    } else if (tempDataName == 'social') {
         let inputGit = document.querySelector('#github');
-        if (inputGit.value !== ''){
+        if (inputGit.value !== '') {
             validation = 'ok';
         }
-    }else if (tempDataName == 'certificates') {
+    } else if (tempDataName == 'certificates') {
         let inputTeam = document.querySelector('#teamName');
         let inputInstitution = document.querySelector('#institution');
-        let inputGraduation  = document.querySelector('#graduation');
+        let inputGraduation = document.querySelector('#graduation');
         if (inputTeam.value !== '' && inputInstitution !== '' && inputGraduation !== '') {
             validation = 'ok';
         }
@@ -49,7 +49,7 @@ document.querySelector('.steps').addEventListener('click', (event) => {
             dynamicContent.classList.remove('invisible')
         }, 200);
         */
-    }else if  (validation == 'no') {
+    } else if (validation == 'no') {
         return;
     }
 })
@@ -73,9 +73,12 @@ dynamicContent.addEventListener('focusout', (event) => {
     let age = document.querySelector('#age');
     let day = document.querySelector('#day');
     let month = document.querySelector('#month')
-    let year  = document.querySelector('#year')
+    let year = document.querySelector('#year')
     let newAge = CalculateAge(day.value, month.value, year.value);
     age.placeholder = newAge;
+
+    if (event.target.value != "")
+        controller.addToTemp(event, tempDataName)
 })
 
 
