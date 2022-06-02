@@ -141,7 +141,7 @@ class TemplateManager {
             `
         } else if (name == 'certificates') {
             let data = JSON.parse(localStorage.getItem(`certificates`))
-            if (!data) {
+            if (!data.certificates) {
                 data = {
                     certificates: [],
                     favorites: []
