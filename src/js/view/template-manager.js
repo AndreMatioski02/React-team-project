@@ -12,7 +12,7 @@ class TemplateManager {
 
                 <div class="input-group">
                 <label for="fullName">Full Name <span class="required">*</span></label>
-                <input class="input-content" value='${data.fullName != undefined ? data.fullName : ''}' type="text" name="fullName" id="fullName"  placeholder="Foo Bar" onmouseenter="addTextMask()">
+                <input class="input-content" value='${data.fullName != undefined ? data.fullName : ''}' type="text" name="fullName" id="fullName"  placeholder="Foo Bar" required onmouseenter="addTextMask()">
             </div>
 
             <div class="input-group">
@@ -22,7 +22,7 @@ class TemplateManager {
 
             <div class="input-group-email">
                 <label for="email">Email<span class="required">*</span></label>
-                <input class="input-content" value='${data.email != undefined ? data.email : ''}' type="text" name="email" id="email"  placeholder="foo@bar.com">
+                <input class="input-content" value='${data.email != undefined ? data.email : ''}' type="text" name="email" id="email"  placeholder="foo@bar.com" required>
             </div>
 
             <div class="input-group-phone">
@@ -93,13 +93,13 @@ class TemplateManager {
                         </div>
                         <div class="input-group">
                             <label for="year">Year</label>
-                            <select name="year" id="year" onclick="StartYears()">
-                                <option value="1991">1991</option>
+                            <select name="year" id="year" onclick="StartYears()" focusout="CalculateAge()" >
+                                <option value="1991" onclick="CalculaAge()">1991</option>
                             </select>
                         </div>
                         <div class="input-group">
                             <label for="age">Age</label>
-                            <input type="text">
+                            <input type="text" placeholder="18">
                         </div>
                     </div>
                 </div>
@@ -127,7 +127,7 @@ class TemplateManager {
 
                     <div class="input-group">
                         <label for="Github">Github<span class="required">*</span></label>
-                        <input class="input-content" value='${data.github != undefined ? data.github : ''}' type="text" name="github" id="github"  placeholder="https://github.com/foobar">
+                        <input class="input-content" value='${data.github != undefined ? data.github : ''}' type="text" name="github" id="github"  placeholder="https://github.com/foobar" required>
                     </div>
 
                     <div class="alignment-space"></div>
@@ -186,17 +186,17 @@ class TemplateManager {
 
                     <div class="input-group">
                         <label for="teamName">Team Name <span class="required">*</span></label>
-                        <input class="input-content" type="text" name="teamName" id="teamName"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
+                        <input class="input-content" type="text" name="teamName" id="teamName"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" required>
                     </div>
 
                     <div class="input-group">
                         <label for="institution">Institution <span class="required">*</span></label>
-                        <input class="input-content" type="text" name="institution" id="institution"  placeholder="Universidade Federal da Paraíba">
+                        <input class="input-content" type="text" name="institution" id="institution"  placeholder="Universidade Federal da Paraíba" required>
                     </div>
 
                     <div class="input-group">
                         <label for="graduation">Graduation <span class="required">*</span></label>
-                        <input class="input-content" type="text" name="graduation" id="graduation"  placeholder="Ciências da Computação">
+                        <input class="input-content" type="text" name="graduation" id="graduation"  placeholder="Ciências da Computação" required>
                     </div>
 
                 </div>
