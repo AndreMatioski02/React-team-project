@@ -7,18 +7,24 @@ class userController {
 
     addToTemp(event, tempDataName) {
 
+        //não salva nada caso o evento tenha vindo do botão next
+        if (event.target.classList.contains('.submit-form-button')) return
+
         let tempData = JSON.parse(localStorage.getItem(tempDataName))
         if (!tempData) tempData = {}
 
         if (event.target.classList.contains('certificate')) {
             //Cria o objeto se não existir
-            if (!tempData['certificates']) tempData['certificates'] = []
+            if (!tempData['certificates']) {
+                tempData['certificates'] = []
+                tempData['favorites'] = []
+
+            }
 
             //Atribui no array no ID definido no input
             tempData['certificates'][event.target.dataset.id] = event.target.value;
             event.target.setAttribute('disabled', 'disabled')
-        }
-        else if (event.target.classList.contains('favorite')) {
+        } else if (event.target.classList.contains('favorite')) {
             //Cria o objeto se não existir
             if (!tempData['favorites']) tempData['favorites'] = []
 
@@ -73,8 +79,7 @@ class userController {
                     if (count < 5) {
                         if (this.inputsNotNull('.certificate'))
                             certificateList.insertAdjacentHTML('afterbegin', TemplateManager.getCertificateTemplate(count))
-                    }
-                    else {
+                    } else {
                         event.target.setAttribute('disabled', 'disabled')
                     }
 
@@ -105,7 +110,12 @@ class userController {
                             let tempData = JSON.parse(localStorage.getItem('certificates'))
                             tempData['certificates'].splice([input.dataset.id], 1)
                             tempData['favorites'][input.dataset.id] = false
-                            event.target.parentNode.parentNode.remove()
+                            if (event.target.parentNode.parentNode.parentNode.childElementCount > 1)
+                                event.target.parentNode.parentNode.remove()
+                            else {
+                                input.value = ''
+                                input.disabled = false
+                            }
                             localStorage.setItem('certificates', JSON.stringify(tempData))
 
                         }
@@ -135,40 +145,63 @@ class userController {
     }
 
     save(page) {
-        switch (page) {
-            case 'basic':
+        if (page == 'basic') {
 
-                //buscando no DOM e atribuindo variaveis
-                let user = new User()
-                user.fullName = document.querySelector('#fullName').value
-                user.nickname = document.querySelector('#nickname').value
-                user.email = document.querySelector('#email').value
-                user.phone = document.querySelector('#phone').value
-                user.day = document.querySelector('#day').value
-                user.month = document.querySelector('#month').value
-                user.year = document.querySelector('#year').value
-                user.terms = document.querySelector('#terms').checked
+            //buscando no DOM e atribuindo variaveis
+            let user = new User()
+            user.fullName = document.querySelector('#fullName').value
+            user.nickname = document.querySelector('#nickname').value
+            user.email = document.querySelector('#email').value
+            user.phone = document.querySelector('#phone').value
+            user.day = document.querySelector('#day').value
+            user.month = document.querySelector('#month').value
+            user.year = document.querySelector('#year').value
+            user.terms = document.querySelector('#terms').checked
 
-                this.addOrUpdateUser(user)
-                break;
+            this.addOrUpdateUser(user)
+        }
 
-            case 'social':
-                let databasic = JSON.parse(localStorage.getItem('basic'))
-                let users = JSON.parse(localStorage.getItem('users'))
-                users.map(e => {
-                    if (e.fullName == databasic.fullName) {
-                        e.linkedin = document.querySelector('#linkedin').value
-                        e.github = document.querySelector('#github').value
-                        return
-                    }
-                })
-                localStorage.setItem('users', JSON.stringify(users))
+        if (page == 'social') {
+            let databasic = JSON.parse(localStorage.getItem('basic'))
+            let users = JSON.parse(localStorage.getItem('users'))
+            users.map(e => {
+                if (e.fullName == databasic.fullName) {
+                    e.linkedin = document.querySelector('#linkedin').value
+                    e.github = document.querySelector('#github').value
+                    return
+                }
+            })
+            localStorage.setItem('users', JSON.stringify(users))
 
-                break;
         }
 
 
+        if (page == 'certificates') {
 
+            let databasic = JSON.parse(localStorage.getItem('basic'))
+            let datacertificate = JSON.parse(localStorage.getItem('certificates'))
+            let users = JSON.parse(localStorage.getItem('users'))
+            let newUsers = [...users.map(e => {
+                if (e.fullName == databasic.fullName) {
+                    //Atualiza JSON com os dados de certificados
+                    e = {
+                        ...e,
+                        ...datacertificate
+                    };
+                    console.log('e', e);
+                }
+                return e
+            })]
+            console.log(newUsers);
+            localStorage.setItem('users', JSON.stringify(newUsers))
+
+            localStorage.removeItem('basic')
+            localStorage.removeItem('social')
+            localStorage.removeItem('certificates')
+
+
+
+        }
     }
 
     addOrUpdateUser(user) {

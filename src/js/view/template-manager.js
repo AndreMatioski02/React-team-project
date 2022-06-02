@@ -156,22 +156,23 @@ class TemplateManager {
                 }
                 localStorage.setItem('certificates', JSON.stringify(data))
             }
-            console.log(data);
             return `
-            <form action="" class="form">
+            <form action="" data-page='basic' class="form">
 
                 <div class="div-certificates">
                     <div class="input-link-certificate">
                         <label for="certificate">Certificates</label>
                         <div id='certificateList'>
                         ${
-                //copia o array e inverte para mostrar do primeiro ao ultimo
-                data.certificates.slice(0).reverse().map((e, i) => {
-                    console.log();
-                    if (i == data.certificates.length - 1) return
-                    return this.getCertificateTemplate(data.certificates.length - i - 1, e)
-                }).join('')
-                }
+                            //copia o array e inverte para mostrar do primeiro ao ultimo
+                            (()=>{
+                                return data.certificates.slice(0).reverse().map((e, i) => {
+                                    if (i == data.certificates.length - 1) return
+                                    return this.getCertificateTemplate(data.certificates.length - i - 1, e)
+                                }).join('')
+                            })()
+                        }
+                
                                 <div class='certificate-item'>
                                     <div class='certificate-input'>
                                         <input class="input-content certificate" data-id='0' value='${data.certificates[0] != undefined ? data.certificates[0] : ''}' type="text" name="certificate0" id="certificate0"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
