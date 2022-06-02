@@ -10,10 +10,19 @@ class userController {
         let tempData = JSON.parse(localStorage.getItem(tempDataName))
         if (!tempData) tempData = {}
 
-        if (event.target.type == "checkbox") {
-            tempData[event.target] = event.target.checked
-        } else
-            tempData[event.target.name] = event.target.value
+        if (event.target.classList.contains('certificate')) {
+            //Cria o objeto se não existir
+            if (!tempData['certificates']) tempData['certificates'] = []
+
+            //Atribui no array no ID definido no input
+            tempData['certificates'][event.target.dataset.id] = event.target.value;
+
+        } else {
+            if (event.target.type == "checkbox")
+                tempData[event.target] = event.target.checked
+            else
+                tempData[event.target.name] = event.target.value
+        }
 
         localStorage.setItem(tempDataName, JSON.stringify(tempData))
     }
@@ -52,11 +61,20 @@ class userController {
                 dynamicContent.querySelector('#addCertificate').addEventListener('click', (event) => {
                     event.preventDefault() //para nao enviar o form
                     let certificateList = dynamicContent.querySelector('#certificateList')
-                    if (certificateList.childElementCount < 2)
-                        certificateList.insertAdjacentHTML('afterbegin', TemplateManager.getCertificateTemplate(certificateList.childElementCount + 1))
+                    let count = certificateList.querySelectorAll('.certificate').length
+                    if (count < 5)
+                        certificateList.insertAdjacentHTML('afterbegin', TemplateManager.getCertificateTemplate(count - 1))
                     else
                         console.log(dynamicContent.querySelectorAll('.certificate'));
 
+                })
+
+                dynamicContent.querySelector('#certificateList').addEventListener('click', (event) => {
+                    if (event.target.classList.contains('favorite')) {
+                        event.target.dataset.favorite = event.target.dataset.favorite == `true` ? false : true
+                        event.target.src = event.target.dataset.favorite == `true` ? 'images/favorite-filled.png' : 'images/favorite.png'
+
+                    }
                 })
             }
         }, 200);

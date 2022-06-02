@@ -366,13 +366,23 @@ body {
   flex-wrap: wrap;
   flex-direction: column;
 }
+.div-certificates .input-link-certificate #certificateList .certificate-item {
+  margin-top: 1rem;
+  position: relative;
+}
+.div-certificates .input-link-certificate #certificateList .certificate-item .favorite {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 25px;
+}
 .div-certificates .input-link-certificate input {
   color: #AAAAAA;
   width: 100%;
   border: 1px solid #AAAAAA;
   border-radius: 4px;
   padding: 0.5rem 0.75rem;
-  background-image: url(../images/favorite-icon.jpg);
   background-repeat: no-repeat;
   background-position: right;
   background-size: 2.5rem;

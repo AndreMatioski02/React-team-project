@@ -148,6 +148,10 @@ class TemplateManager {
             </form>
             `
         } else if (name == 'certificates') {
+            let data = JSON.parse(localStorage.getItem(`certificates`))
+            if (!data) data = {
+                certificates: []
+            }
             return `
             <form action="" class="form">
 
@@ -155,7 +159,17 @@ class TemplateManager {
                     <div class="input-link-certificate">
                         <label for="certificate">Certificates</label>
                         <div id='certificateList'>
-                            <input class="input-content certificate" type="text" name="certificate1" id="certificate1"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">            
+                        ${
+                            //copia o array e inverte para mostrar do primeiro ao ultimo
+                            data.certificates.slice(0).reverse().map((e, i) => {
+                            if(i == 4) return
+                            return this.getCertificateTemplate(data.certificates.length - i -1, e)
+                        }).join('')
+                    }
+                            <div class='certificate-item'>
+                                <input class="input-content certificate" data-id='0' value='${data.certificates[0] != undefined ? data.certificates[0] : ''}' type="text" name="certificate0" id="certificate0"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
+                                <img src='images/favorite.png' data-favorite='false' class='favorite' />
+                            </div>
                         </div>
                     </div>
                     <div class="add-button-div">
@@ -190,10 +204,11 @@ class TemplateManager {
         }
     }
 
-    static getCertificateTemplate(id) {
+    static getCertificateTemplate(id, value = '') {
         return `
-        <div class="input-link-certificate">
-            <input class="input-content certificate" type="text" name="certificate${id}" id="certificate${id}"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">            
+        <div class='certificate-item'>
+            <input class="input-content certificate" data-id='${id}' value='${value}' type="text" name="certificate${id}" id="certificate${id}"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">            
+            <img src='images/favorite.png' data-favorite='false' class='favorite'/>
         </div>
         `
     }

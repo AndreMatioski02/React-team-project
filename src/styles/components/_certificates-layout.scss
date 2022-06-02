@@ -9,13 +9,26 @@
         width: 100%;
         flex-wrap: wrap;
         flex-direction: column;
+        #certificateList {
+            .certificate-item {
+                margin-top: 1rem;
+                position: relative;
+                .favorite {
+                    position: absolute;
+                    right: 10px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 25px;
+                }
+            }
+        }
         input {
             color: $secondary;
             width: 100%;
             border: 1px solid $secondary;
             border-radius: 4px;
             padding: 0.5rem 0.75rem;
-            background-image: url(../images/favorite-icon.jpg);
+            //background-image: url(../images/favorite-icon.jpg);
             background-repeat: no-repeat;
             background-position: right;
             background-size: 2.5rem;
