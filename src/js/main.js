@@ -58,6 +58,10 @@ dynamicContent.addEventListener('submit', (event) => {
 //Evento FocusOut recebido por bubbling
 dynamicContent.addEventListener('focusout', (event) => {
     //Valida se o campo digitado nao está em branco
+    if(event.target.classList.contains('certificate')){
+        
+    }
+
     if (event.target.value != "")
         controller.addToTemp(event, tempDataName)
 })

@@ -11,8 +11,26 @@
         flex-direction: column;
         #certificateList {
             .certificate-item {
+                display: flex;
                 margin-top: 1rem;
                 position: relative;
+                .certificate-input {
+                    position: relative;
+                    flex-grow: 9;
+                }
+                .certificate-actions {
+                    flex-grow: 1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    margin-left: 1rem;
+                    .action-btn {
+                        width: 25px;
+                        height: 25px;
+                        margin-right: 0.5rem;
+                        
+                    }
+                }
                 .favorite {
                     position: absolute;
                     right: 10px;

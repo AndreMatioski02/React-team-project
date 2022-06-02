@@ -149,9 +149,14 @@ class TemplateManager {
             `
         } else if (name == 'certificates') {
             let data = JSON.parse(localStorage.getItem(`certificates`))
-            if (!data) data = {
-                certificates: []
+            if (!data) {
+                data = {
+                    certificates: [],
+                    favorites: []
+                }
+                localStorage.setItem('certificates', JSON.stringify(data))
             }
+            console.log(data);
             return `
             <form action="" class="form">
 
@@ -160,15 +165,22 @@ class TemplateManager {
                         <label for="certificate">Certificates</label>
                         <div id='certificateList'>
                         ${
-                            //copia o array e inverte para mostrar do primeiro ao ultimo
-                            data.certificates.slice(0).reverse().map((e, i) => {
-                            if(i == 4) return
-                            return this.getCertificateTemplate(data.certificates.length - i -1, e)
-                        }).join('')
-                    }
+                //copia o array e inverte para mostrar do primeiro ao ultimo
+                data.certificates.slice(0).reverse().map((e, i) => {
+                    console.log();
+                    if (i == data.certificates.length - 1) return
+                    return this.getCertificateTemplate(data.certificates.length - i - 1, e)
+                }).join('')
+                }
                             <div class='certificate-item'>
-                                <input class="input-content certificate" data-id='0' value='${data.certificates[0] != undefined ? data.certificates[0] : ''}' type="text" name="certificate0" id="certificate0"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
-                                <img src='images/favorite.png' data-favorite='false' class='favorite' />
+                                <div class='certificate-input'>
+                                    <input class="input-content certificate" data-id='0' value='${data.certificates[0] != undefined ? data.certificates[0] : ''}' type="text" name="certificate0" id="certificate0"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
+                                    <img src='${data.favorites[0] == 'true' ? "images/favorite-filled.png" : "images/favorite.png"}' data-id='0' data-favorite='${data.favorites[0] == "true" ? "true" : "false"}' class='favorite' />
+                                </div>
+                                <div class='certificate-actions'>
+                                    <img src='images/edit.png' class='action-btn'/>
+                                    <img src='images/trash.png' class='action-btn'/>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -205,10 +217,18 @@ class TemplateManager {
     }
 
     static getCertificateTemplate(id, value = '') {
+        let data = JSON.parse(localStorage.getItem(`certificates`))
+
         return `
         <div class='certificate-item'>
-            <input class="input-content certificate" data-id='${id}' value='${value}' type="text" name="certificate${id}" id="certificate${id}"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">            
-            <img src='images/favorite.png' data-favorite='false' class='favorite'/>
+            <div class='certificate-input'>
+                <input class="input-content certificate" data-id='${id}' value='${value}' type="text" name="certificate${id}" id="certificate${id}"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">            
+                <img src='${data.favorites[id] == 'true' ? "images/favorite-filled.png" : "images/favorite.png"}' data-id='${id}' data-favorite='${data.favorites[id] == "true" ? "true" : "false"}' class='favorite' />
+            </div>
+            <div class='certificate-actions'>
+                <img src='images/edit.png' class='action-btn edit'/>
+                <img src='images/trash.png' class='action-btn trash'/>
+            </div>
         </div>
         `
     }

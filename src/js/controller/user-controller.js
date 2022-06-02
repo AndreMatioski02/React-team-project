@@ -16,6 +16,14 @@ class userController {
 
             //Atribui no array no ID definido no input
             tempData['certificates'][event.target.dataset.id] = event.target.value;
+            event.target.setAttribute('disabled', 'disabled') 
+        }
+        else if (event.target.classList.contains('favorite')) {
+            //Cria o objeto se não existir
+            if (!tempData['favorites']) tempData['favorites'] = []
+
+            //Atribui no array no ID definido no input
+            tempData['favorites'][event.target.dataset.id] = event.target.dataset.favorite;
 
         } else {
             if (event.target.type == "checkbox")
@@ -62,10 +70,13 @@ class userController {
                     event.preventDefault() //para nao enviar o form
                     let certificateList = dynamicContent.querySelector('#certificateList')
                     let count = certificateList.querySelectorAll('.certificate').length
-                    if (count < 5)
-                        certificateList.insertAdjacentHTML('afterbegin', TemplateManager.getCertificateTemplate(count - 1))
-                    else
-                        console.log(dynamicContent.querySelectorAll('.certificate'));
+                    if (count < 5) {
+                        if (this.inputsNotNull('.certificate'))
+                            certificateList.insertAdjacentHTML('afterbegin', TemplateManager.getCertificateTemplate(count))
+                    }
+                    else {
+                        event.target.setAttribute('disabled', 'disabled')
+                    }
 
                 })
 
@@ -73,13 +84,51 @@ class userController {
                     if (event.target.classList.contains('favorite')) {
                         event.target.dataset.favorite = event.target.dataset.favorite == `true` ? false : true
                         event.target.src = event.target.dataset.favorite == `true` ? 'images/favorite-filled.png' : 'images/favorite.png'
+                        this.addToTemp(event, 'certificates')
 
                     }
+
+                    if (event.target.classList.contains('edit')) {
+                        let input = event.target.parentNode.parentNode.querySelector('input')
+                        input.disabled = false
+                        input.focus()
+
+
+                    }
+
+                    if (event.target.classList.contains('trash')) {
+                        let answer = confirm("Do you really want to remove the selected certificate?");
+                        if(answer){
+                            //Remove certificate
+                            let input = event.target.parentNode.parentNode.querySelector('input')
+                            let tempData = JSON.parse(localStorage.getItem(tempDataName))
+                            tempData['certificates'].splice([input.dataset.id],1)
+                            tempData['favorite'][input.dataset.id] = false
+
+                        }
+                    }
+                })
+
+                dynamicContent.querySelector('.certificate-actions').addEventListener('click', (event) => {
+
+
                 })
             }
         }, 200);
 
 
+    }
+
+    inputsNotNull(query) {
+        let elements = [...document.querySelectorAll(query)]
+        let result = true
+        elements.map(e => {
+            if (e.value == '') {
+                result = false
+                return
+            }
+        })
+        return result
     }
 
     save(page) {

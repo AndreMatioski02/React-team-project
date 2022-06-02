@@ -367,8 +367,25 @@ body {
   flex-direction: column;
 }
 .div-certificates .input-link-certificate #certificateList .certificate-item {
+  display: flex;
   margin-top: 1rem;
   position: relative;
+}
+.div-certificates .input-link-certificate #certificateList .certificate-item .certificate-input {
+  position: relative;
+  flex-grow: 9;
+}
+.div-certificates .input-link-certificate #certificateList .certificate-item .certificate-actions {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-left: 1rem;
+}
+.div-certificates .input-link-certificate #certificateList .certificate-item .certificate-actions .action-btn {
+  width: 25px;
+  height: 25px;
+  margin-right: 0.5rem;
 }
 .div-certificates .input-link-certificate #certificateList .certificate-item .favorite {
   position: absolute;
