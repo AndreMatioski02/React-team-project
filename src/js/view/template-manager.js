@@ -172,16 +172,16 @@ class TemplateManager {
                     return this.getCertificateTemplate(data.certificates.length - i - 1, e)
                 }).join('')
                 }
-                            <div class='certificate-item'>
-                                <div class='certificate-input'>
-                                    <input class="input-content certificate" data-id='0' value='${data.certificates[0] != undefined ? data.certificates[0] : ''}' type="text" name="certificate0" id="certificate0"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
-                                    <img src='${data.favorites[0] == 'true' ? "images/favorite-filled.png" : "images/favorite.png"}' data-id='0' data-favorite='${data.favorites[0] == "true" ? "true" : "false"}' class='favorite' />
+                                <div class='certificate-item'>
+                                    <div class='certificate-input'>
+                                        <input class="input-content certificate" data-id='0' value='${data.certificates[0] != undefined ? data.certificates[0] : ''}' type="text" name="certificate0" id="certificate0"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
+                                        <img src='${data.favorites[0] == 'true' ? "images/favorite-filled.png" : "images/favorite.png"}' data-id='0' data-favorite='${data.favorites[0] == "true" ? "true" : "false"}' class='favorite' />
+                                    </div>
+                                    <div class='certificate-actions'>
+                                        <img src='images/edit.png' class='action-btn edit'/>
+                                        <img src='images/trash.png' class='action-btn trash'/>
+                                    </div>
                                 </div>
-                                <div class='certificate-actions'>
-                                    <img src='images/edit.png' class='action-btn'/>
-                                    <img src='images/trash.png' class='action-btn'/>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="add-button-div">

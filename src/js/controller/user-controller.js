@@ -16,7 +16,7 @@ class userController {
 
             //Atribui no array no ID definido no input
             tempData['certificates'][event.target.dataset.id] = event.target.value;
-            event.target.setAttribute('disabled', 'disabled') 
+            event.target.setAttribute('disabled', 'disabled')
         }
         else if (event.target.classList.contains('favorite')) {
             //Cria o objeto se não existir
@@ -98,12 +98,15 @@ class userController {
 
                     if (event.target.classList.contains('trash')) {
                         let answer = confirm("Do you really want to remove the selected certificate?");
-                        if(answer){
+                        if (answer) {
                             //Remove certificate
+
                             let input = event.target.parentNode.parentNode.querySelector('input')
-                            let tempData = JSON.parse(localStorage.getItem(tempDataName))
-                            tempData['certificates'].splice([input.dataset.id],1)
-                            tempData['favorite'][input.dataset.id] = false
+                            let tempData = JSON.parse(localStorage.getItem('certificates'))
+                            tempData['certificates'].splice([input.dataset.id], 1)
+                            tempData['favorites'][input.dataset.id] = false
+                            event.target.parentNode.parentNode.remove()
+                            localStorage.setItem('certificates', JSON.stringify(tempData))
 
                         }
                     }
