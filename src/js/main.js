@@ -69,14 +69,16 @@ dynamicContent.addEventListener('submit', (event) => {
 
 //Evento FocusOut recebido por bubbling
 dynamicContent.addEventListener('focusout', (event) => {
-    // calculo da idade
-    let age = document.querySelector('#age');
-    let day = document.querySelector('#day');
-    let month = document.querySelector('#month')
-    let year = document.querySelector('#year')
-    let newAge = CalculateAge(day.value, month.value, year.value);
-    age.placeholder = newAge;
-
+    if (tempDataName == 'basic') {
+        // calculo da idade
+        let age = document.querySelector('#age');
+        let day = document.querySelector('#day');
+        let month = document.querySelector('#month')
+        let year = document.querySelector('#year')
+        let newAge = CalculateAge(day.value, month.value, year.value);
+        age.placeholder = newAge;
+    }
+    
     if (event.target.value != "")
         controller.addToTemp(event, tempDataName)
 })

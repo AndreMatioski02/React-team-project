@@ -10,7 +10,6 @@ function CalculateAge(day, month, year) {
     if (currentMonth < month && currentDay < day) {
         age = age - 1;
     }
-    console.log(`Sua idade é ${age}`);
 
     return age;
 }
