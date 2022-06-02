@@ -12,7 +12,7 @@ class TemplateManager {
 
                 <div class="input-group">
                 <label for="fullName">Full Name <span class="required">*</span></label>
-                <input class="input-content" value='${data.fullName != undefined ? data.fullName : ''}' type="text" name="fullName" id="fullName"  placeholder="Foo Bar">
+                <input class="input-content" value='${data.fullName != undefined ? data.fullName : ''}' type="text" name="fullName" id="fullName"  placeholder="Foo Bar" onmouseenter="addTextMask()">
             </div>
 
             <div class="input-group">
@@ -27,7 +27,7 @@ class TemplateManager {
 
             <div class="input-group-phone">
                 <label for="phone">Phone</label>
-                <input class="input-content" value='${data.phone != undefined ? data.phone : ''}' type="text" name="phone" id="phone" placeholder="(83) 0000-0000">
+                <input class="input-content" value='${data.phone != undefined ? data.phone : ''}' type="text" name="phone" id="phone" placeholder="(83) 0000-0000" maxlength="15" onmouseenter="addPhoneMask()">
             </div>
 
                 </div>
@@ -109,7 +109,7 @@ class TemplateManager {
                 </div>
 
                 <footer class="first-footer">
-                    <button value="Next" class="submit-form-button">Next<i class="fa-solid fa-angle-right"></i></button>
+                    <button value="Next" class="submit-form-button"">Next<i class="fa-solid fa-angle-right"></i></button>
                 </footer>
             </form>
         `
@@ -175,9 +175,25 @@ class TemplateManager {
                 </div>
 
                 <footer class="third-footer">
-                    <button value="Next" class="finish-form-button"><i class="fa-solid fa-check"></i>Finish</button>
+                    <button value="Next" class="finish-form-button" onmouseenter="starModalOnClick()"><i class="fa-solid fa-check"></i>Finish</button>
                 </footer>
             </form>
+
+            <div class="modal-container" id="confirmation-modal">
+                <div class="modal">
+                    <div class="modal-close-button">
+                        <button class="close-button">X</button>
+                    </div>
+                    <div class="modal-texts">
+                        <h1>Congratulations!</h1>
+                        <h3>Your informations have been correctly saved!</h3>                
+                    </div>
+        
+                    <div class="modal-image-confirmation">
+                        <img src="./images/confirmation-image.png" >
+                    </div>
+                </div>
+            </div>
             `
         }
     }
