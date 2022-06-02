@@ -64,11 +64,16 @@ dynamicContent.addEventListener('submit', (event) => {
     //Salvar no banco e trocar de tela
     controller.save(tempDataName)
     changeDiv(event)
+
 })
 
 //Evento FocusOut recebido por bubbling
 dynamicContent.addEventListener('focusout', (event) => {
     //Valida se o campo digitado nao está em branco
+    if (event.target.classList.contains('.input-year')) {
+        //calcula data e preenche no input idade aqui
+    }
+
     if (event.target.value != "")
         controller.addToTemp(event, tempDataName)
 })

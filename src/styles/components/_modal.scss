@@ -1,0 +1,211 @@
+@import '../scss/variables';
+
+.modal-container.show {
+    display: flex;
+}
+
+.modal-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.5);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 2000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    .modal {
+        display: flex;   
+        flex-direction: column;     
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        min-width: 200px;
+        max-width: 800px;
+        width: 50%;
+        height: 45%;
+        position: relative;
+        box-shadow: 5px 5px 10px 0 rgba(255, 255, 255, 0.3);
+        .modal-close-button {
+            .close-button {
+                position: absolute;
+                top: -12px;
+                right: -12px;
+                border-radius: 50%;
+                border: none;
+                color: white;
+                background-color: $primary;
+                width: 3rem;
+                height: 3rem;
+                font-size: 1.5rem;
+                cursor: pointer;
+                box-shadow: 0 3px 3px 0 rgba(0,0,0,.3);
+            }
+        }
+
+        .modal-texts {
+            text-align: center;
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h3 {
+                font-size: 1rem;
+            }
+        }
+
+        .modal-image-confirmation {
+            margin-top: 1.5rem;
+            img {
+                width: 7rem;
+                height: 7rem;
+            }
+        }
+    }
+}
+
+@keyframes modal {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -60px, 0);
+    }
+
+    to {
+        opacity: 1;        
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.show .modal {
+    animation: modal .7s;
+}
+
+@media (max-width: 325px) {
+    .modal-container {    
+        .modal {
+            .modal-close-button {
+                .close-button {
+                    width: 2rem;
+                    height: 2rem;
+                    font-size: 1rem;
+                }
+            }
+    
+            .modal-texts {
+                h1 {
+                    font-size: 1rem;
+                }
+    
+                h3 {
+                    font-size: 0.75rem;
+                }
+            }
+    
+            .modal-image-confirmation {
+                margin-top: 1rem;
+                img {
+                    width: 5rem;
+                    height: 5rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 475px) {
+    .modal-container {    
+        .modal {
+            .modal-close-button {
+                .close-button {
+                    width: 2rem;
+                    height: 2rem;
+                    font-size: 1rem;
+                }
+            }
+    
+            .modal-texts {
+                h1 {
+                    font-size: 1.25rem;
+                }
+    
+                h3 {
+                    font-size: 0.8rem;
+                }
+            }
+    
+            .modal-image-confirmation {
+                margin-top: 1rem;
+                img {
+                    width: 5rem;
+                    height: 5rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 775px) {
+    .modal-container {    
+        .modal {
+            .modal-close-button {
+                .close-button {
+                    width: 2rem;
+                    height: 2rem;
+                    font-size: 1rem;
+                }
+            }
+    
+            .modal-texts {
+                h1 {
+                    font-size: 1.25rem;
+                }
+    
+                h3 {
+                    font-size: 0.8rem;
+                }
+            }
+    
+            .modal-image-confirmation {
+                margin-top: 1rem;
+                img {
+                    width: 5rem;
+                    height: 5rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 950px) {
+    .modal-container {    
+        .modal {
+            .modal-close-button {
+                .close-button {
+                    width: 2rem;
+                    height: 2rem;
+                    font-size: 1rem;
+                }
+            }
+    
+            .modal-texts {
+                h1 {
+                    font-size: 1.25rem;
+                }
+    
+                h3 {
+                    font-size: 0.8rem;
+                }
+            }
+    
+            .modal-image-confirmation {
+                margin-top: 1rem;
+                img {
+                    width: 5rem;
+                    height: 5rem;
+                }
+            }
+        }
+    }
+}
