@@ -1,0 +1,55 @@
+@import '../scss/variables';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    .header {
+        margin-top: 0;
+        .steps {
+            #list {
+                font-size: 2rem;
+            }
+        }
+    }
+    .content {  
+        display: flex;
+        div {              
+        justify-content: center;
+        align-items: center;          
+        flex-wrap: wrap;
+            .list-div {
+                height: 50%;
+                width: 20rem;
+                border: 2px solid #000000;
+                border-radius: 10px;
+                padding: 1rem;
+                margin: 1rem;
+            }
+        }      
+    }
+}
+
+@media (max-width: 430px) {
+    .container {
+        .header {
+            .steps {
+                #list {
+                    font-size: 1.75rem;
+                }
+            }
+        }
+        .content {  
+            div {    
+            width: 100%; 
+            flex-wrap: wrap;
+                .list-div {
+                    width: 100%;
+                    border: 2px solid #000000;
+                    border-radius: 10px;
+                    padding: 1rem;
+                    margin: 1rem;
+                }
+            }      
+        }
+    }
+}

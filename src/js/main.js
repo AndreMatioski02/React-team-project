@@ -19,10 +19,15 @@ document.querySelector('.steps').addEventListener('click', (event) => {
         if (inputName.value !== '' && inputEmail.value !== '' && checked.checked == true) {
             validation = 'ok';
         } else if (inputName.value == '' || inputEmail.value == '' || checked.checked == false) {
-            return document.getElementById('fullName').focus();
+            if (inputName.value == '') {
+                return document.getElementById('fullName').focus();
+            } else if (inputEmail.value == '') {
+                return document.getElementById('email').focus();
+            } else if (checked.checked == false) {
+                return alert('Please, accept the terms to proceed');
+            }
+
         }
-
-
     } else if (tempDataName == 'certificates') {
         let inputTeam = document.querySelector('#teamName');
         let inputInstitution = document.querySelector('#institution');
@@ -56,11 +61,14 @@ document.querySelector('.steps').addEventListener('click', (event) => {
     }
 })
 
+// PERMITE Q SEJA POSSIL VOLTAR A PARTIR DA TELA CERTIFICADOS 
 document.querySelector('#certificates').addEventListener('click', (event) => {
     if (tempDataName == 'social') {
         let inputGit = document.querySelector('#github');
         if (inputGit.value !== '') {
             validation = 'ok';
+        } else if (inputGit.value == '') {
+            return document.getElementById('github').focus();
         }
     }
 
@@ -71,10 +79,10 @@ document.querySelector('#certificates').addEventListener('click', (event) => {
         return;
     }
 });
+// PERMITE VOLTAR PARA BASIC SEM TEM COLOCADO ALGO NO CAMPO OBRIGATORIO
 document.querySelector('#basic').addEventListener('click', (event) => {
     validation = 'ok';
     if (validation == 'ok') {
-        if (!validateBasic(event.target)) return
         controller.save(tempDataName, true)
         changeDiv(event)
     }
