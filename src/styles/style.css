@@ -834,8 +834,10 @@ body {
   display: -ms-flexbox;
   display: flex;
   position: absolute;
-  bottom: 0;
+  top: 0;
   margin-bottom: 2rem;
+  margin-top: 2rem;
+  margin-left: 1rem;
 }
 
 .index-button-redirect a #index-button {
@@ -854,5 +856,77 @@ body {
 .index-button-redirect a #index-button i {
   color: white;
   padding: 0.5rem;
+}
+
+@media (max-width: 430px) {
+  .index-button-redirect {
+    margin-top: 2rem;
+  }
+  .index-button-redirect a #index-button {
+    width: 5rem;
+    font-size: 1rem;
+  }
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.container .header {
+  margin-top: 0;
+}
+
+.container .header .steps #list {
+  font-size: 2rem;
+}
+
+.container .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .content div {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.container .content div .list-div {
+  height: 50%;
+  width: 20rem;
+  border: 2px solid #000000;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+@media (max-width: 430px) {
+  .container .header .steps #list {
+    font-size: 1.75rem;
+  }
+  .container .content div {
+    width: 100%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .container .content div .list-div {
+    width: 100%;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */
