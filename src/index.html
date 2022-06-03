@@ -20,7 +20,7 @@
                 <li id="social" data-page="social" class="list-item" type="button">Social</li>
                 <li id="certificates" data-page="certificates" class="list-item" type="button">Certificates</li>
             </ul>
-      </header>
+        </header>
 
         <!-- Aqui será inserido o conteúdo dinamico da página -->
         <div class="dynamic-content">
@@ -31,17 +31,17 @@
 
                     <div class="input-group">
                         <label for="fullName">Full Name <span class="required">*</span></label>
-                        <input required class="input-content" type="text" name="fullName" id="fullName"  placeholder="Foo Bar" onmouseover="addTextMask()" autocomplete="off">
+                        <input required class="input-content" type="text" name="fullName" id="fullName" placeholder="Foo Bar" onmouseover="addTextMask()" autocomplete="off">
                     </div>
 
                     <div class="input-group">
                         <label for="nickname">Nickname</label>
-                        <input class="input-content" type="text" name="nickname" id="nickname"  placeholder="Juanito" onmouseover="addTextMask()" autocomplete="off">
+                        <input class="input-content" type="text" name="nickname" id="nickname" placeholder="Juanito" onmouseover="addTextMask()" autocomplete="off">
                     </div>
 
                     <div class="input-group-email">
                         <label for="email">Email<span class="required">*</span></label>
-                        <input required class="input-content" type="text" name="email" id="email"  placeholder="foo@bar.com" autocomplete="off">
+                        <input required class="input-content" type="email" name="email" id="email" placeholder="foo@bar.com" autocomplete="off">
                     </div>
 
                     <div class="input-group-phone">
@@ -112,7 +112,7 @@
                         </div>
                         <div class="input-group">
                             <label for="year">Year</label>
-                            <select name="year" id="year" onclick="StartYears()" focusout="CalculateAge()" >
+                            <select name="year" id="year" onclick="StartYears()" focusout="CalculateAge()">
                                 <option value="1991" onclick="CalculaAge()">1991</option>
                             </select>
                         </div>
@@ -122,7 +122,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="label-div">
                     <label><input type="checkbox" value="agree" name="terms" id="terms" required> I accept the terms and privacy</label>
                 </div>
@@ -140,16 +140,17 @@
     <script src="./js/main.js"></script>
     <script src="./js/utils/age-input.js"></script>
     <script src="./js/view/template-manager.js"></script>
-   
+
     <Script src="./js/view/finish-button-check.js"></Script>
 
-    <script src="./js/utils/year-select.js"></script> 
+    <script src="./js/utils/year-select.js"></script>
     <script src="./js/view/phone-mask.js"></script>
     <script src="./js/view/text-masks.js"></script>
     <script src="./js/view/modal-pop-up.js"></script>
-    <script src="./js/utils/inputs-certificates.js"></script>
     <script src="./js/view/list-view.js"></script>
 
+    <script src="./js/utils/validations.js"></script>
+    <script src="./js/utils/validacoes-basic.js"></script>
 </body>
 
 </html>

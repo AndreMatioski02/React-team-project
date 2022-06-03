@@ -8,8 +8,6 @@ let users = localStorage.getItem('users')
 if (!users)
     localStorage.setItem('users', JSON.stringify([]))
 
-
-
 //Trocar de tela sem sair da pagina + animações
 document.querySelector('.steps').addEventListener('click', (event) => {
     //If para verificar se os compos obrigatorios possuem value
@@ -20,7 +18,7 @@ document.querySelector('.steps').addEventListener('click', (event) => {
         let checked = document.querySelector('#terms');
         if (inputName.value !== '' && inputEmail.value !== '' && checked.checked == true) {
             validation = 'ok';
-        }else if (inputName.value == '' || inputEmail.value == '' || checked.checked == false) {
+        } else if (inputName.value == '' || inputEmail.value == '' || checked.checked == false) {
             return document.getElementById('fullName').focus();
         }
 
@@ -31,15 +29,17 @@ document.querySelector('.steps').addEventListener('click', (event) => {
         let inputGraduation = document.querySelector('#graduation');
         if (inputTeam.value !== '' && inputInstitution !== '' && inputGraduation !== '') {
             validation = 'ok';
-        }else {
-            validation= 'ok';
+        } else {
+            validation = 'ok';
         }
     }
 
     if (validation == 'ok') {
-        controller.save(tempDataName, true)
-        changeDiv(event)
-            /*
+        if (validateBasic(dynamicContent.querySelector('.form'))) {
+            controller.save(tempDataName, true)
+            changeDiv(event)
+        }
+        /*
         document.querySelectorAll('.list-item').forEach((element) => {
             element.classList.remove('active')
         })
@@ -74,6 +74,7 @@ document.querySelector('#certificates').addEventListener('click', (event) => {
 document.querySelector('#basic').addEventListener('click', (event) => {
     validation = 'ok';
     if (validation == 'ok') {
+        if (!validateBasic(event.target)) return
         controller.save(tempDataName, true)
         changeDiv(event)
     }
@@ -87,11 +88,12 @@ dynamicContent.addEventListener('submit', (event) => {
     event.preventDefault()
 
     //Validações
+    if (!validateBasic(event.target)) return
 
     //Salvar no banco e trocar de tela
     controller.save(tempDataName, false)
 
-    if(event.target.dataset.page == "report"){
+    if (event.target.dataset.page == "report") {
         //escreve a lógica para mostrar o report pós cadastro aqui
         return
     }
@@ -110,7 +112,7 @@ dynamicContent.addEventListener('focusout', (event) => {
         let newAge = CalculateAge(day.value, month.value, year.value);
         age.placeholder = newAge;
     }
-    
+
     if (event.target.value != "")
         controller.addToTemp(event, tempDataName)
 })
@@ -135,4 +137,3 @@ window.addEventListener('load', () => {
         tempDataName = 'basic'
     }, 250);
 })
-
