@@ -97,7 +97,10 @@ dynamicContent.addEventListener('submit', (event) => {
 
     //Validações da tela basic
     if (tempDataName == 'basic')
-        if (!validateBasic(event.target)) return
+        if (!validateBasic(event.target, tempDataName)) return
+
+    if (tempDataName == 'social' || tempDataName == 'certificates') 
+        if (!VaidateUrl(event.target, tempDataName)) return
 
         //Salvar no banco e trocar de tela
     controller.save(tempDataName, false)
@@ -109,7 +112,6 @@ dynamicContent.addEventListener('submit', (event) => {
     changeDiv(event)
 
 })
-
 //Evento FocusOut recebido por bubbling
 dynamicContent.addEventListener('focusout', (event) => {
     if (tempDataName == 'basic') {
