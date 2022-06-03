@@ -185,12 +185,15 @@ class TemplateManager {
 
                     <div class="input-group">
                         <label for="teamName">Team Name <span class="required">*</span></label>
+
                         <input class="input-content" type="text" value='${data.teamName != undefined ? data.teamName : ''}' name="teamName" id="teamName"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" required onclick=" toggleFinishButton()" autocomplete="off">
+
 
                     </div>
 
                     <div class="input-group">
                         <label for="institution">Institution <span class="required">*</span></label>
+
                         <input class="input-content" type="text" value='${data.institution != undefined ? data.institution : ''}' name="institution" id="institution"  placeholder="Universidade Federal da Paraíba" required onclick=" toggleFinishButton()" autocomplete="off">
 
                     </div>
@@ -198,6 +201,7 @@ class TemplateManager {
                     <div class="input-group">
                         <label for="graduation">Graduation <span class="required">*</span></label>
                         <input class="input-content" type="text" value='${data.graduation != undefined ? data.graduation : ''}' name="graduation" id="graduation"  placeholder="Ciências da Computação" required onclick=" toggleFinishButton()" autocomplete="off">
+
 
                     </div>
 
