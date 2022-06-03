@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="list">
         <h1 class="title">List team</h1>
         <header class="header">
             <ul class="steps">
@@ -18,15 +18,11 @@
         </header>
 
         <!-- Aqui será inserido o conteúdo dinamico da página -->
-        <div class="content" style="display: flex;flex-wrap: wrap;">
+        <div class="content" id="content">
 
         </div>
 
     </div>
     <script src="./js/view/list-view.js"></script>
-    <script>
-        var $wrapper = document.querySelector('.content');
-        $wrapper.innerHTML= ListView.list();
-    </script>
 </body>
 </html>
