@@ -3,8 +3,8 @@ class ListView{
         let data = JSON.parse(localStorage.getItem(`users`));
         const div = document.querySelector('.content');
         const card = document.createElement("div");
+        
         card.style.display='flex';
-    
 
         data.forEach(item => { 
             card.innerHTML =  card.innerHTML + `<div class="list-div">
@@ -16,14 +16,26 @@ class ListView{
                 
                 <h3 class="subtitle-list">Github: ${item.github}</h3>
                 <h3 class="subtitle-list">Linkedin: ${item.linkedin}</h3><br>
+
+                <div class="Certificates">
                 
-                ${item.certificates.forEach(certificate =>{
-                    `<h3 class="subtitle-list">Certificate: ${certificate}</h3><br>`
-                })}
+                    ${item.certificates.forEach(certificate =>{
+                        certificades(certificate);
+                    })}
+                </div>
+
                 </div>`;
         });
-        div.append(card)
+        function certificades(certificate){
+            const card = document.createElement("div");
+            const certi = document.createElement('div');
+            certi.innerHTML = certi.innerHTML + `<h3 class="subtitle-list">Certificates:${certificate}</h3>`;
+            console.log(certi)
+            card.append(certi);
+        }
+        div.append(card);
     }
+    
 };
 
 ListView.list();
