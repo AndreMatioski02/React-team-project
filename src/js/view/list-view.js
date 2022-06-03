@@ -17,25 +17,20 @@ class ListView{
                 <h3 class="subtitle-list">Github: ${item.github}</h3>
                 <h3 class="subtitle-list">Linkedin: ${item.linkedin}</h3><br>
 
-                <div class="Certificates">
-                
-                    ${item.certificates.forEach(certificate =>{
-                        certificades(certificate);
-                    })}
+                    ${item.certificates.forEach((certificate)=>{
+                        // console.log(certificate);
+                        const certi = document.createElement('div');
+                        
+                        certi.innerHTML =certi.innerHTML+`<h3 class="subtitle-list">Certificates:${certificate}</h3>`;
+                        
+                        console.log(certi)
+                    })};
                 </div>
 
                 </div>`;
         });
-        function certificades(certificate){
-            const card = document.createElement("div");
-            const certi = document.createElement('div');
-            certi.innerHTML = certi.innerHTML + `<h3 class="subtitle-list">Certificates:${certificate}</h3>`;
-            console.log(certi)
-            card.append(certi);
-        }
         div.append(card);
-    }
-    
+    }  
 };
 
 ListView.list();
