@@ -17,25 +17,25 @@ document.querySelector('.steps').addEventListener('click', (event) => {
     if (tempDataName == 'basic') {
         let inputName = document.querySelector('#fullName');
         let inputEmail = document.querySelector('#email');
-        if (inputName.value !== '' && inputEmail.value !== ''){
+        if (inputName.value !== '' && inputEmail.value !== '') {
             validation = 'ok';
         }
-    }else if (tempDataName == 'social') {
+    } else if (tempDataName == 'social') {
         let inputGit = document.querySelector('#github');
-        if (inputGit.value !== ''){
+        if (inputGit.value !== '') {
             validation = 'ok';
         }
-    }else if (tempDataName == 'certificates') {
+    } else if (tempDataName == 'certificates') {
         let inputTeam = document.querySelector('#teamName');
         let inputInstitution = document.querySelector('#institution');
-        let inputGraduation  = document.querySelector('#graduation');
+        let inputGraduation = document.querySelector('#graduation');
         if (inputTeam.value !== '' && inputInstitution !== '' && inputGraduation !== '') {
             validation = 'ok';
         }
     }
 
     if (validation == 'ok') {
-        controller.save(tempDataName)
+        controller.save(tempDataName, true)
         changeDiv(event)
             /*
         document.querySelectorAll('.list-item').forEach((element) => {
@@ -49,7 +49,7 @@ document.querySelector('.steps').addEventListener('click', (event) => {
             dynamicContent.classList.remove('invisible')
         }, 200);
         */
-    }else if  (validation == 'no') {
+    } else if (validation == 'no') {
         return;
     }
 })
@@ -62,18 +62,28 @@ dynamicContent.addEventListener('submit', (event) => {
     //Validações
 
     //Salvar no banco e trocar de tela
-    controller.save(tempDataName)
+    controller.save(tempDataName, false)
+
+    if(event.target.dataset.page == "report"){
+        //escreve a lógica para mostrar o report pós cadastro aqui
+        return
+    }
     changeDiv(event)
 
 })
 
 //Evento FocusOut recebido por bubbling
 dynamicContent.addEventListener('focusout', (event) => {
-    //Valida se o campo digitado nao está em branco
-    if (event.target.classList.contains('.input-year')) {
-        //calcula data e preenche no input idade aqui
+    if (tempDataName == 'basic') {
+        // calculo da idade
+        let age = document.querySelector('#age');
+        let day = document.querySelector('#day');
+        let month = document.querySelector('#month')
+        let year = document.querySelector('#year')
+        let newAge = CalculateAge(day.value, month.value, year.value);
+        age.placeholder = newAge;
     }
-
+    
     if (event.target.value != "")
         controller.addToTemp(event, tempDataName)
 })

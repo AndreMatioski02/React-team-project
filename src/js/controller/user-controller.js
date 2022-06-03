@@ -78,7 +78,7 @@ class userController {
                     let count = certificateList.querySelectorAll('.certificate').length
                     if (count < 5) {
                         if (this.inputsNotNull('.certificate'))
-                            certificateList.insertAdjacentHTML('afterbegin', TemplateManager.getCertificateTemplate(count))
+                            certificateList.insertAdjacentHTML('beforeend', TemplateManager.getCertificateTemplate(count))
                     } else {
                         event.target.setAttribute('disabled', 'disabled')
                     }
@@ -144,7 +144,7 @@ class userController {
         return result
     }
 
-    save(page) {
+    save(page, isTab) {
         if (page == 'basic') {
 
             //buscando no DOM e atribuindo variaveis
@@ -188,16 +188,16 @@ class userController {
                         ...e,
                         ...datacertificate
                     };
-                    console.log('e', e);
                 }
                 return e
             })]
-            console.log(newUsers);
             localStorage.setItem('users', JSON.stringify(newUsers))
 
-            localStorage.removeItem('basic')
-            localStorage.removeItem('social')
-            localStorage.removeItem('certificates')
+            if(!isTab){
+                localStorage.removeItem('basic')
+                localStorage.removeItem('social')
+                localStorage.removeItem('certificates')
+            }
 
 
 
