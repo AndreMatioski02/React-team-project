@@ -7,7 +7,7 @@ const validateBasic = (form) => {
     if (!emailResult) {
         email.classList.add('input-error')
         email.value = ''
-        email.placeholder = ''
+        email.placeholder = 'invalid email'
         email.focus()
     }
 
@@ -26,12 +26,12 @@ const ValidateSocial = (form) => {
     if (!gitResults) {
         inputGit.classList.add('input-error')
         inputGit.value = ''
-        inputGit.placeholder = 'link invalido'
+        inputGit.placeholder = 'invalid link'
         inputGit.focus()
     } else if (!linkedinResults) {
         inputLinkedin.classList.add('input-error')
         inputLinkedin.value = ''
-        inputLinkedin.placeholder = 'link invalido'
+        inputLinkedin.placeholder = 'invalid link'
         inputLinkedin.focus()
     }
 
@@ -49,12 +49,12 @@ const ValidateCertificate = (form) => {
     if (!gitResults) {
         inputGit.classList.add('input-error')
         inputGit.value = ''
-        inputGit.placeholder = 'link invalido'
+        inputGit.placeholder = 'invalid link'
         inputGit.focus()
     } else if (!linkedinResults) {
         inputLinkedin.classList.add('input-error')
         inputLinkedin.value = ''
-        inputLinkedin.placeholder = 'link invalido'
+        inputLinkedin.placeholder = 'invalid link'
         inputLinkedin.focus()
     }
 
