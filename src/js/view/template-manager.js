@@ -185,29 +185,20 @@ class TemplateManager {
 
                     <div class="input-group">
                         <label for="teamName">Team Name <span class="required">*</span></label>
-<<<<<<< HEAD
-                        <input required class="input-content" type="text" name="teamName" id="teamName"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" required>
-=======
                         <input class="input-content" type="text" value='${data.teamName != undefined ? data.teamName : ''}' name="teamName" id="teamName"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" required>
->>>>>>> 422acb9f0e3f83e5a1866928ded2e1ae564dacfd
+
                     </div>
 
                     <div class="input-group">
                         <label for="institution">Institution <span class="required">*</span></label>
-<<<<<<< HEAD
-                        <input required class="input-content" type="text" name="institution" id="institution"  placeholder="Universidade Federal da Paraíba" required>
-=======
                         <input class="input-content" type="text" value='${data.institution != undefined ? data.institution : ''}' name="institution" id="institution"  placeholder="Universidade Federal da Paraíba" required>
->>>>>>> 422acb9f0e3f83e5a1866928ded2e1ae564dacfd
+
                     </div>
 
                     <div class="input-group">
                         <label for="graduation">Graduation <span class="required">*</span></label>
-<<<<<<< HEAD
-                        <input required class="input-content" type="text" name="graduation" id="graduation"  placeholder="Ciências da Computação" required>
-=======
                         <input class="input-content" type="text" value='${data.graduation != undefined ? data.graduation : ''}' name="graduation" id="graduation"  placeholder="Ciências da Computação" required>
->>>>>>> 422acb9f0e3f83e5a1866928ded2e1ae564dacfd
+
                     </div>
 
                 </div>
