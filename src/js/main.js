@@ -61,14 +61,11 @@ document.querySelector('.steps').addEventListener('click', (event) => {
     }
 })
 
-// PERMITE Q SEJA POSSIL VOLTAR A PARTIR DA TELA CERTIFICADOS 
 document.querySelector('#certificates').addEventListener('click', (event) => {
     if (tempDataName == 'social') {
         let inputGit = document.querySelector('#github');
         if (inputGit.value !== '') {
             validation = 'ok';
-        } else if (inputGit.value == '') {
-            return document.getElementById('github').focus();
         }
     }
 
@@ -79,7 +76,6 @@ document.querySelector('#certificates').addEventListener('click', (event) => {
         return;
     }
 });
-// PERMITE VOLTAR PARA BASIC SEM TEM COLOCADO ALGO NO CAMPO OBRIGATORIO
 document.querySelector('#basic').addEventListener('click', (event) => {
     validation = 'ok';
     if (validation == 'ok') {
