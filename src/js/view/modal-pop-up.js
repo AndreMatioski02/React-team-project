@@ -5,6 +5,7 @@ function starModalOnClick(){
         modal.addEventListener('click', (event) => {
             if(event.target.id == modalID || event.target.className == 'close-button') {
                 modal.classList.remove('show');
+                window.location.href = './list.html';
             }
         });
     }

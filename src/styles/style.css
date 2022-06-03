@@ -1,27 +1,36 @@
 .container {
   padding: 0 2rem;
 }
+
 .container .title {
   margin-top: 3.5rem;
   font-size: 1.125rem;
   line-height: 1.5rem;
   font-weight: 600;
 }
+
 .container .header {
   margin-top: 2.875rem;
 }
+
 .container .header .steps {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
   list-style-type: none;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
 .container .header .list-item {
   border-bottom: 1px solid grey;
   text-align: center;
   width: 33%;
   cursor: pointer;
 }
+
 .container .header .list-item.active {
   border-bottom: 2px solid #074EE8;
   color: #074EE8;
@@ -41,6 +50,7 @@
     padding: 0;
   }
 }
+
 @media (max-width: 325px) {
   .container {
     padding: 0.5rem;
@@ -55,14 +65,17 @@
     padding: 0;
   }
 }
+
 @font-face {
-  font-family: "Nunito";
+  font-family: 'Nunito';
   src: url("../assets/fonts/Nunito/Nunito-VariableFont_wght.ttf");
 }
+
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   color: black;
-  font-family: "Nunito";
+  font-family: 'Nunito';
 }
 
 body {
@@ -77,45 +90,59 @@ body {
 
 @media (max-width: 475px) {
   body {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin: 0;
     width: 100%;
   }
-
   .form {
     margin-top: 2rem;
   }
 }
+
 @media (max-width: 325px) {
   body {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin: 0;
     width: 100%;
   }
-
   .form {
     margin-top: 1.5rem;
   }
 }
+
 @media (max-width: 775px) {
   body {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     margin: 0;
     width: 100%;
   }
-
   .form {
     margin-top: 2rem;
   }
 }
+
 .dynamic-content .form .label-div {
-  justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
+
 .dynamic-content .form .first-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-bottom: 1rem;
-  justify-content: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
+
 .dynamic-content .form .first-footer .submit-form-button {
   color: white;
   border: none;
@@ -125,6 +152,7 @@ body {
   height: 2rem;
   font-size: 1rem;
 }
+
 .dynamic-content .form .first-footer .submit-form-button i {
   color: white;
   padding-left: 0.75rem;
@@ -132,18 +160,24 @@ body {
 
 @media (max-width: 475px) {
   .label-div {
-    justify-content: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
   }
-
   .first-footer {
     width: 100%;
     margin-top: 1.5rem;
-    justify-content: flex-end;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
 }
+
 @media (max-width: 325px) {
   .dynamic-content .form .label-div {
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin-top: 1.5rem;
   }
   .dynamic-content .form .label-div label {
@@ -151,26 +185,50 @@ body {
   }
   .dynamic-content .form .first-footer {
     margin-bottom: 1rem;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .dynamic-content .form .first-footer .submit-form-button {
     width: 7rem;
     font-size: 1rem;
   }
 }
+
 .div-inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
+
+.div-inputs .input-content::-webkit-input-placeholder {
+  color: #bababa;
+}
+
+.div-inputs .input-content:-ms-input-placeholder {
+  color: #bababa;
+}
+
+.div-inputs .input-content::-ms-input-placeholder {
+  color: #bababa;
+}
+
 .div-inputs .input-content::placeholder {
   color: #bababa;
 }
+
 .div-inputs .input-group {
   margin-bottom: 2.18rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
+
 .div-inputs .input-group input {
   color: #AAAAAA;
   width: 100%;
@@ -178,20 +236,29 @@ body {
   border-radius: 4px;
   padding: 0.5rem 0.75rem;
 }
+
 .div-inputs .input-group label {
   color: #AAAAAA;
   line-height: 16px;
   font-size: 0.875rem;
   font-weight: 400;
 }
+
 .div-inputs .input-group label .required {
   color: #bababa;
 }
+
 .div-inputs .input-group-email {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 65%;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
+
 .div-inputs .input-group-email input {
   color: #AAAAAA;
   width: 100%;
@@ -199,21 +266,30 @@ body {
   border-radius: 4px;
   padding: 0.5rem 0.75rem;
 }
+
 .div-inputs .input-group-email label {
   color: #AAAAAA;
   line-height: 16px;
   font-size: 0.875rem;
   font-weight: 400;
 }
+
 .div-inputs .input-group-email label .required {
   color: #bababa;
 }
+
 .div-inputs .input-group-phone {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 30%;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-left: 5%;
 }
+
 .div-inputs .input-group-phone input {
   color: #AAAAAA;
   width: 100%;
@@ -221,20 +297,25 @@ body {
   border-radius: 4px;
   padding: 0.5rem 0.75rem;
 }
+
 .div-inputs .input-group-phone label {
   color: #AAAAAA;
   line-height: 16px;
   font-size: 0.875rem;
   font-weight: 400;
 }
+
 .div-inputs .input-group-phone label .required {
   color: #bababa;
 }
 
 @media (max-width: 475px) {
   .div-inputs {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
   .div-inputs .input-group-email {
     width: 55%;
@@ -243,6 +324,7 @@ body {
     width: 40%;
   }
 }
+
 @media (max-width: 325px) {
   .div-inputs .input-group {
     margin-bottom: 1rem;
@@ -256,10 +338,12 @@ body {
     margin-left: 0;
   }
 }
+
 .birthday {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+
 .birthday .subtitle {
   margin-bottom: 1rem;
   margin-left: 0;
@@ -267,18 +351,29 @@ body {
   color: #AAAAAA;
   font-weight: 400;
 }
+
 .birthday .date-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
 }
+
 .birthday .date-group .input-group {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
+
 .birthday .date-group .input-group label {
   color: #AAAAAA;
 }
+
 .birthday .date-group .input-group select {
   color: #AAAAAA;
   width: 90%;
@@ -286,6 +381,7 @@ body {
   border-radius: 4px;
   padding: 0.5rem 0.75rem;
 }
+
 .birthday .date-group .input-group input {
   color: #AAAAAA;
   width: 100%;
@@ -299,6 +395,7 @@ body {
     padding: 0.5rem 0.5rem;
   }
 }
+
 @media (max-width: 325px) {
   .birthday {
     margin-top: 0.75rem;
@@ -310,9 +407,12 @@ body {
     margin-left: 0.5rem;
   }
   .birthday .date-group {
-    flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     margin: auto;
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     margin-left: 0.5rem;
   }
   .birthday .date-group .input-group {
@@ -330,16 +430,25 @@ body {
     padding: 0.5rem 0.75rem;
   }
 }
+
 .dynamic-content .form {
   width: 100%;
 }
+
 .dynamic-content .form .third-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   margin-bottom: 1rem;
 }
+
 .dynamic-content .form .third-footer .finish-form-button {
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   color: white;
   border: none;
   background-color: #074EE8;
@@ -348,6 +457,7 @@ body {
   height: 2rem;
   font-size: 1rem;
 }
+
 .dynamic-content .form .third-footer .finish-form-button i {
   color: white;
   padding-right: 0.55rem;
@@ -356,44 +466,83 @@ body {
 .div-certificates {
   width: 100%;
 }
+
+.div-certificates .input-content::-webkit-input-placeholder {
+  color: #bababa;
+}
+
+.div-certificates .input-content:-ms-input-placeholder {
+  color: #bababa;
+}
+
+.div-certificates .input-content::-ms-input-placeholder {
+  color: #bababa;
+}
+
 .div-certificates .input-content::placeholder {
   color: #bababa;
 }
+
 .div-certificates .input-link-certificate {
   margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
-  flex-wrap: wrap;
-  flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
+
 .div-certificates .input-link-certificate #certificateList .certificate-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-top: 1rem;
   position: relative;
 }
+
 .div-certificates .input-link-certificate #certificateList .certificate-item .certificate-input {
   position: relative;
-  flex-grow: 9;
+  -webkit-box-flex: 9;
+      -ms-flex-positive: 9;
+          flex-grow: 9;
 }
+
 .div-certificates .input-link-certificate #certificateList .certificate-item .certificate-actions {
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   margin-left: 1rem;
 }
+
 .div-certificates .input-link-certificate #certificateList .certificate-item .certificate-actions .action-btn {
   width: 25px;
   height: 25px;
   margin-right: 0.5rem;
 }
+
 .div-certificates .input-link-certificate #certificateList .certificate-item .favorite {
   position: absolute;
   right: 10px;
   top: 50%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   width: 25px;
 }
+
 .div-certificates .input-link-certificate input {
   color: #AAAAAA;
   width: 100%;
@@ -404,23 +553,32 @@ body {
   background-position: right;
   background-size: 2.5rem;
 }
+
 .div-certificates .input-link-certificate label {
   color: #AAAAAA;
   line-height: 16px;
   font-size: 0.875rem;
   font-weight: 400;
 }
+
 .div-certificates .input-link-certificate label .required {
   color: #bababa;
 }
 
 .add-button-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   margin-bottom: 2rem;
 }
+
 .add-button-div .add-button {
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   color: white;
   border: none;
   background-color: #074EE8;
@@ -429,6 +587,7 @@ body {
   height: 2.25rem;
   font-size: 1rem;
 }
+
 .add-button-div .add-button i {
   color: white;
   padding: 0.5rem;
@@ -445,11 +604,17 @@ body {
     height: 5rem;
   }
 }
+
 .dynamic-content .form .second-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   margin-bottom: 1rem;
 }
+
 .dynamic-content .form .second-footer .submit-form-button {
   color: white;
   border: none;
@@ -459,12 +624,15 @@ body {
   height: 2rem;
   font-size: 1rem;
 }
+
 .dynamic-content .form .second-footer .submit-form-button i {
   color: white;
   padding-left: 0.75rem;
 }
 
 .modal-container.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -477,22 +645,38 @@ body {
   left: 0px;
   z-index: 2000;
   display: none;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .modal-container .modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   background-color: white;
   min-width: 200px;
   max-width: 800px;
   width: 50%;
   height: 45%;
   position: relative;
-  box-shadow: 5px 5px 10px 0 rgba(255, 255, 255, 0.3);
+  -webkit-box-shadow: 5px 5px 10px 0 rgba(255, 255, 255, 0.3);
+          box-shadow: 5px 5px 10px 0 rgba(255, 255, 255, 0.3);
 }
+
 .modal-container .modal .modal-close-button .close-button {
   position: absolute;
   top: -12px;
@@ -505,37 +689,60 @@ body {
   height: 3rem;
   font-size: 1.5rem;
   cursor: pointer;
-  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.3);
 }
+
 .modal-container .modal .modal-texts {
   text-align: center;
 }
+
 .modal-container .modal .modal-texts h1 {
   font-size: 1.5rem;
 }
+
 .modal-container .modal .modal-texts h3 {
   font-size: 1rem;
 }
+
 .modal-container .modal .modal-image-confirmation {
   margin-top: 1.5rem;
 }
+
 .modal-container .modal .modal-image-confirmation img {
   width: 7rem;
   height: 7rem;
 }
 
-@keyframes modal {
+@-webkit-keyframes modal {
   from {
     opacity: 0;
-    transform: translate3d(0, -60px, 0);
+    -webkit-transform: translate3d(0, -60px, 0);
+            transform: translate3d(0, -60px, 0);
   }
   to {
     opacity: 1;
-    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
   }
 }
+
+@keyframes modal {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -60px, 0);
+            transform: translate3d(0, -60px, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+}
+
 .show .modal {
-  animation: modal 0.7s;
+  -webkit-animation: modal .7s;
+          animation: modal .7s;
 }
 
 @media (max-width: 325px) {
@@ -558,6 +765,7 @@ body {
     height: 5rem;
   }
 }
+
 @media (max-width: 475px) {
   .modal-container .modal .modal-close-button .close-button {
     width: 2rem;
@@ -578,6 +786,7 @@ body {
     height: 5rem;
   }
 }
+
 @media (max-width: 775px) {
   .modal-container .modal .modal-close-button .close-button {
     width: 2rem;
@@ -598,6 +807,7 @@ body {
     height: 5rem;
   }
 }
+
 @media (max-width: 950px) {
   .modal-container .modal .modal-close-button .close-button {
     width: 2rem;
@@ -619,16 +829,30 @@ body {
   }
 }
 
-.list-div{
-  margin: 10px;
-  border: 1px solid #777777;
-  border-radius: 10px;
-  width: 30vh;
-  text-align: center;
-  line-height: 0.9vh;
-  box-shadow: 1px 1px 1px black;
+.index-button-redirect {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 2rem;
 }
-#list  div {
-    flex-wrap: wrap;
+
+.index-button-redirect a #index-button {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  border: none;
+  background-color: #074EE8;
+  border-radius: 4px;
+  width: 7rem;
+  height: 2.25rem;
+  font-size: 1rem;
+}
+
+.index-button-redirect a #index-button i {
+  color: white;
+  padding: 0.5rem;
 }
 /*# sourceMappingURL=style.css.map */
