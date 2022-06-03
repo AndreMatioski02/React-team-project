@@ -16,25 +16,48 @@ const validateBasic = (form) => {
     return result
 }
 
-const VaidateUrl = (form) => {
-        let inputGit = form.querySelector('#github');
-        let inputLinkedin = form.querySelector('#linkedin')
+const ValidateSocial = (form) => {
+    let inputGit = form.querySelector('#github');
+    let inputLinkedin = form.querySelector('#linkedin')
 
-        gitResults = ValidateUrl(inputGit.value);
-        linkedinResults = ValidateUrl(inputLinkedin.value);
+    let gitResults = ValidateUrl(inputGit.value);
+    let linkedinResults = ValidateUrl(inputLinkedin.value);
 
-        if (!gitResult) {
-            inputGit.classList.add('input-error')
-            inputGit.value = ''
-            inputGit.placeholder = 'Email invalido'
-            inputGit.focus()
-        }else if (!inputLinkedin) {
-            inputLinkedin.classList.add('input-error')
-            inputLinkedin.value = ''
-            inputLinkedin.placeholder = 'Email invalido'
-            inputLinkedin.focus()
-        }
-    
-        let result = gitResults && linkedinResults
-        return result
+    if (!gitResults) {
+        inputGit.classList.add('input-error')
+        inputGit.value = ''
+        inputGit.placeholder = 'link invalido'
+        inputGit.focus()
+    } else if (!linkedinResults) {
+        inputLinkedin.classList.add('input-error')
+        inputLinkedin.value = ''
+        inputLinkedin.placeholder = 'link invalido'
+        inputLinkedin.focus()
+    }
+
+    let result = gitResults && linkedinResults
+    return result
+}
+
+const ValidateCertificate = (form) => {
+    //faltou implementar ########
+    let inputLinkedin = form.querySelector('#linkedin')
+
+    let gitResults = ValidateUrl(inputGit.value);
+    let linkedinResults = ValidateUrl(inputLinkedin.value);
+
+    if (!gitResults) {
+        inputGit.classList.add('input-error')
+        inputGit.value = ''
+        inputGit.placeholder = 'link invalido'
+        inputGit.focus()
+    } else if (!linkedinResults) {
+        inputLinkedin.classList.add('input-error')
+        inputLinkedin.value = ''
+        inputLinkedin.placeholder = 'link invalido'
+        inputLinkedin.focus()
+    }
+
+    let result = gitResults && linkedinResults
+    return result
 }
