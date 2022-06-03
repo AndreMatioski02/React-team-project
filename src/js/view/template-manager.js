@@ -185,7 +185,6 @@ class TemplateManager {
 
                     <div class="input-group">
                         <label for="teamName">Team Name <span class="required">*</span></label>
-                        <input class="input-content" type="text" value='${data.teamName != undefined ? data.teamName : ''}' name="teamName" id="teamName"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
 
                         <input class="input-content" type="text" value='${data.teamName != undefined ? data.teamName : ''}' name="teamName" id="teamName"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" required onclick=" toggleFinishButton()" autocomplete="off">
 
