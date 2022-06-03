@@ -243,4 +243,5 @@ class TemplateManager {
         </div>
         `
     }
+    
 }

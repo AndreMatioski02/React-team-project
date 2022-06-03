@@ -619,4 +619,16 @@ body {
   }
 }
 
+.list-div{
+  margin: 10px;
+  border: 1px solid #777777;
+  border-radius: 10px;
+  width: 30vh;
+  text-align: center;
+  line-height: 0.9vh;
+  box-shadow: 1px 1px 1px black;
+}
+#list  div {
+    flex-wrap: wrap;
+}
 /*# sourceMappingURL=style.css.map */
