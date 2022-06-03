@@ -140,8 +140,8 @@ class TemplateManager {
             </form>
             `
         } else if (name == 'certificates') {
-            let data = JSON.parse(localStorage.getItem(`certificates`))
-            if (!data.certificates) {
+            let data = JSON.parse(localStorage.getItem(`certificates`)) || {}
+            if (!data.hasOwnProperty('certificates')) {
                 data = {
                     certificates: [],
                     favorites: []
@@ -149,22 +149,12 @@ class TemplateManager {
                 localStorage.setItem('certificates', JSON.stringify(data))
             }
             return `
-            <form action="" data-page='basic' class="form">
+            <form action="" data-page='report' class="form">
 
                 <div class="div-certificates">
                     <div class="input-link-certificate">
                         <label for="certificate">Certificates</label>
                         <div id='certificateList'>
-                        ${
-                            //copia o array e inverte para mostrar do primeiro ao ultimo
-                            (()=>{
-                                return data.certificates.slice(0).reverse().map((e, i) => {
-                                    if (i == data.certificates.length - 1) return
-                                    return this.getCertificateTemplate(data.certificates.length - i - 1, e)
-                                }).join('')
-                            })()
-                        }
-                
                                 <div class='certificate-item'>
                                     <div class='certificate-input'>
                                         <input class="input-content certificate" data-id='0' value='${data.certificates[0] != undefined ? data.certificates[0] : ''}' type="text" name="certificate0" id="certificate0"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
@@ -175,6 +165,15 @@ class TemplateManager {
                                         <img src='images/trash.png' class='action-btn trash'/>
                                     </div>
                                 </div>
+                                ${
+                                    //copia o array e inverte para mostrar do primeiro ao ultimo
+                                    (()=>{
+                                        return data.certificates.map((e, i) => {
+                                            if (i==0) return
+                                            return this.getCertificateTemplate(i, e)
+                                        }).join('')
+                                    })()
+                                }
                         </div>
                     </div>
                     <div class="add-button-div">
@@ -186,17 +185,29 @@ class TemplateManager {
 
                     <div class="input-group">
                         <label for="teamName">Team Name <span class="required">*</span></label>
+<<<<<<< HEAD
                         <input required class="input-content" type="text" name="teamName" id="teamName"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" required>
+=======
+                        <input class="input-content" type="text" value='${data.teamName != undefined ? data.teamName : ''}' name="teamName" id="teamName"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" required>
+>>>>>>> 422acb9f0e3f83e5a1866928ded2e1ae564dacfd
                     </div>
 
                     <div class="input-group">
                         <label for="institution">Institution <span class="required">*</span></label>
+<<<<<<< HEAD
                         <input required class="input-content" type="text" name="institution" id="institution"  placeholder="Universidade Federal da Paraíba" required>
+=======
+                        <input class="input-content" type="text" value='${data.institution != undefined ? data.institution : ''}' name="institution" id="institution"  placeholder="Universidade Federal da Paraíba" required>
+>>>>>>> 422acb9f0e3f83e5a1866928ded2e1ae564dacfd
                     </div>
 
                     <div class="input-group">
                         <label for="graduation">Graduation <span class="required">*</span></label>
+<<<<<<< HEAD
                         <input required class="input-content" type="text" name="graduation" id="graduation"  placeholder="Ciências da Computação" required>
+=======
+                        <input class="input-content" type="text" value='${data.graduation != undefined ? data.graduation : ''}' name="graduation" id="graduation"  placeholder="Ciências da Computação" required>
+>>>>>>> 422acb9f0e3f83e5a1866928ded2e1ae564dacfd
                     </div>
 
                 </div>
