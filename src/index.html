@@ -16,26 +16,27 @@
         <h1 class="title">Team Sign Up</h1>
         <header class="header">
             <ul class="steps">
-                <li data-page="basic" class="list-item active">Basic</li>
-                <li data-page="social" class="list-item">Social</li>
-                <li data-page="certificates" class="list-item">Certificates</li>
+                <li id="basic" data-page="basic" class="list-item active">Basic</li>
+                <li id="social" data-page="social" class="list-item">Social</li>
+                <li id="certificates" data-page="certificates" class="list-item">Certificates</li>
             </ul>
-        </header>
+      </header>
 
         <!-- Aqui será inserido o conteúdo dinamico da página -->
         <div class="dynamic-content">
+
             <form action="" class="form">
 
                 <div class="div-inputs">
 
                     <div class="input-group">
                         <label for="fullName">Full Name <span class="required">*</span></label>
-                        <input class="input-content" type="text" name="fullName" id="fullName"  placeholder="Foo Bar">
+                        <input class="input-content" type="text" name="fullName" id="fullName"  placeholder="Foo Bar" onmouseover="addTextMask()">
                     </div>
 
                     <div class="input-group">
                         <label for="nickname">Nickname</label>
-                        <input class="input-content" type="text" name="nickname" id="nickname"  placeholder="Juanito">
+                        <input class="input-content" type="text" name="nickname" id="nickname"  placeholder="Juanito" onmouseover="addTextMask()">
                     </div>
 
                     <div class="input-group-email">
@@ -45,7 +46,7 @@
 
                     <div class="input-group-phone">
                         <label for="phone">Phone</label>
-                        <input class="input-content" type="text" name="phone" id="phone" placeholder="(83) 0000-0000">
+                        <input class="input-content" type="text" name="phone" id="phone" placeholder="(83) 0000-0000" maxlength="15" onmouseover="addPhoneMask()">
                     </div>
 
                 </div>
@@ -111,41 +112,40 @@
                         </div>
                         <div class="input-group">
                             <label for="year">Year</label>
-                            <select name="year" id="year">
+                            <select name="year" id="year" onclick="StartYears()">
                                 <option value="1991">1991</option>
-                                <option value="1992">1992</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
                             </select>
                         </div>
                         <div class="input-group">
                             <label for="age">Age</label>
-                            <input type="text">
+                            <input type="text" placeholder="18" id="age">
                         </div>
                     </div>
                 </div>
+                
+                <div class="label-div">
+                    <label><input type="checkbox" value="agree" name="terms" id="terms"> I accept the terms and privacy</label>
+                </div>
 
                 <footer class="first-footer">
-                    <label><input type="checkbox" value="agree" name="terms" id="terms"> I accept the terms and privacy</label>
-                    <button value="Next" class="submit-form-button" id="submit-form">Next<i class="fa-solid fa-angle-right"></i></button>
+                    <button value="Next" class="submit-form-button" onclick="starModalOnClick()">Next<i class="fa-solid fa-angle-right"></i></button>
                 </footer>
-                </form>
+            </form>
         </div>
 
     </div>
 
     <script src="./js/model/User.js"></script>
     <script src="./js/controller/user-controller.js"></script>
-    <script src="./js/view/template-manager.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/utils/age-input.js"></script>
+
+    <script src="./js/view/template-manager.js"></script>
+
+    <script src="./js/utils/year-select.js"></script> 
+    <script src="./js/view/phone-mask.js"></script>
+    <script src="./js/view/text-masks.js"></script>
+    <script src="./js/view/modal-pop-up.js"></script>
 </body>
 
 </html>

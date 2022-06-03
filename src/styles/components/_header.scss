@@ -5,7 +5,7 @@
     .title {
         margin-top: 3.5rem;
         font-size: 1.125rem;
-        line-height: 24px;
+        line-height: 1.5rem;
         font-weight: 600;
     }
     .header {
@@ -24,6 +24,36 @@
             &.active {
                 border-bottom: 2px solid $primary;
                 color: $primary;
+            }
+        }
+    }
+}
+
+@media (max-width: 475px) {
+    .container {
+        padding: 1rem;
+        .title {
+            margin-top: 2rem;
+        }
+        .header {
+            margin-top: 2rem;
+            .steps {
+                padding: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 325px) {
+    .container {
+        padding: 0.5rem;
+        .title {
+            margin-top: 1rem;
+        }
+        .header {
+            margin-top: 1.5rem;
+            .steps {
+                padding: 0;
             }
         }
     }

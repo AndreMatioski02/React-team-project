@@ -8,17 +8,48 @@
         display: flex;
         width: 100%;
         flex-wrap: wrap;
+        flex-direction: column;
+        #certificateList {
+            .certificate-item {
+                display: flex;
+                margin-top: 1rem;
+                position: relative;
+                .certificate-input {
+                    position: relative;
+                    flex-grow: 9;
+                }
+                .certificate-actions {
+                    flex-grow: 1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    margin-left: 1rem;
+                    .action-btn {
+                        width: 25px;
+                        height: 25px;
+                        margin-right: 0.5rem;
+                        
+                    }
+                }
+                .favorite {
+                    position: absolute;
+                    right: 10px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 25px;
+                }
+            }
+        }
         input {
             color: $secondary;
             width: 100%;
             border: 1px solid $secondary;
             border-radius: 4px;
             padding: 0.5rem 0.75rem;
-            background-image: url(../images/favorite-icon.jpg);
+            //background-image: url(../images/favorite-icon.jpg);
             background-repeat: no-repeat;
             background-position: right;
             background-size: 2.5rem;
-            
         }
         label {
             color: $secondary;
@@ -30,5 +61,4 @@
             }
         }
     }
-
 }
