@@ -20,6 +20,8 @@ document.querySelector('.steps').addEventListener('click', (event) => {
         let checked = document.querySelector('#terms');
         if (inputName.value !== '' && inputEmail.value !== '' && checked.checked == true) {
             validation = 'ok';
+        }else if (inputName.value == '' || inputEmail.value == '' || checked.checked == false) {
+            return document.getElementById('fullName').focus();
         }
 
 
