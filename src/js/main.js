@@ -17,14 +17,12 @@ document.querySelector('.steps').addEventListener('click', (event) => {
     if (tempDataName == 'basic') {
         let inputName = document.querySelector('#fullName');
         let inputEmail = document.querySelector('#email');
-        if (inputName.value !== '' && inputEmail.value !== '') {
+        let checked = document.querySelector('#terms');
+        if (inputName.value !== '' && inputEmail.value !== '' && checked.checked == true) {
             validation = 'ok';
         }
-    } else if (tempDataName == 'social') {
-        let inputGit = document.querySelector('#github');
-        if (inputGit.value !== '') {
-            validation = 'ok';
-        }
+
+
     } else if (tempDataName == 'certificates') {
         let inputTeam = document.querySelector('#teamName');
         let inputInstitution = document.querySelector('#institution');
@@ -55,6 +53,31 @@ document.querySelector('.steps').addEventListener('click', (event) => {
         return;
     }
 })
+
+document.querySelector('#certificates').addEventListener('click', (event) => {
+    if (tempDataName == 'social') {
+        let inputGit = document.querySelector('#github');
+        if (inputGit.value !== '') {
+            validation = 'ok';
+        }
+    }
+
+    if (validation == 'ok') {
+        controller.save(tempDataName, true)
+        changeDiv(event)
+    } else if (validation == 'no') {
+        return;
+    }
+});
+document.querySelector('#basic').addEventListener('click', (event) => {
+    validation = 'ok';
+    if (validation == 'ok') {
+        controller.save(tempDataName, true)
+        changeDiv(event)
+    }
+});
+
+
 
 //Ao clicar no botão enviar (realizar validações e trocar de tela)
 //para funcionar é necessario que exista um formulário na tela com um data-page='id_da_pg_seguinte'
