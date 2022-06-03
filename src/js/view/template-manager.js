@@ -12,7 +12,7 @@ class TemplateManager {
 
                 <div class="input-group">
                 <label for="fullName">Full Name <span class="required">*</span></label>
-                <input class="input-content" value='${data.fullName != undefined ? data.fullName : ''}' type="text" name="fullName" id="fullName"  placeholder="Foo Bar" required onmouseenter="addTextMask()">
+                <input required class="input-content" value='${data.fullName != undefined ? data.fullName : ''}' type="text" name="fullName" id="fullName"  placeholder="Foo Bar" required onmouseenter="addTextMask()">
             </div>
 
             <div class="input-group">
@@ -22,7 +22,7 @@ class TemplateManager {
 
             <div class="input-group-email">
                 <label for="email">Email<span class="required">*</span></label>
-                <input class="input-content" value='${data.email != undefined ? data.email : ''}' type="text" name="email" id="email"  placeholder="foo@bar.com" required>
+                <input required class="input-content" value='${data.email != undefined ? data.email : ''}' type="text" name="email" id="email"  placeholder="foo@bar.com" required>
             </div>
 
             <div class="input-group-phone">
@@ -186,17 +186,17 @@ class TemplateManager {
 
                     <div class="input-group">
                         <label for="teamName">Team Name <span class="required">*</span></label>
-                        <input class="input-content" type="text" name="teamName" id="teamName"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" required>
+                        <input required class="input-content" type="text" name="teamName" id="teamName"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" required>
                     </div>
 
                     <div class="input-group">
                         <label for="institution">Institution <span class="required">*</span></label>
-                        <input class="input-content" type="text" name="institution" id="institution"  placeholder="Universidade Federal da Paraíba" required>
+                        <input required class="input-content" type="text" name="institution" id="institution"  placeholder="Universidade Federal da Paraíba" required>
                     </div>
 
                     <div class="input-group">
                         <label for="graduation">Graduation <span class="required">*</span></label>
-                        <input class="input-content" type="text" name="graduation" id="graduation"  placeholder="Ciências da Computação" required>
+                        <input required class="input-content" type="text" name="graduation" id="graduation"  placeholder="Ciências da Computação" required>
                     </div>
 
                 </div>
