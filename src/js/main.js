@@ -95,10 +95,11 @@ document.querySelector('#basic').addEventListener('click', (event) => {
 dynamicContent.addEventListener('submit', (event) => {
     event.preventDefault()
 
-    //Validações
-    if (!validateBasic(event.target)) return
+    //Validações da tela basic
+    if (tempDataName == 'basic')
+        if (!validateBasic(event.target)) return
 
-    //Salvar no banco e trocar de tela
+        //Salvar no banco e trocar de tela
     controller.save(tempDataName, false)
 
     if (event.target.dataset.page == "report") {
