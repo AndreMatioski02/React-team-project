@@ -64,7 +64,10 @@ dynamicContent.addEventListener('submit', (event) => {
     //Salvar no banco e trocar de tela
     controller.save(tempDataName, false)
 
-    
+    if(event.target.dataset.page == "report"){
+        //escreve a lógica para mostrar o report pós cadastro aqui
+        return
+    }
     changeDiv(event)
 
 })
