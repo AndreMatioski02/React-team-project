@@ -904,7 +904,7 @@ body {
 }
 
 .container .content div .list-div {
-  height: 50%;
+  height: 100%;
   width: 20rem;
   border: 2px solid #000000;
   border-radius: 10px;
