@@ -12,22 +12,22 @@ class TemplateManager {
 
                 <div class="input-group">
                 <label for="fullName">Full Name <span class="required">*</span></label>
-                <input required class="input-content" value='${data.fullName != undefined ? data.fullName : ''}' type="text" name="fullName" id="fullName"  placeholder="Foo Bar" required onmouseenter="addTextMask()">
+                <input required class="input-content" value='${data.fullName != undefined ? data.fullName : ''}' type="text" name="fullName" id="fullName"  placeholder="Foo Bar" required onmouseenter="addTextMask()" autocomplete="off">
             </div>
 
             <div class="input-group">
                 <label for="nickname">Nickname</label>
-                <input class="input-content" value='${data.nickname != undefined ? data.nickname : ''}' type="text" name="nickname" id="nickname"  placeholder="Juanito" onmouseenter="addTextMask()">
+                <input class="input-content" value='${data.nickname != undefined ? data.nickname : ''}' type="text" name="nickname" id="nickname"  placeholder="Juanito" onmouseenter="addTextMask()" autocomplete="off">
             </div>
 
             <div class="input-group-email">
                 <label for="email">Email<span class="required">*</span></label>
-                <input required class="input-content" value='${data.email != undefined ? data.email : ''}' type="text" name="email" id="email"  placeholder="foo@bar.com" required>
+                <input required class="input-content" value='${data.email != undefined ? data.email : ''}' type="text" name="email" id="email"  placeholder="foo@bar.com" required autocomplete="off">
             </div>
 
             <div class="input-group-phone">
                 <label for="phone">Phone</label>
-                <input class="input-content" value='${data.phone != undefined ? data.phone : ''}' type="text" name="phone" id="phone" placeholder="(83) 0000-0000" maxlength="15" onmouseenter="addPhoneMask()">
+                <input class="input-content" value='${data.phone != undefined ? data.phone : ''}' type="text" name="phone" id="phone" placeholder="(83) 0000-0000" maxlength="15" onmouseenter="addPhoneMask()" autocomplete="off">
             </div>
 
                 </div>
@@ -99,7 +99,7 @@ class TemplateManager {
                         </div>
                         <div class="input-group">
                             <label for="age">Age</label>
-                            <input type="text" placeholder="18" id="age">
+                            <input type="text" placeholder="18" id="age" disabled>
                         </div>
                     </div>
                 </div>
@@ -109,7 +109,7 @@ class TemplateManager {
                 </div>
 
                 <footer class="first-footer">
-                    <button value="Next" class="submit-form-button"">Next<i class="fa-solid fa-angle-right"></i></button>
+                    <button value="Next" class="submit-form-button">Next<i class="fa-solid fa-angle-right"></i></button>
                 </footer>
             </form>
         `
@@ -122,12 +122,12 @@ class TemplateManager {
                 <div class="div-inputs">
                     <div class="input-group">
                         <label for="linkedin">Linkedin<span ></span></label>
-                        <input class="input-content" value='${data.linkedin != undefined ? data.linkedin : ''}' type="text" name="linkedin" id="linkedin"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
+                        <input class="input-content" value='${data.linkedin != undefined ? data.linkedin : ''}' type="text" name="linkedin" id="linkedin"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" autocomplete="off">
                     </div>
 
                     <div class="input-group">
                         <label for="Github">Github<span class="required">*</span></label>
-                        <input class="input-content" value='${data.github != undefined ? data.github : ''}' type="text" name="github" id="github"  placeholder="https://github.com/foobar" required>
+                        <input class="input-content" value='${data.github != undefined ? data.github : ''}' type="text" name="github" id="github"  placeholder="https://github.com/foobar" required autocomplete="off">
                     </div>
 
                     <div class="alignment-space"></div>
@@ -135,7 +135,7 @@ class TemplateManager {
                 
 
                 <footer class="second-footer">
-                    <button value="Next" class="submit-form-button">Next<i class="fa-solid fa-angle-right"></i></button>
+                    <button value="Next" class="submit-form-button" >Next<i class="fa-solid fa-angle-right"></i></button>
                 </footer>
             </form>
             `
@@ -187,24 +187,29 @@ class TemplateManager {
                         <label for="teamName">Team Name <span class="required">*</span></label>
                         <input class="input-content" type="text" value='${data.teamName != undefined ? data.teamName : ''}' name="teamName" id="teamName"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
 
+                        <input class="input-content" type="text" value='${data.teamName != undefined ? data.teamName : ''}' name="teamName" id="teamName"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" required onclick=" toggleFinishButton()" autocomplete="off">
+
+
                     </div>
 
                     <div class="input-group">
                         <label for="institution">Institution <span class="required">*</span></label>
-                        <input class="input-content" type="text" value='${data.institution != undefined ? data.institution : ''}' name="institution" id="institution"  placeholder="Universidade Federal da Paraíba">
+
+                        <input class="input-content" type="text" value='${data.institution != undefined ? data.institution : ''}' name="institution" id="institution"  placeholder="Universidade Federal da Paraíba" required onclick=" toggleFinishButton()" autocomplete="off">
 
                     </div>
 
                     <div class="input-group">
                         <label for="graduation">Graduation <span class="required">*</span></label>
-                        <input class="input-content" type="text" value='${data.graduation != undefined ? data.graduation : ''}' name="graduation" id="graduation"  placeholder="Ciências da Computação">
+                        <input class="input-content" type="text" value='${data.graduation != undefined ? data.graduation : ''}' name="graduation" id="graduation"  placeholder="Ciências da Computação" required onclick=" toggleFinishButton()" autocomplete="off">
+
 
                     </div>
 
                 </div>
 
                 <footer class="third-footer">
-                    <button value="Next" class="finish-form-button" onmouseenter="starModalOnClick()"><i class="fa-solid fa-check"></i>Finish</button>
+                    <button value="Next" class="finish-form-button" onclick="toggleFinishButton(), starModalOnClick()" id="finishButton"><i class="fa-solid fa-check"></i>Finish</button>
                 </footer>
             </form>
 
