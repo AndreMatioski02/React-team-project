@@ -7,7 +7,9 @@ const validateBasic = (form) => {
     if (!emailResult) {
         email.classList.add('input-error')
         email.value = ''
-        email.placeholder = 'invalid email'
+
+        email.placeholder = 'Invalid email, try this format: email@test.com'
+
         email.focus()
     }
 
