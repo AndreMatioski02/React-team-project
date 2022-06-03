@@ -93,24 +93,29 @@ document.querySelector('#basic').addEventListener('click', (event) => {
 //Ao clicar no botão enviar (realizar validações e trocar de tela)
 //para funcionar é necessario que exista um formulário na tela com um data-page='id_da_pg_seguinte'
 dynamicContent.addEventListener('submit', (event) => {
-    event.preventDefault()
+        event.preventDefault()
 
-    //Validações da tela basic
-    if (tempDataName == 'basic')
-        if (!validateBasic(event.target)) return
+        //Validações da tela basic
+        if (tempDataName == 'basic')
+            if (!validateBasic(event.target, tempDataName)) return
 
-        //Salvar no banco e trocar de tela
-    controller.save(tempDataName, false)
+        if (tempDataName == 'social')
+            if (!ValidateSocial(event.target, tempDataName)) return
 
-    if (event.target.dataset.page == "report") {
-        //escreve a lógica para mostrar o report pós cadastro aqui
-        return
-    }
-    changeDiv(event)
+            // if (tempDataName == 'certificates')
+            //     if (!ValidateSocial(event.target, tempDataName)) return
 
-})
+            //Salvar no banco e trocar de tela
+        controller.save(tempDataName, false)
 
-//Evento FocusOut recebido por bubbling
+        if (event.target.dataset.page == "report") {
+            //escreve a lógica para mostrar o report pós cadastro aqui
+            return
+        }
+        changeDiv(event)
+
+    })
+    //Evento FocusOut recebido por bubbling
 dynamicContent.addEventListener('focusout', (event) => {
     if (tempDataName == 'basic') {
         // calculo da idade
