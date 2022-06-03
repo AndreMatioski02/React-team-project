@@ -105,7 +105,7 @@ class TemplateManager {
                 </div>
                 
                 <div class="label-div">
-                    <label><input type="checkbox" value="agree" name="terms" id="terms"> I accept the terms and privacy</label>
+                    <label><input type="checkbox" value="agree" name="terms" id="terms" required> I accept the terms and privacy</label>
                 </div>
 
                 <footer class="first-footer">
@@ -185,19 +185,19 @@ class TemplateManager {
 
                     <div class="input-group">
                         <label for="teamName">Team Name <span class="required">*</span></label>
-                        <input class="input-content" type="text" value='${data.teamName != undefined ? data.teamName : ''}' name="teamName" id="teamName"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" required>
+                        <input class="input-content" type="text" value='${data.teamName != undefined ? data.teamName : ''}' name="teamName" id="teamName"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/">
 
                     </div>
 
                     <div class="input-group">
                         <label for="institution">Institution <span class="required">*</span></label>
-                        <input class="input-content" type="text" value='${data.institution != undefined ? data.institution : ''}' name="institution" id="institution"  placeholder="Universidade Federal da Paraíba" required>
+                        <input class="input-content" type="text" value='${data.institution != undefined ? data.institution : ''}' name="institution" id="institution"  placeholder="Universidade Federal da Paraíba">
 
                     </div>
 
                     <div class="input-group">
                         <label for="graduation">Graduation <span class="required">*</span></label>
-                        <input class="input-content" type="text" value='${data.graduation != undefined ? data.graduation : ''}' name="graduation" id="graduation"  placeholder="Ciências da Computação" required>
+                        <input class="input-content" type="text" value='${data.graduation != undefined ? data.graduation : ''}' name="graduation" id="graduation"  placeholder="Ciências da Computação">
 
                     </div>
 

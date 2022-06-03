@@ -31,6 +31,8 @@ document.querySelector('.steps').addEventListener('click', (event) => {
         let inputGraduation = document.querySelector('#graduation');
         if (inputTeam.value !== '' && inputInstitution !== '' && inputGraduation !== '') {
             validation = 'ok';
+        }else {
+            validation= 'ok';
         }
     }
 
