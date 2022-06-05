@@ -1,9 +1,13 @@
 @import '../scss/variables';
-
-.dynamic-content{
-    .form{  
+.dynamic-content {
+    .form {
         .label-div {
             justify-content: flex-start;
+            display: flex;
+            flex-direction: column;
+        }
+        .invisible {
+            display: none;
         }
         .first-footer {
             display: flex;
@@ -33,13 +37,13 @@
     .first-footer {
         width: 100%;
         margin-top: 1.5rem;
-        justify-content: flex-end;       
+        justify-content: flex-end;
     }
 }
 
 @media (max-width: 325px) {
-    .dynamic-content{
-        .form{  
+    .dynamic-content {
+        .form {
             .label-div {
                 justify-content: center;
                 margin-top: 1.5rem;
@@ -58,5 +62,3 @@
         }
     }
 }
-    
-

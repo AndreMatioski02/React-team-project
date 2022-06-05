@@ -33,7 +33,7 @@ class userController {
 
         } else {
             if (event.target.type == "checkbox")
-                tempData[event.target] = event.target.checked
+                tempData[event.target.name] = event.target.checked
             else
                 tempData[event.target.name] = event.target.value
         }
@@ -68,6 +68,10 @@ class userController {
             tempDataName = newTab.dataset.page
             dynamicContent.classList.remove('invisible')
 
+
+            if (target == 'basic') {
+                addPhoneMask()
+            }
 
             //Tratamento diferenciado para tela de certificados
             if (target == 'certificates') {
@@ -193,7 +197,7 @@ class userController {
             })]
             localStorage.setItem('users', JSON.stringify(newUsers))
 
-            if(!isTab){
+            if (!isTab) {
                 localStorage.removeItem('basic')
                 localStorage.removeItem('social')
                 localStorage.removeItem('certificates')

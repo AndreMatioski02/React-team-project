@@ -1,6 +1,16 @@
+.input-error {
+    border: solid 1px $danger !important;
+    color: $danger;
+}
+
+.checkbox-error {
+    color: $danger;
+    margin-left: 1.5rem;
+}
+
 .div-inputs {
     display: flex;
-    flex-wrap: wrap;    
+    flex-wrap: wrap;
     .input-content::placeholder {
         color: #bababa;
     }
@@ -26,7 +36,6 @@
             }
         }
     }
-
     .input-group-email {
         display: flex;
         width: 65%;
@@ -43,13 +52,11 @@
             line-height: 16px;
             font-size: 0.875rem;
             font-weight: 400;
-            
             .required {
                 color: #bababa;
             }
         }
     }
-
     .input-group-phone {
         display: flex;
         width: 30%;
@@ -67,7 +74,6 @@
             line-height: 16px;
             font-size: 0.875rem;
             font-weight: 400;
-            
             .required {
                 color: #bababa;
             }
@@ -78,12 +84,10 @@
 @media (max-width: 475px) {
     .div-inputs {
         display: flex;
-        flex-wrap: wrap;    
-    
+        flex-wrap: wrap;
         .input-group-email {
             width: 55%;
         }
-    
         .input-group-phone {
             width: 40%;
         }
@@ -95,12 +99,10 @@
         .input-group {
             margin-bottom: 1rem;
         }
-    
         .input-group-email {
             width: 100%;
             margin-bottom: 1rem;
         }
-    
         .input-group-phone {
             width: 100%;
             margin-left: 0;
