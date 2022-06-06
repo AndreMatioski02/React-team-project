@@ -180,8 +180,12 @@ function validateInputLinkedIn(linkedin, format) {
     if (format) {
         if (!linkedinResult) {
             linkedin.classList.add('input-error')
+            linkedin.parentNode.querySelector('.invalid-link').classList.remove('invisible')
+
         } else {
             linkedin.classList.remove('input-error')
+            linkedin.parentNode.querySelector('.invalid-link').classList.add('invisible')
+
         }
     }
     return linkedinResult
@@ -192,8 +196,10 @@ function validateInputGithub(github, format) {
     if (format) {
         if (!githubResult) {
             github.classList.add('input-error')
+            github.parentNode.querySelector('.invalid-link').classList.remove('invisible')
         } else {
             github.classList.remove('input-error')
+            github.parentNode.querySelector('.invalid-link').classList.add('invisible')
         }
     }
     return githubResult
