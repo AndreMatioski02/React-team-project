@@ -15,7 +15,7 @@ document.querySelector('.steps').addEventListener('click', (event) => {
     let form = dynamicContent.querySelector(`.form`)
 
     if (form.dataset.page == 'basic')
-        if (validateBasic(form)) validation = `ok`
+        if (validateBasic(form, true)) validation = `ok`
 
 
     if (tempDataName == 'certificates') {
@@ -84,7 +84,7 @@ dynamicContent.addEventListener('submit', (event) => {
         let formName = event.target.dataset.page
             //Validações da tela basic
         if (formName == 'basic')
-            if (!validateBasic(event.target)) return
+            if (!validateBasic(event.target, true)) return
 
         if (formName == 'social')
             if (!ValidateSocial(event.target)) return
@@ -111,8 +111,10 @@ dynamicContent.addEventListener('focusout', (event) => {
 
     //Valida o campo referido atraves do método do arquivo validacoes-basic
     validateField(event.target)
+    
+    if (dynamicContent.querySelector('.form').dataset.page == 'basic') {
+        validateBasic(dynamicContent.querySelector('.form'), false)
 
-    if (tempDataName == 'basic') {
         // calculo da idade
         let age = document.querySelector('#age');
         let day = document.querySelector('#day');

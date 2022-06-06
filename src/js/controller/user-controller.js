@@ -71,6 +71,7 @@ class userController {
 
             if (target == 'basic') {
                 addPhoneMask()
+                validateBasic(dynamicContent.querySelector('.form'), false)
             }
 
             //Tratamento diferenciado para tela de certificados

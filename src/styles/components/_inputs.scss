@@ -2,6 +2,9 @@
     border: solid 1px $danger !important;
     color: $danger;
 }
+.disabled {
+    background-color: $secondary !important;
+}
 
 .checkbox-error {
     color: $danger;

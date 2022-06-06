@@ -1,48 +1,52 @@
 const validateField = (target) => {
     switch (target.id) {
         case 'fullName':
-            validateInputFullName(target)
+            validateInputFullName(target, true)
             break;
         case 'email':
-            validateInputEmail(target)
+            validateInputEmail(target, true)
             break;
 
         case 'phone':
-            validateInputPhone(target)
+            validateInputPhone(target, true)
             break;
         case 'day':
-            validateInputDay(target)
+            validateInputDay(target, true)
             break;
         case 'month':
-            validateInputMonth(target)
+            validateInputMonth(target, true)
             break;
         case 'year':
-            validateInputYear(target)
+            validateInputYear(target, true)
             break;
 
     }
 }
 
-const validateBasic = (form) => {
+const validateBasic = (form, format) => {
 
-    let fullName = validateInputFullName(form.querySelector('#fullName'))
-    let email = validateInputEmail(form.querySelector('#email'))
-    let day = validateInputDay(form.querySelector('#day'))
-    let month = validateInputMonth(form.querySelector('#month'))
-    let year = validateInputYear(form.querySelector('#year'))
-    let terms = validateTermsAndPrivacy(form.querySelector('.terms-group'))
+    let fullName = validateInputFullName(form.querySelector('#fullName'), format)
+    let email = validateInputEmail(form.querySelector('#email'), format)
+    let day = validateInputDay(form.querySelector('#day'), format)
+    let month = validateInputMonth(form.querySelector('#month'), format)
+    let year = validateInputYear(form.querySelector('#year'), format)
+    let terms = validateTermsAndPrivacy(form.querySelector('.terms-group'), format)
 
-    let phoneInput = form.querySelector('#phone')
+    let phoneInput = form.querySelector('#phone', format)
     let phone = phoneInput.value != '' ? validateInputPhone(phoneInput) : true
 
     //Sequencia de validações
-    let result = fullName && email && phone && day && month && year && terms
+    var result = fullName && email && phone && day && month && year && terms
+    if (!result)
+        form.querySelector('.submit-form-button').classList.add('disabled')
+    else
+        form.querySelector('.submit-form-button').classList.remove('disabled')
 
     return result
 }
 
 //Validar nome completo
-function validateInputFullName(name) {
+function validateInputFullName(name, format) {
 
     //Validar apenas letras
     let regexResult = ValidateString(name.value)
@@ -50,75 +54,99 @@ function validateInputFullName(name) {
     //Validar no minimo duas palavras
     let wordCountResult = name.value.split(' ').length > 1 ? true : false
 
-
-    if (!(regexResult & wordCountResult)) {
-        name.classList.add('input-error')
-    } else {
-        name.classList.remove('input-error')
+    if (format) {
+        if (!(regexResult & wordCountResult)) {
+            name.classList.add('input-error')
+        } else {
+            name.classList.remove('input-error')
+        }
     }
     return regexResult & wordCountResult
 }
 
 //Validar email
-function validateInputEmail(email) {
+function validateInputEmail(email, format) {
     let emailResult = ValidateEmail(email.value)
-    if (!emailResult) {
-        email.classList.add('input-error')
-    } else {
-        email.classList.remove('input-error')
+    if (format) {
+        if (!emailResult) {
+            email.classList.add('input-error')
+        } else {
+            email.classList.remove('input-error')
+        }
     }
     return emailResult
 }
 
 //Validar phone
-function validateInputPhone(phone) {
+function validateInputPhone(phone, format) {
     let phoneResult = ValidatePhone(phone.value)
-    if (!phoneResult) {
-        phone.classList.add('input-error')
+    if (phone.value.length > 0 && format) {
+        if (!phoneResult) {
+            phone.classList.add('input-error')
+        } else {
+            phone.classList.remove('input-error')
+        }
     } else {
         phone.classList.remove('input-error')
     }
+
     return phoneResult
 }
 
 //Validar data de aniversario
-function validateInputDay(day) {
+function validateInputDay(day, format) {
     let dayResult = (day.value > 0 && day.value <= 31)
-    if (!dayResult) {
-        day.classList.add('input-error')
-    } else {
-        day.classList.remove('input-error')
+
+    if (format) {
+        if (!dayResult) {
+            day.classList.add('input-error')
+        } else {
+            day.classList.remove('input-error')
+        }
     }
+
     return dayResult
 }
 
-function validateInputMonth(day) {
+function validateInputMonth(month, format) {
     let monthResult = (month.value > 0 && month.value <= 12)
-    if (!monthResult) {
-        month.classList.add('input-error')
-    } else {
-        month.classList.remove('input-error')
+
+    if (format) {
+        if (!monthResult) {
+            month.classList.add('input-error')
+        } else {
+            month.classList.remove('input-error')
+        }
     }
+
     return monthResult
 }
 
-function validateInputYear(day) {
+function validateInputYear(year, format) {
     let yearResult = (year.value > 1900 && year.value <= 2022)
-    if (!yearResult) {
-        year.classList.add('input-error')
-    } else {
-        year.classList.remove('input-error')
+
+    if (format) {
+        if (!yearResult) {
+            year.classList.add('input-error')
+        } else {
+            year.classList.remove('input-error')
+        }
     }
+
     return yearResult
 }
 
-function validateTermsAndPrivacy(terms) {
+function validateTermsAndPrivacy(terms, format) {
     let termsResult = terms.querySelector(`#terms`).checked
-    if (!termsResult) {
-        terms.parentNode.querySelector('.checkbox-error').classList.remove(`invisible`)
-    } else {
-        terms.parentNode.querySelector('.checkbox-error').classList.add(`invisible`)
+
+    if (format) {
+        if (!termsResult) {
+            terms.parentNode.querySelector('.checkbox-error').classList.remove(`invisible`)
+        } else {
+            terms.parentNode.querySelector('.checkbox-error').classList.add(`invisible`)
+        }
     }
+
     return termsResult
 }
 
