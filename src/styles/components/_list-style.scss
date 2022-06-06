@@ -3,11 +3,18 @@
 .container {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    padding: 0;
     .header {
-        margin-top: 0;
+        display: flex;
+        margin: 1rem;
+        justify-content: center;
+        align-items: center;
         .steps {
+            width: 66%;
             #list {
                 font-size: 2rem;
+                width: 40%;
             }
         }
     }
@@ -15,15 +22,20 @@
         display: flex;
         div {              
         justify-content: center;
-        align-items: center;          
+        align-items: stretch;          
         flex-wrap: wrap;
             .list-div {
-                height: 100%;
                 width: 20rem;
                 border: 2px solid #000000;
                 border-radius: 10px;
                 padding: 1rem;
                 margin: 1rem;
+
+                .subtitle-list {
+                    width: 100%;
+                    word-break: break-all;
+                    flex-wrap: wrap;
+                }
             }
         }      
     }
@@ -33,6 +45,7 @@
     .container {
         .header {
             .steps {
+                margin-right: 3rem;
                 #list {
                     font-size: 1.75rem;
                 }
@@ -48,6 +61,47 @@
                     border-radius: 10px;
                     padding: 1rem;
                     margin: 1rem;
+
+                    .subtitle-list {
+                        width: 100%;
+                        word-break: break-all;
+                        flex-wrap: wrap;
+                    }
+                }
+            }      
+        }
+    }
+}
+
+@media (max-width: 325px) {
+    .container {
+        padding: 0;
+        .header {
+            .steps {
+                #list {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+        .content {  
+            div {    
+            width: 100%; 
+            flex-wrap: wrap;
+                .list-div {
+                    display: flex;                    
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                    width: 100%;
+                    border: 2px solid #000000;
+                    border-radius: 10px;
+                    padding: 1rem;
+                    margin: 1rem;
+
+                    .subtitle-list {
+                        width: 100%;
+                        word-break: break-all;
+                        flex-wrap: wrap;
+                    }
                 }
             }      
         }

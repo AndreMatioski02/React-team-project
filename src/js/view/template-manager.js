@@ -2,17 +2,17 @@ class TemplateManager {
 
     static getTemplate(name) {
 
-        if (name == 'basic') {
-            let data = JSON.parse(localStorage.getItem(`basic`))
-            if (!data) data = {}
-            return `
-            <form action="" class="form" data-page='social'>
+            if (name == 'basic') {
+                let data = JSON.parse(localStorage.getItem(`basic`))
+                if (!data) data = {}
+                return `
+            <form action="" class="form" data-page='basic' data-next='social'>
 
                 <div class="div-inputs">
 
                 <div class="input-group">
-                <label for="fullName">Full Name <span class="required">*</span></label>
-                <input required class="input-content" value='${data.fullName != undefined ? data.fullName : ''}' type="text" name="fullName" id="fullName"  placeholder="Foo Bar" required onmouseenter="addTextMask()" autocomplete="off">
+                <label for="fullName">Full Name <span class="">*</span></label>
+                <input  class="input-content" value='${data.fullName != undefined ? data.fullName : ''}' type="text" name="fullName" id="fullName"  placeholder="Foo Bar"  onmouseenter="addTextMask()" autocomplete="off">
             </div>
 
             <div class="input-group">
@@ -21,13 +21,13 @@ class TemplateManager {
             </div>
 
             <div class="input-group-email">
-                <label for="email">Email<span class="required">*</span></label>
-                <input required class="input-content" value='${data.email != undefined ? data.email : ''}' type="text" name="email" id="email"  placeholder="foo@bar.com" required autocomplete="off">
+                <label for="email">Email<span class="">*</span></label>
+                <input  class="input-content" value='${data.email != undefined ? data.email : ''}' type="text" name="email" id="email"  placeholder="foo@bar.com"  autocomplete="off">
             </div>
 
             <div class="input-group-phone">
                 <label for="phone">Phone</label>
-                <input class="input-content" value='${data.phone != undefined ? data.phone : ''}' type="text" name="phone" id="phone" placeholder="(83) 0000-0000" maxlength="15" onmouseenter="addPhoneMask()" autocomplete="off">
+                <input class="input-content" value='${data.phone != undefined ? data.phone : ''}' type="text" name="phone" id="phone" placeholder="(83) 0000-0000" maxlength="15" autocomplete="off">
             </div>
 
                 </div>
@@ -40,61 +40,47 @@ class TemplateManager {
                         <div class="input-group">
                             <label for="day">Day</label>
                             <select name="day" id="day">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                            <option value="13">13</option>
-                            <option value="14">14</option>
-                            <option value="15">15</option>
-                            <option value="16">16</option>
-                            <option value="17">17</option>
-                            <option value="18">18</option>
-                            <option value="19">19</option>
-                            <option value="20">20</option>
-                            <option value="21">21</option>
-                            <option value="22">22</option>
-                            <option value="23">23</option>
-                            <option value="24">24</option>
-                            <option value="25">25</option>
-                            <option value="26">26</option>
-                            <option value="27">27</option>
-                            <option value="28">28</option>
-                            <option value="29">29</option>
-                            <option value="30">30</option>
-                            <option value="31">31</option>
-                        </select>
+                            <option selected disabled>Select the day</option>
+                            ${(()=>{
+                                let options = ``
+                                for (let index = 1; index <= 31; index++) {
+                                    options += `<option ${data.day == index ? 'selected' : ''} value="${index}">${index}</option>`
+                                    
+                                }
+                                return options
+                            })()
+                            }
+                            </select>
                         </div>
 
                         <div class="input-group">
                             <label for="month">Month</label>
                             <select name="month" id="month">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
-                                <option value="11">11</option>
-                                <option value="12">12</option>
+                            <option selected disabled>Select the month</option>
+                            ${(()=>{
+                                let options = ``
+                                for (let index = 1; index <= 12; index++) {
+                                    options += `<option ${data.month == index ? 'selected' : ''} value="${index}">${index}</option>`
+                                    
+                                }
+                                return options
+                            })()
+                            }
                             </select>
                         </div>
                         <div class="input-group">
                             <label for="year">Year</label>
-                            <select name="year" id="year" onclick="StartYears()" focusout="CalculateAge()" >
-                                <option value="1991" onclick="CalculaAge()">1991</option>
+                            <select name="year" id="year" focusout="CalculateAge()" >
+                                <option selected disabled>Select the year</option>
+                                ${(()=>{
+                                    let options = ``
+                                    for (let index = 2022; index >= 1900; index--) {
+                                        options += `<option ${data.year == index ? 'selected' : ''} value="${index}">${index}</option>`
+                                        
+                                    }
+                                    return options
+                                })()
+                                }
                             </select>
                         </div>
                         <div class="input-group">
@@ -104,8 +90,9 @@ class TemplateManager {
                     </div>
                 </div>
                 
-                <div class="label-div">
-                    <label><input type="checkbox" value="agree" name="terms" id="terms" required> I accept the terms and privacy</label>
+                <div class="label-div terms-group">
+                <label><input type="checkbox" ${data.terms ? 'checked': ''} class='checkbox' value="agree" name="terms" id="terms" > I accept the terms and privacy</label>
+                <label class='checkbox-error invisible'>Please, check the box above to agree with our terms</label>
                 </div>
 
                 <footer class="first-footer">
@@ -117,7 +104,7 @@ class TemplateManager {
             let data = JSON.parse(localStorage.getItem(`social`))
             if (!data) data = {}
             return `
-            <form action="" class="form" data-page='certificates'>
+            <form action="" class="form" data-page='social' data-next='certificates'>
 
                 <div class="div-inputs">
                     <div class="input-group">
@@ -126,8 +113,8 @@ class TemplateManager {
                     </div>
 
                     <div class="input-group">
-                        <label for="Github">Github<span class="required">*</span></label>
-                        <input class="input-content" value='${data.github != undefined ? data.github : ''}' type="text" name="github" id="github"  placeholder="https://github.com/foobar" required autocomplete="off">
+                        <label for="Github">Github<span class="">*</span></label>
+                        <input class="input-content" value='${data.github != undefined ? data.github : ''}' type="text" name="github" id="github"  placeholder="https://github.com/foobar"  autocomplete="off">
                     </div>
 
                     <div class="alignment-space"></div>
@@ -149,7 +136,7 @@ class TemplateManager {
                 localStorage.setItem('certificates', JSON.stringify(data))
             }
             return `
-            <form action="" data-page='report' class="form">
+            <form action="" data-page='certificates' data-next='report' class="form">
 
                 <div class="div-certificates">
                     <div class="input-link-certificate">
@@ -184,23 +171,23 @@ class TemplateManager {
                 <div class="div-inputs">
 
                     <div class="input-group">
-                        <label for="teamName">Team Name <span class="required">*</span></label>
+                        <label for="teamName">Team Name <span class="">*</span></label>
                     
-                        <input class="input-content" type="text" value='${data.teamName != undefined ? data.teamName : ''}' name="teamName" id="teamName"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" required onclick=" toggleFinishButton()" autocomplete="off">
+                        <input class="input-content" type="text" value='${data.teamName != undefined ? data.teamName : ''}' name="teamName" id="teamName"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/"  onclick=" toggleFinishButton()" autocomplete="off">
 
 
                     </div>
 
                     <div class="input-group">
-                        <label for="institution">Institution <span class="required">*</span></label>
+                        <label for="institution">Institution <span class="">*</span></label>
 
-                        <input class="input-content" type="text" value='${data.institution != undefined ? data.institution : ''}' name="institution" id="institution"  placeholder="Universidade Federal da Paraíba" required onclick=" toggleFinishButton()" autocomplete="off">
+                        <input class="input-content" type="text" value='${data.institution != undefined ? data.institution : ''}' name="institution" id="institution"  placeholder="Universidade Federal da Paraíba"  onclick=" toggleFinishButton()" autocomplete="off">
 
                     </div>
 
                     <div class="input-group">
-                        <label for="graduation">Graduation <span class="required">*</span></label>
-                        <input class="input-content" type="text" value='${data.graduation != undefined ? data.graduation : ''}' name="graduation" id="graduation"  placeholder="Ciências da Computação" required onclick=" toggleFinishButton()" autocomplete="off">
+                        <label for="graduation">Graduation <span class="">*</span></label>
+                        <input class="input-content" type="text" value='${data.graduation != undefined ? data.graduation : ''}' name="graduation" id="graduation"  placeholder="Ciências da Computação"  onclick=" toggleFinishButton()" autocomplete="off">
 
 
                     </div>
