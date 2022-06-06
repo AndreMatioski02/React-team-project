@@ -173,6 +173,11 @@ body {
   background-color: #AAAAAA !important;
 }
 
+.invalid-link {
+  margin-top: 0.225rem;
+  color: #e36868 !important;
+}
+
 .checkbox-error {
   color: #e36868;
   margin-left: 1.5rem;

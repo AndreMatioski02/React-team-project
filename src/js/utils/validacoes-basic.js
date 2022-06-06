@@ -19,6 +19,12 @@ const validateField = (target) => {
         case 'year':
             validateInputYear(target, true)
             break;
+        case 'linkedin':
+            validateInputLinkedIn(target, true)
+            break;
+        case 'github':
+            validateInputGithub(target, true)
+            break;
 
     }
 }
@@ -37,6 +43,25 @@ const validateBasic = (form, format) => {
 
     //Sequencia de validações
     var result = fullName && email && phone && day && month && year && terms
+    if (!result)
+        form.querySelector('.submit-form-button').classList.add('disabled')
+    else
+        form.querySelector('.submit-form-button').classList.remove('disabled')
+
+    return result
+}
+
+const validateSocial = (form, format) => {
+
+    let inputLinkedin = form.querySelector('#linkedin')
+    let inputGit = form.querySelector('#github');
+
+    let linkedinResult = validateInputLinkedIn(inputLinkedin, format);
+    let gitResult = validateInputGithub(inputGit, format);
+
+
+
+    let result = gitResult && linkedinResult
     if (!result)
         form.querySelector('.submit-form-button').classList.add('disabled')
     else
@@ -150,27 +175,28 @@ function validateTermsAndPrivacy(terms, format) {
     return termsResult
 }
 
-const ValidateSocial = (form) => {
-    let inputGit = form.querySelector('#github');
-    let inputLinkedin = form.querySelector('#linkedin')
-
-    let gitResults = ValidateUrl(inputGit.value);
-    let linkedinResults = ValidateUrl(inputLinkedin.value);
-
-    if (!gitResults) {
-        inputGit.classList.add('input-error')
-        inputGit.value = ''
-        inputGit.placeholder = 'invalid link'
-        inputGit.focus()
-    } else if (!linkedinResults) {
-        inputLinkedin.classList.add('input-error')
-        inputLinkedin.value = ''
-        inputLinkedin.placeholder = 'invalid link'
-        inputLinkedin.focus()
+function validateInputLinkedIn(linkedin, format) {
+    let linkedinResult = ValidateUrl(linkedin.value)
+    if (format) {
+        if (!linkedinResult) {
+            linkedin.classList.add('input-error')
+        } else {
+            linkedin.classList.remove('input-error')
+        }
     }
+    return linkedinResult
+}
 
-    let result = gitResults && linkedinResults
-    return result
+function validateInputGithub(github, format) {
+    let githubResult = ValidateUrl(github.value)
+    if (format) {
+        if (!githubResult) {
+            github.classList.add('input-error')
+        } else {
+            github.classList.remove('input-error')
+        }
+    }
+    return githubResult
 }
 
 const ValidateCertificate = (form) => {

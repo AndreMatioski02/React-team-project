@@ -17,8 +17,10 @@ document.querySelector('.steps').addEventListener('click', (event) => {
     if (form.dataset.page == 'basic')
         if (validateBasic(form, true)) validation = `ok`
 
+    if (form.dataset.page == 'social')
+        if (validateSocial(form, true)) validation = `ok`
 
-    if (tempDataName == 'certificates') {
+    if (form.dataset.page == 'certificates') {
         let inputTeam = document.querySelector('#teamName');
         let inputInstitution = document.querySelector('#institution');
         let inputGraduation = document.querySelector('#graduation');
@@ -87,7 +89,7 @@ dynamicContent.addEventListener('submit', (event) => {
             if (!validateBasic(event.target, true)) return
 
         if (formName == 'social')
-            if (!ValidateSocial(event.target)) return
+            if (!validateSocial(event.target)) return
 
             // if (tempDataName == 'certificates')
             //     if (!ValidateSocial(event.target, tempDataName)) return
@@ -111,9 +113,13 @@ dynamicContent.addEventListener('focusout', (event) => {
 
     //Valida o campo referido atraves do método do arquivo validacoes-basic
     validateField(event.target)
-    
-    if (dynamicContent.querySelector('.form').dataset.page == 'basic') {
+
+    let form = dynamicContent.querySelector('.form').dataset.page
+
+    if (form == 'basic') {
         validateBasic(dynamicContent.querySelector('.form'), false)
+
+
 
         // calculo da idade
         let age = document.querySelector('#age');
@@ -122,6 +128,11 @@ dynamicContent.addEventListener('focusout', (event) => {
         let year = document.querySelector('#year')
         let newAge = CalculateAge(day.value, month.value, year.value);
         age.placeholder = newAge;
+    }
+
+    if (form == 'social') {
+        validateSocial(dynamicContent.querySelector('.form'), false)
+
     }
 
     if (event.target.value != "")

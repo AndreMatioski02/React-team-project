@@ -2,8 +2,14 @@
     border: solid 1px $danger !important;
     color: $danger;
 }
+
 .disabled {
     background-color: $secondary !important;
+}
+
+.invalid-link {
+    margin-top: 0.225rem;
+    color: $danger !important;
 }
 
 .checkbox-error {
