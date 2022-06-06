@@ -12,23 +12,13 @@ if (!users)
 document.querySelector('.steps').addEventListener('click', (event) => {
     //If para verificar se os compos obrigatorios possuem value
     let validation = 'no';
-    if (tempDataName == 'basic') {
-        let inputName = document.querySelector('#fullName');
-        let inputEmail = document.querySelector('#email');
-        let checked = document.querySelector('#terms');
-        if (inputName.value !== '' && inputEmail.value !== '' && checked.checked == true) {
-            validation = 'ok';
-        } else if (inputName.value == '' || inputEmail.value == '' || checked.checked == false) {
-            if (inputName.value == '') {
-                return document.getElementById('fullName').focus();
-            } else if (inputEmail.value == '') {
-                return document.getElementById('email').focus();
-            } else if (checked.checked == false) {
-                return alert('Please, accept the terms to proceed');
-            }
+    let form = dynamicContent.querySelector(`.form`)
 
-        }
-    } else if (tempDataName == 'certificates') {
+    if (form.dataset.page == 'basic')
+        if (validateBasic(form, true)) validation = `ok`
+
+
+    if (tempDataName == 'certificates') {
         let inputTeam = document.querySelector('#teamName');
         let inputInstitution = document.querySelector('#institution');
         let inputGraduation = document.querySelector('#graduation');
@@ -40,28 +30,25 @@ document.querySelector('.steps').addEventListener('click', (event) => {
     }
 
     if (validation == 'ok') {
-        if (validateBasic(dynamicContent.querySelector('.form'))) {
-            controller.save(tempDataName, true)
-            changeDiv(event)
-        }
-        /*
-        document.querySelectorAll('.list-item').forEach((element) => {
-            element.classList.remove('active')
-        })
-        event.target.classList.add(`active`)
-        dynamicContent.classList.add('invisible')
-        setTimeout(() => {
-            dynamicContent.innerHTML = TemplateManager.getTemplate(event.target.dataset.page);
-            tempDataName = event.target.dataset.page
-            dynamicContent.classList.remove('invisible')
-        }, 200);
-        */
-    } else if (validation == 'no') {
-        return;
+        controller.save(form.dataset.page, true)
+        controller.changeForm(event.target.dataset.page)
+
+        //changeDiv(event)
     }
+    /*
+    document.querySelectorAll('.list-item').forEach((element) => {
+        element.classList.remove('active')
+    })
+    event.target.classList.add(`active`)
+    dynamicContent.classList.add('invisible')
+    setTimeout(() => {
+        dynamicContent.innerHTML = TemplateManager.getTemplate(event.target.dataset.next);
+        tempDataName = event.target.dataset.next
+        dynamicContent.classList.remove('invisible')
+    }, 200);
+    */
 })
 
-// PERMITE Q SEJA POSSIL VOLTAR A PARTIR DA TELA CERTIFICADOS 
 document.querySelector('#certificates').addEventListener('click', (event) => {
     if (tempDataName == 'social') {
         let inputGit = document.querySelector('#github');
@@ -87,33 +74,46 @@ document.querySelector('#basic').addEventListener('click', (event) => {
 
 
 //Ao clicar no botão enviar (realizar validações e trocar de tela)
-//para funcionar é necessario que exista um formulário na tela com um data-page='id_da_pg_seguinte'
+//para funcionar é necessario que exista um formulário na tela com um data-next='id_da_pg_seguinte'
 dynamicContent.addEventListener('submit', (event) => {
         event.preventDefault()
 
-        //Validações da tela basic
-        if (tempDataName == 'basic')
-            if (!validateBasic(event.target, tempDataName)) return
 
-        if (tempDataName == 'social')
-            if (!ValidateSocial(event.target, tempDataName)) return
+        //Validações
+        let formName = event.target.dataset.page
+            //Validações da tela basic
+        if (formName == 'basic')
+            if (!validateBasic(event.target, true)) return
+
+        if (formName == 'social')
+            if (!ValidateSocial(event.target)) return
 
             // if (tempDataName == 'certificates')
             //     if (!ValidateSocial(event.target, tempDataName)) return
 
             //Salvar no banco e trocar de tela
-        controller.save(tempDataName, false)
+        controller.save(formName, false)
 
-        if (event.target.dataset.page == "report") {
+        if (event.target.dataset.next == "report") {
             //escreve a lógica para mostrar o report pós cadastro aqui
             return
         }
-        changeDiv(event)
+
+        controller.changeForm(event.target.dataset.next)
+
+        //talvez sumir com esse changeDiv
+        //changeDiv(event)
 
     })
     //Evento FocusOut recebido por bubbling
 dynamicContent.addEventListener('focusout', (event) => {
-    if (tempDataName == 'basic') {
+
+    //Valida o campo referido atraves do método do arquivo validacoes-basic
+    validateField(event.target)
+    
+    if (dynamicContent.querySelector('.form').dataset.page == 'basic') {
+        validateBasic(dynamicContent.querySelector('.form'), false)
+
         // calculo da idade
         let age = document.querySelector('#age');
         let day = document.querySelector('#day');
@@ -134,7 +134,7 @@ function changeDiv(event) {
     //Precisei fazer ele esperar para que nao gerasse um cadastro de temp na proxima tela
     //ele ativa o evento focusout quando some com a div anterior
     setTimeout(() => {
-        tempDataName = event.target.dataset.page
+        tempDataName = event.target.dataset.next
     }, 250);
 }
 
