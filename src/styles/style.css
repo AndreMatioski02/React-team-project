@@ -547,7 +547,7 @@ body {
 }
 
 .div-certificates .input-link-certificate #certificateList .certificate-item .certificate-actions {
->>>>>>> 358dc23dee0e494d8fdff64920ef20dd8db5ffea
+
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -909,7 +909,7 @@ body {
   }
 }
 
-.container {
+
 
 .list-container {
 
@@ -962,12 +962,12 @@ body {
   color: #074EE8;
   border-bottom: 2px solid #074EE8;
   text-align: center;
->>>>>>> 358dc23dee0e494d8fdff64920ef20dd8db5ffea
+
   font-size: 2rem;
   width: 40%;
 }
 
-.container .content {
+
 
 .list-container .content {
 
@@ -977,13 +977,6 @@ body {
 }
 
 
-.container .content div {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 
 .list-container .content div {
   -webkit-box-pack: center;
@@ -998,11 +991,9 @@ body {
 }
 
 
-.container .content div .list-div {
-  height: 100%;
+
 
 .list-container .content div .list-div {
->>>>>>> 358dc23dee0e494d8fdff64920ef20dd8db5ffea
   width: 20rem;
   border: 2px solid #000000;
   border-radius: 10px;
