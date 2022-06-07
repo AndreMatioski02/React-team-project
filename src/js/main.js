@@ -75,7 +75,6 @@ document.querySelector('#basic').addEventListener('click', (event) => {
 });
 
 
-
 //Ao clicar no botão enviar (realizar validações e trocar de tela)
 //para funcionar é necessario que exista um formulário na tela com um data-next='id_da_pg_seguinte'
 dynamicContent.addEventListener('submit', (event) => {
@@ -91,8 +90,9 @@ dynamicContent.addEventListener('submit', (event) => {
         if (formName == 'social')
             if (!validateSocial(event.target)) return
 
-            // if (tempDataName == 'certificates')
-            //     if (!ValidateSocial(event.target, tempDataName)) return
+        if (formName == 'certificates')
+            if(!ValidateCertificate(event.target)) return
+
 
             //Salvar no banco e trocar de tela
         controller.save(formName, false)

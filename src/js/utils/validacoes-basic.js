@@ -206,24 +206,53 @@ function validateInputGithub(github, format) {
 }
 
 const ValidateCertificate = (form) => {
-    //faltou implementar ########
-    let inputLinkedin = form.querySelector('#linkedin')
+    let teamName    = form.querySelector('#teamName');
+    let institution = form.querySelector('#institution');
+    let graduation  = form.querySelector('#graduation');
 
-    let gitResults = ValidateUrl(inputGit.value);
-    let linkedinResults = ValidateUrl(inputLinkedin.value);
+    let teamNameResult    = ValidateInputCertificate(teamName.value);
+    let institutionResult = ValidateInputCertificate(institution.value);
+    let graduationResult  = ValidateInputCertificate(graduation.value);
 
-    if (!gitResults) {
-        inputGit.classList.add('input-error')
-        inputGit.value = ''
-        inputGit.placeholder = 'invalid link'
-        inputGit.focus()
-    } else if (!linkedinResults) {
-        inputLinkedin.classList.add('input-error')
-        inputLinkedin.value = ''
-        inputLinkedin.placeholder = 'invalid link'
-        inputLinkedin.focus()
+
+    if (!teamNameResult) {
+       teamName.classList.add('input-error')
+       teamName.parentNode.querySelector('.team-error').classList.remove(`invisible`);
+
+    }else if (teamNameResult) {
+        teamName.classList.remove('input-error');
+        teamName.parentNode.querySelector('.team-error').classList.add(`invisible`);
     }
 
-    let result = gitResults && linkedinResults
-    return result
+    if (!institutionResult) {
+        institution.classList.add('input-error');
+        institution.parentNode.querySelector('.institution-error').classList.remove(`invisible`);
+
+    }else if (institutionResult) {
+        institution.classList.remove('input-error');
+        institution.parentNode.querySelector('.institution-error').classList.add(`invisible`);
+    }
+
+    if (!graduationResult) {
+        graduation.classList.add('input-error');
+        graduation.parentNode.querySelector('.graduation-error').classList.remove(`invisible`);
+    }else if (graduationResult) {
+        graduation.classList.remove('input-error');
+        graduation.parentNode.querySelector('.graduation-error').classList.add(`invisible`)
+    }
+
+    let result = teamNameResult && institutionResult && graduationResult;
+    return result;
+
 }
+
+function ValidateInputCertificate(value) {
+    if (value.length > 2) {
+        return true;
+    }else {
+        return false;
+    }
+    
+}
+
+
