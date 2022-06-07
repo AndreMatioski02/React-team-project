@@ -89,7 +89,7 @@ dynamicContent.addEventListener('submit', (event) => {
             if (!ValidateSocial(event.target)) return
 
         if (formName == 'certificates')
-            if(!ValidadeCertificate(event.target)) return
+            if(!ValidateCertificate(event.target)) return
 
 
             //Salvar no banco e trocar de tela

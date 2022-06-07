@@ -174,7 +174,7 @@ class TemplateManager {
                         <label for="teamName">Team Name <span class="">*</span></label>
                     
                         <input class="input-content" type="text" value='${data.teamName != undefined ? data.teamName : ''}' name="teamName" id="teamName"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/"  onclick=" toggleFinishButton()" autocomplete="off">
-
+                        <label id="team-error" class='team-error invisible'>Required field</label>        
 
                     </div>
 
@@ -182,20 +182,20 @@ class TemplateManager {
                         <label for="institution">Institution <span class="">*</span></label>
 
                         <input class="input-content" type="text" value='${data.institution != undefined ? data.institution : ''}' name="institution" id="institution"  placeholder="Universidade Federal da Paraíba"  onclick=" toggleFinishButton()" autocomplete="off">
-
+                        <label id="institution-error" class='institution-error invisible'>Required field</label>            
                     </div>
 
                     <div class="input-group">
                         <label for="graduation">Graduation <span class="">*</span></label>
                         <input class="input-content" type="text" value='${data.graduation != undefined ? data.graduation : ''}' name="graduation" id="graduation"  placeholder="Ciências da Computação"  onclick=" toggleFinishButton()" autocomplete="off">
-
+                        <label id="graduation-error" class='graduation-error invisible'>Required field</label>        
 
                     </div>
 
                 </div>
 
                 <footer class="third-footer">
-                    <button value="Next" class="finish-form-button" onclick="toggleFinishButton(), starModalOnClick()" id="finishButton"><i class="fa-solid fa-check"></i>Finish</button>
+                    <button type="submit" value="Next" class="finish-form-button" onclick="toggleFinishButton(), starModalOnClick()" id="finishButton"><i class="fa-solid fa-check"></i>Finish</button>
                 </footer>
             </form>
 

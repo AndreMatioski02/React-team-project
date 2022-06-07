@@ -537,17 +537,11 @@ body {
   -webkit-box-flex: 9;
       -ms-flex-positive: 9;
           flex-grow: 9;
-
   width: 80%;
 }
 
 .div-certificates .input-link-certificate #certificateList .certificate-item .certificate-actions {
   width: 10%;
-
-}
-
-.div-certificates .input-link-certificate #certificateList .certificate-item .certificate-actions {
-
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -557,15 +551,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: end;
-
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-
   margin-left: 1rem;
 }
 
@@ -909,10 +897,7 @@ body {
   }
 }
 
-
-
 .list-container {
-
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -920,15 +905,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-
-}
-
-.container .header {
-  margin-top: 0;
-}
-
-.container .header .steps #list {
-
   width: 100%;
   padding: 0;
 }
@@ -962,21 +938,15 @@ body {
   color: #074EE8;
   border-bottom: 2px solid #074EE8;
   text-align: center;
-
   font-size: 2rem;
   width: 40%;
 }
 
-
-
 .list-container .content {
-
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-
-
 
 .list-container .content div {
   -webkit-box-pack: center;
@@ -985,13 +955,9 @@ body {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-
-
-
 
 .list-container .content div .list-div {
   width: 20rem;
@@ -1070,4 +1036,15 @@ body {
   }
 }
 
+#team-error {
+  color: red;
+}
+
+#institution-error {
+  color: red;
+}
+
+#graduation-error {
+  color: red;
+}
 /*# sourceMappingURL=style.css.map */

@@ -174,17 +174,53 @@ const ValidateSocial = (form) => {
 }
 
 const ValidateCertificate = (form) => {
-    //faltou implementar ########
-    let teamName    = ValidateString(form.querySelector('#teamName'));
-    let institution = ValidateString(form.querySelector('#institution'));
-    let graduation  = ValidateString(form.querySelector('#graduation'));
-    
-    let result = teamName.value && institution.value && graduation.value;
-    console.log(result)
-    if (!result) {
-        form.querySelector('.submit-form-button').classList.add('disabled');
-    } else {
-        form.querySelector('.submit.form-button').classList;remove('disabled');
+    let teamName    = form.querySelector('#teamName');
+    let institution = form.querySelector('#institution');
+    let graduation  = form.querySelector('#graduation');
+
+    let teamNameResult    = ValidateInputCertificate(teamName.value);
+    let institutionResult = ValidateInputCertificate(institution.value);
+    let graduationResult  = ValidateInputCertificate(graduation.value);
+
+
+    if (!teamNameResult) {
+       teamName.classList.add('input-error')
+       teamName.parentNode.querySelector('.team-error').classList.remove(`invisible`);
+
+    }else if (teamNameResult) {
+        teamName.classList.remove('input-error');
+        teamName.parentNode.querySelector('.team-error').classList.add(`invisible`);
     }
+
+    if (!institutionResult) {
+        institution.classList.add('input-error');
+        institution.parentNode.querySelector('.institution-error').classList.remove(`invisible`);
+
+    }else if (institutionResult) {
+        institution.classList.remove('input-error');
+        institution.parentNode.querySelector('.institution-error').classList.add(`invisible`);
+    }
+
+    if (!graduationResult) {
+        graduation.classList.add('input-error');
+        graduation.parentNode.querySelector('.graduation-error').classList.remove(`invisible`);
+    }else if (graduationResult) {
+        graduation.classList.remove('input-error');
+        graduation.parentNode.querySelector('.graduation-error').classList.add(`invisible`)
+    }
+
+    let result = teamNameResult && institutionResult && graduationResult;
     return result;
+
 }
+
+function ValidateInputCertificate(value) {
+    if (value.length > 2) {
+        return true;
+    }else {
+        return false;
+    }
+    
+}
+
+
