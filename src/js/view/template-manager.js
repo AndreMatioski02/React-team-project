@@ -110,11 +110,14 @@ class TemplateManager {
                     <div class="input-group">
                         <label for="linkedin">Linkedin<span ></span></label>
                         <input class="input-content" value='${data.linkedin != undefined ? data.linkedin : ''}' type="text" name="linkedin" id="linkedin"  placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" autocomplete="off">
+                        <label class='invalid-link invisible'>Please insert a valid link</label>
                     </div>
 
                     <div class="input-group">
                         <label for="Github">Github<span class="">*</span></label>
                         <input class="input-content" value='${data.github != undefined ? data.github : ''}' type="text" name="github" id="github"  placeholder="https://github.com/foobar"  autocomplete="off">
+                        <label class='invalid-link invisible'>Please insert a valid link</label>
+
                     </div>
 
                     <div class="alignment-space"></div>
