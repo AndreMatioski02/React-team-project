@@ -175,23 +175,16 @@ const ValidateSocial = (form) => {
 
 const ValidateCertificate = (form) => {
     //faltou implementar ########
-    let inputLinkedin = form.querySelector('#linkedin')
-
-    let gitResults = ValidateUrl(inputGit.value);
-    let linkedinResults = ValidateUrl(inputLinkedin.value);
-
-    if (!gitResults) {
-        inputGit.classList.add('input-error')
-        inputGit.value = ''
-        inputGit.placeholder = 'invalid link'
-        inputGit.focus()
-    } else if (!linkedinResults) {
-        inputLinkedin.classList.add('input-error')
-        inputLinkedin.value = ''
-        inputLinkedin.placeholder = 'invalid link'
-        inputLinkedin.focus()
+    let teamName    = ValidateString(form.querySelector('#teamName'));
+    let institution = ValidateString(form.querySelector('#institution'));
+    let graduation  = ValidateString(form.querySelector('#graduation'));
+    
+    let result = teamName.value && institution.value && graduation.value;
+    console.log(result)
+    if (!result) {
+        form.querySelector('.submit-form-button').classList.add('disabled');
+    } else {
+        form.querySelector('.submit.form-button').classList;remove('disabled');
     }
-
-    let result = gitResults && linkedinResults
-    return result
+    return result;
 }
