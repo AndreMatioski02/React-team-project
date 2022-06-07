@@ -2,11 +2,6 @@
 
 .index-button-redirect {
     display: flex;
-    position: absolute;
-    top: 0;
-    margin-bottom: 2rem; 
-    margin-top: 2rem;
-    margin-left: 1rem;
     a {      
         #index-button{
             justify-content: center;
@@ -27,7 +22,8 @@
 
 @media (max-width: 430px) {
     .index-button-redirect { 
-        margin-top: 2rem;
+        display: flex;
+        align-items: center;
         a {      
             #index-button{
                 width: 5rem;

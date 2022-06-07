@@ -537,11 +537,17 @@ body {
   -webkit-box-flex: 9;
       -ms-flex-positive: 9;
           flex-grow: 9;
+
   width: 80%;
 }
 
 .div-certificates .input-link-certificate #certificateList .certificate-item .certificate-actions {
   width: 10%;
+
+}
+
+.div-certificates .input-link-certificate #certificateList .certificate-item .certificate-actions {
+>>>>>>> 358dc23dee0e494d8fdff64920ef20dd8db5ffea
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -551,9 +557,15 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: end;
+
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+
   margin-left: 1rem;
 }
 
@@ -862,11 +874,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: absolute;
-  top: 0;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-  margin-left: 1rem;
 }
 
 .index-button-redirect a #index-button {
@@ -889,7 +896,12 @@ body {
 
 @media (max-width: 430px) {
   .index-button-redirect {
-    margin-top: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .index-button-redirect a #index-button {
     width: 5rem;
@@ -898,6 +910,9 @@ body {
 }
 
 .container {
+
+.list-container {
+
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -905,6 +920,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+
 }
 
 .container .header {
@@ -912,14 +928,54 @@ body {
 }
 
 .container .header .steps #list {
+
+  width: 100%;
+  padding: 0;
+}
+
+.list-container .list-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.list-container .list-header .steps {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  padding-left: 0;
+  list-style-type: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.list-container .list-header .steps #list {
+  color: #074EE8;
+  border-bottom: 2px solid #074EE8;
+  text-align: center;
+>>>>>>> 358dc23dee0e494d8fdff64920ef20dd8db5ffea
   font-size: 2rem;
+  width: 40%;
 }
 
 .container .content {
+
+.list-container .content {
+
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
+
 
 .container .content div {
   -webkit-box-pack: center;
@@ -928,12 +984,25 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+
+.list-container .content div {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
 
+
 .container .content div .list-div {
   height: 100%;
+
+.list-container .content div .list-div {
+>>>>>>> 358dc23dee0e494d8fdff64920ef20dd8db5ffea
   width: 20rem;
   border: 2px solid #000000;
   border-radius: 10px;
@@ -941,21 +1010,73 @@ body {
   margin: 1rem;
 }
 
+.list-container .content div .list-div .subtitle-list {
+  width: 100%;
+  word-break: break-all;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
 @media (max-width: 430px) {
-  .container .header .steps #list {
+  .list-container .list-header .steps {
+    margin-right: 3rem;
+  }
+  .list-container .list-header .steps #list {
     font-size: 1.75rem;
   }
-  .container .content div {
+  .list-container .content div {
     width: 100%;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
-  .container .content div .list-div {
+  .list-container .content div .list-div {
     width: 100%;
     border: 2px solid #000000;
     border-radius: 10px;
     padding: 1rem;
     margin: 1rem;
   }
+  .list-container .content div .list-div .subtitle-list {
+    width: 100%;
+    word-break: break-all;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
 }
+
+@media (max-width: 325px) {
+  .list-container {
+    padding: 0;
+  }
+  .list-container .list-header .steps #list {
+    font-size: 1.5rem;
+  }
+  .list-container .content div {
+    width: 100%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .list-container .content div .list-div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    width: 100%;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+  }
+  .list-container .content div .list-div .subtitle-list {
+    width: 100%;
+    word-break: break-all;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
